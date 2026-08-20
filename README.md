@@ -10,6 +10,8 @@ Each skill lives in its own directory under [`skills/`](skills/) and defines its
 ## Skills
 
 - [`architect`](skills/architect/SKILL.md): Design APIs, types, and module boundaries before implementation.
+- [`arena`](skills/arena/SKILL.md): Compare parallel attempts and synthesize the strongest verified result.
+- [`bro`](skills/bro/SKILL.md): Restate the last message in plain human language.
 - [`create-verification-skill`](skills/create-verification-skill/SKILL.md): Create a project-specific skill that verifies behavior through user-facing surfaces.
 - [`file-pr`](skills/file-pr/SKILL.md): Review a branch and open a concise pull request.
 - [`how`](skills/how/SKILL.md): Explain how a subsystem works from source evidence.
@@ -24,6 +26,8 @@ Each skill lives in its own directory under [`skills/`](skills/) and defines its
 ## Attribution
 
 - [`architect`](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md)
+- [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
+- [`bro`](https://github.com/cursor/plugins/blob/main/pstack/skills/bro/SKILL.md)
 - [`create-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/create-verification-skill/SKILL.md)
 - [`how`](https://github.com/cursor/plugins/blob/main/pstack/skills/how/SKILL.md)
 - [`interrogate`](https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md)
