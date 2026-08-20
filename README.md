@@ -10,7 +10,7 @@ The checked-in files have three roles:
 
 Generated skill files do not belong in Git. The Skills CLI restores them into `.agents/skills`, and `.gitignore` excludes both `.agents/` and `.claude/`.
 
-`install.sh` installs skills. It does not copy or link the root instruction files.
+`install.sh` installs public and private skills. It does not copy or link the root instruction files.
 
 ## Installation
 
@@ -21,15 +21,21 @@ The script then performs these steps:
 1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
 2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
 3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
-4. `~/.agents/skills` points to this repo's `.agents/skills`.
-5. `~/.claude/skills` points to this repo's `.claude/skills`.
+4. The animations.dev installer adds private skills to the project through `.claude/skills`.
+5. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation.
+6. `~/.agents/skills` points to this repo's `.agents/skills`.
+7. `~/.claude/skills` points to this repo's `.claude/skills`.
 
 If a target path contains a directory, the script moves that directory to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
 
-The script requires Node.js and `npx`. Set `SKILLS_CLI_VERSION` to use a Skills CLI version other than `latest`:
+The script requires Node.js and `npx`. It reads the animations.dev token from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI.
+
+Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item. Set `SKILLS_CLI_VERSION` to use a Skills CLI version other than `latest`:
 
 ```sh
-SKILLS_CLI_VERSION=1.5.23 ./install.sh
+ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token \
+  SKILLS_CLI_VERSION=1.5.23 \
+  ./install.sh
 ```
 
 ## Skill changes
