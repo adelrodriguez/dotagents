@@ -271,6 +271,12 @@
       "skillPath": "skills/obsidian-markdown/SKILL.md",
       "computedHash": "0f47297035d7824e7bf0f1984e8145a59a123e2258b5d54c9ac9642f9f77e177"
     },
+    "packref": {
+      "source": "adelrodriguez/packref",
+      "sourceType": "github",
+      "skillPath": "skills/packref/SKILL.md",
+      "computedHash": "ffc5a1ccbb040bda8c0c9af90e1df1834ed8c18ab154ebbbded57e22b9c3d676"
+    },
     "principle-boundary-discipline": {
       "source": "cursor/plugins",
       "sourceType": "github",
