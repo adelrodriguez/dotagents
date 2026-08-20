@@ -52,4 +52,4 @@ Some skills started in other repositories and were adapted here:
 - [`no-comments`](https://github.com/cursor/plugins/blob/main/pstack/skills/no-comments/SKILL.md)
 - [`show-me-your-work`](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
 
-The animation skills came from an earlier `adelrodriguez/dotfiles` snapshot. This repo now maintains those copies.
+The animation skills come from [animations.dev skills](https://animations.dev/skills). This repo maintains its copies.
