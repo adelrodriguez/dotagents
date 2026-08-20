@@ -1,37 +1,46 @@
-<div align="center">
-  <h1 align="center"><code>skills</code></h1>
-  <p align="center">
-    <strong>My skills for working with coding agents.</strong>
-  </p>
-</div>
+# dotagents
 
-Each skill lives in its own directory under [`skills/`](skills/) and defines its instructions in `SKILL.md`.
+This repo stores my coding-agent setup. It keeps skills, global instructions, and the list of installed third-party skills under version control.
 
-## Skills
+The checked-in files have three roles:
 
-- [`animation-accessibility`](skills/animation-accessibility/SKILL.md): Make web animation respect reduced-motion preferences.
-- [`animation-performance`](skills/animation-performance/SKILL.md): Keep web animation within the frame budget.
-- [`architect`](skills/architect/SKILL.md): Design APIs, types, and module boundaries before implementation.
-- [`arena`](skills/arena/SKILL.md): Compare parallel attempts and synthesize the strongest verified result.
-- [`bro`](skills/bro/SKILL.md): Restate the last message in plain human language.
-- [`create-verification-skill`](skills/create-verification-skill/SKILL.md): Create a project-specific skill that verifies behavior through user-facing surfaces.
-- [`css-animations`](skills/css-animations/SKILL.md): Build polished web animation with CSS.
-- [`emil-design-engineering`](skills/emil-design-engineering/SKILL.md): Build polished, accessible web interfaces.
-- [`file-pr`](skills/file-pr/SKILL.md): Review a branch and open a concise pull request.
-- [`how`](skills/how/SKILL.md): Explain how a subsystem works from source evidence.
-- [`html-communication`](skills/html-communication/SKILL.md): Present plans, reports, and UI mocks as self-contained HTML documents.
-- [`interrogate`](skills/interrogate/SKILL.md): Review a diff or design from independent, adversarial angles.
-- [`maintain-verification-skill`](skills/maintain-verification-skill/SKILL.md): Check and repair a project-specific verification skill.
-- [`monitor-pr`](skills/monitor-pr/SKILL.md): Monitor a pull request through review and CI.
-- [`motion-brief`](skills/motion-brief/SKILL.md): Define an animation through a complete motion brief.
-- [`motion-react`](skills/motion-react/SKILL.md): Build and debug animations with Motion for React.
-- [`no-comments`](skills/no-comments/SKILL.md): Review comments and suppressions for stale narration and hidden design debt.
-- [`show-me-your-work`](skills/show-me-your-work/SKILL.md): Record decisions and evidence during long-running or high-risk work.
-- [`write-changeset`](skills/write-changeset/SKILL.md): Write or update a changeset for staged changes.
+- [`skills/`](skills/) contains skills maintained in this repo.
+- [`skills-lock.json`](skills-lock.json) records every installed skill and its source.
+- [`AGENTS.md`](AGENTS.md) and [`CLAUDE.md`](CLAUDE.md) hold global agent instructions.
+
+Generated skill files do not belong in Git. The Skills CLI restores them into `.agents/skills`, and `.gitignore` excludes both `.agents/` and `.claude/`.
+
+`install.sh` installs skills. It does not copy or link the root instruction files.
+
+## Installation
+
+The installation entry point is `./install.sh`. The script works from any directory because it finds the repo root before it changes files.
+
+The script then performs these steps:
+
+1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
+2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
+3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
+4. `~/.agents/skills` points to this repo's `.agents/skills`.
+5. `~/.claude/skills` points to this repo's `.claude/skills`.
+
+If a target path contains a directory, the script moves that directory to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
+
+The script requires Node.js and `npx`. Set `SKILLS_CLI_VERSION` to use a Skills CLI version other than `latest`:
+
+```sh
+SKILLS_CLI_VERSION=1.5.23 ./install.sh
+```
+
+## Skill changes
+
+Files under `skills/` are the maintained source. Entries in `skills-lock.json` that point back to this repo restore the published GitHub version, not uncommitted files in the working tree.
+
+The Skills CLI adds or updates third-party skills and writes the result to `skills-lock.json`. The lock file is the installed-skill list. The generated `.agents/skills` directory is only a local copy.
 
 ## Attribution
 
-The following skills were preserved from the `adelrodriguez/dotfiles` snapshot and are maintained in this repository: `animation-accessibility`, `animation-performance`, `css-animations`, `emil-design-engineering`, `motion-brief`, and `motion-react`.
+Some skills started in other repositories and were adapted here:
 
 - [`architect`](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md)
 - [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
@@ -42,3 +51,5 @@ The following skills were preserved from the `adelrodriguez/dotfiles` snapshot a
 - [`maintain-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/maintain-verification-skill/SKILL.md)
 - [`no-comments`](https://github.com/cursor/plugins/blob/main/pstack/skills/no-comments/SKILL.md)
 - [`show-me-your-work`](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
+
+The animation skills came from an earlier `adelrodriguez/dotfiles` snapshot. This repo now maintains those copies.
