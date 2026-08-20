@@ -19,18 +19,6 @@
       "skillPath": "skills/animate/SKILL.md",
       "computedHash": "609e30351bf518b21a8cfe87cd1111554855527075d6563605bafe61963252f7"
     },
-    "animation-accessibility": {
-      "source": "adelrodriguez/dotagents",
-      "sourceType": "github",
-      "skillPath": "skills/animation-accessibility/SKILL.md",
-      "computedHash": "56daeb7ed3c30b93b7bd169ef1bc22b5762eff90b88f2279167423ccb412f92a"
-    },
-    "animation-performance": {
-      "source": "adelrodriguez/dotagents",
-      "sourceType": "github",
-      "skillPath": "skills/animation-performance/SKILL.md",
-      "computedHash": "1959dc117989a70b09b3e08ecef12918bd3825c4ee2250210d962a617bee3053"
-    },
     "animation-vocabulary": {
       "source": "emilkowalski/skills",
       "sourceType": "github",
@@ -120,12 +108,6 @@
       "sourceType": "github",
       "skillPath": "skills/create-verification-skill/SKILL.md",
       "computedHash": "f5eee6aa7a1ea223526b635abada0028611e19b772958f7d43eaadcff7d3c43e"
-    },
-    "css-animations": {
-      "source": "adelrodriguez/dotagents",
-      "sourceType": "github",
-      "skillPath": "skills/css-animations/SKILL.md",
-      "computedHash": "74187c9cdb9ede299ed06afbd9b3903745bb7cc5bd2b5f4dd055f020dc8b3e86"
     },
     "diagnosing-bugs": {
       "source": "mattpocock/skills",
@@ -294,18 +276,6 @@
       "sourceType": "github",
       "skillPath": "skills/monitor-pr/SKILL.md",
       "computedHash": "93510d1978ba99ae0e8eb95c93c7092424aa84696d3973d3009e4116a494e188"
-    },
-    "motion-brief": {
-      "source": "adelrodriguez/dotagents",
-      "sourceType": "github",
-      "skillPath": "skills/motion-brief/SKILL.md",
-      "computedHash": "8dc2c5231429ce6c414b57128aa8ecde2d8dd01d5b0fcbfd5a6389aa0a1f6974"
-    },
-    "motion-react": {
-      "source": "adelrodriguez/dotagents",
-      "sourceType": "github",
-      "skillPath": "skills/motion-react/SKILL.md",
-      "computedHash": "b4d1a24f0b5baddfb34326bb1e314ef4ecbac1472c251551103a4e8b76638a90"
     },
     "no-comments": {
       "source": "adelrodriguez/dotagents",
