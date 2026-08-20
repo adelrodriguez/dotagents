@@ -9,21 +9,29 @@ Each skill lives in its own directory under [`skills/`](skills/) and defines its
 
 ## Skills
 
+- [`animation-accessibility`](skills/animation-accessibility/SKILL.md): Make web animation respect reduced-motion preferences.
+- [`animation-performance`](skills/animation-performance/SKILL.md): Keep web animation within the frame budget.
 - [`architect`](skills/architect/SKILL.md): Design APIs, types, and module boundaries before implementation.
 - [`arena`](skills/arena/SKILL.md): Compare parallel attempts and synthesize the strongest verified result.
 - [`bro`](skills/bro/SKILL.md): Restate the last message in plain human language.
 - [`create-verification-skill`](skills/create-verification-skill/SKILL.md): Create a project-specific skill that verifies behavior through user-facing surfaces.
+- [`css-animations`](skills/css-animations/SKILL.md): Build polished web animation with CSS.
+- [`emil-design-engineering`](skills/emil-design-engineering/SKILL.md): Build polished, accessible web interfaces.
 - [`file-pr`](skills/file-pr/SKILL.md): Review a branch and open a concise pull request.
 - [`how`](skills/how/SKILL.md): Explain how a subsystem works from source evidence.
 - [`html-communication`](skills/html-communication/SKILL.md): Present plans, reports, and UI mocks as self-contained HTML documents.
 - [`interrogate`](skills/interrogate/SKILL.md): Review a diff or design from independent, adversarial angles.
 - [`maintain-verification-skill`](skills/maintain-verification-skill/SKILL.md): Check and repair a project-specific verification skill.
 - [`monitor-pr`](skills/monitor-pr/SKILL.md): Monitor a pull request through review and CI.
+- [`motion-brief`](skills/motion-brief/SKILL.md): Define an animation through a complete motion brief.
+- [`motion-react`](skills/motion-react/SKILL.md): Build and debug animations with Motion for React.
 - [`no-comments`](skills/no-comments/SKILL.md): Review comments and suppressions for stale narration and hidden design debt.
 - [`show-me-your-work`](skills/show-me-your-work/SKILL.md): Record decisions and evidence during long-running or high-risk work.
 - [`write-changeset`](skills/write-changeset/SKILL.md): Write or update a changeset for staged changes.
 
 ## Attribution
+
+The following skills were preserved from the `adelrodriguez/dotfiles` snapshot and are maintained in this repository: `animation-accessibility`, `animation-performance`, `css-animations`, `emil-design-engineering`, `motion-brief`, and `motion-react`.
 
 - [`architect`](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md)
 - [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
