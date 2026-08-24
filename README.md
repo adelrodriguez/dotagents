@@ -46,7 +46,7 @@ The Skills CLI adds or updates third-party skills and writes the result to `skil
 
 ## Attribution
 
-Some skills started in other repositories and were adapted here:
+Some skills were copied or adapted from other sources:
 
 - [`architect`](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md)
 - [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
@@ -56,6 +56,7 @@ Some skills started in other repositories and were adapted here:
 - [`interrogate`](https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md)
 - [`maintain-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/maintain-verification-skill/SKILL.md)
 - [`no-comments`](https://github.com/cursor/plugins/blob/main/pstack/skills/no-comments/SKILL.md)
+- [`product-description`](https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f) by [Steve Ruiz](https://github.com/steveruizok)
 - [`show-me-your-work`](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
 
 The animation skills come from [animations.dev skills](https://animations.dev/skills). They are installed separately and are not tracked in `skills/` or `skills-lock.json`.
