@@ -58,5 +58,6 @@ Some skills were copied or adapted from other sources:
 - [`no-comments`](https://github.com/cursor/plugins/blob/main/pstack/skills/no-comments/SKILL.md)
 - [`product-description`](https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f) by [Steve Ruiz](https://github.com/steveruizok)
 - [`show-me-your-work`](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
+- [`typescript-best-practices`](https://github.com/cursor/plugins/blob/main/pstack/skills/typescript-best-practices/SKILL.md)
 
 The animation skills come from [animations.dev skills](https://animations.dev/skills). They are installed separately and are not tracked in `skills/` or `skills-lock.json`.
