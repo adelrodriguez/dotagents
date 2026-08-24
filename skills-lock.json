@@ -343,6 +343,12 @@
       "skillPath": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
       "computedHash": "bc86d43626770c780551730a180de8ffb91ab16f193647047644c606d01874c8"
     },
+    "product-description": {
+      "source": "adelrodriguez/dotagents",
+      "sourceType": "github",
+      "skillPath": "skills/product-description/SKILL.md",
+      "computedHash": "068f29f1d756f66a522a5a5131a98c75c1996d7857ddd66fb146b102315d49c8"
+    },
     "react-doctor": {
       "source": "millionco/react-doctor",
       "sourceType": "github",
