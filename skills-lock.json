@@ -337,6 +337,12 @@
       "skillPath": "pstack/skills/principle-minimize-reader-load/SKILL.md",
       "computedHash": "094bf45ca1440596057715d2124c96534917087b730a4ba25c0314eff2447368"
     },
+    "principle-outcome-oriented-execution": {
+      "source": "cursor/plugins",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "computedHash": "c6ba3d622fe1e3d28a83d391ceaa150aaeafac9c935c154df9b1826f6423bc0b"
+    },
     "principle-prove-it-works": {
       "source": "cursor/plugins",
       "sourceType": "github",
@@ -360,6 +366,12 @@
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
       "computedHash": "c85188049e825fe715bb76bb0aa53adfa7f2f719a0b52db2b0c72daf6dd9aac7"
+    },
+    "principle-test-behavior-not-implementation": {
+      "source": "cursor/plugins",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+      "computedHash": "41a7140188cc96559c6af4bde7ca3e9611458490846d2dc446776e962ad9f430"
     },
     "principle-type-system-discipline": {
       "source": "cursor/plugins",
@@ -420,12 +432,6 @@
       "sourceType": "github",
       "skillPath": "skills/show-me-your-work/SKILL.md",
       "computedHash": "4c6bb8852d4d2d904e375e4a37c39bd3f571f8ad85e664d930c2747068c3a28c"
-    },
-    "tdd": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "skillPath": "skills/engineering/tdd/SKILL.md",
-      "computedHash": "e753a5da75292bbe59d302d89566bc2c53d0e73944da2f0e944a7578883c07d0"
     },
     "teach": {
       "source": "mattpocock/skills",
@@ -516,6 +522,12 @@
       "sourceType": "github",
       "skillPath": "skills/web-design-guidelines/SKILL.md",
       "computedHash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474"
+    },
+    "why": {
+      "source": "cursor/plugins",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/why/SKILL.md",
+      "computedHash": "0e1f6acfce6fc2c54f059b16d1e2273639f59f828b59c57a6644f895c22d68b2"
     },
     "wizard": {
       "source": "mattpocock/skills",
