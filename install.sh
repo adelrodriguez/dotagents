@@ -81,15 +81,38 @@ if [ -z "${ANIMATIONSDEV_TOKEN:-}" ]; then
   }
 fi
 
-# Limit agent detection to Claude so the project keeps one skills directory.
+# Stage private skills separately so duplicate names cannot overwrite public skills.
 ANIMATIONSDEV_HOME=$(mktemp -d)
 mkdir -p "$ANIMATIONSDEV_HOME/.claude"
 
 printf 'Installing animations.dev skills into the project...\n'
-HOME="$ANIMATIONSDEV_HOME" npx --yes @animationsdev/install \
-  --token="$ANIMATIONSDEV_TOKEN" \
-  --project \
-  --yes
+(
+  cd "$ANIMATIONSDEV_HOME"
+  HOME="$ANIMATIONSDEV_HOME" npx --yes @animationsdev/install \
+    --token="$ANIMATIONSDEV_TOKEN" \
+    --project \
+    --yes
+)
+
+node - "$ANIMATIONSDEV_HOME/.claude/skills" "$REPO_ROOT/.agents/skills" <<'NODE'
+const fs = require("node:fs");
+const path = require("node:path");
+const [source, destination] = process.argv.slice(2);
+const prototype = path.join(source, "prototype");
+const skillFile = path.join(prototype, "SKILL.md");
+const skill = fs.readFileSync(skillFile, "utf8");
+if (!/^name: prototype\r?$/m.test(skill)) {
+  throw new Error("Unexpected animations.dev prototype metadata");
+}
+fs.writeFileSync(skillFile, skill.replace(/^name: prototype\r?$/m, "name: prototype-ui"));
+fs.renameSync(prototype, path.join(source, "prototype-ui"));
+for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
+  if (!entry.isDirectory()) continue;
+  const target = path.join(destination, entry.name);
+  fs.rmSync(target, { recursive: true, force: true });
+  fs.cpSync(path.join(source, entry.name), target, { recursive: true });
+}
+NODE
 
 unset ANIMATIONSDEV_TOKEN
 cleanup

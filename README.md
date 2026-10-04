@@ -21,7 +21,7 @@ The script then performs these steps:
 1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
 2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
 3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
-4. The animations.dev installer adds private skills to the project through `.claude/skills`.
+4. The animations.dev installer stages private skills in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
 5. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation.
 6. `~/.agents/skills` points to this repo's `.agents/skills`.
 7. `~/.claude/skills` points to this repo's `.claude/skills`.
