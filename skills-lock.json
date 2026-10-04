@@ -80,16 +80,22 @@
       "computedHash": "5a17552cc1482f1a40124bf4e6c9dbd90ac0dbb47e71c07d47369f9e5f2ae3b5"
     },
     "convex": {
-      "source": "waynesutton/convexskills",
+      "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex/SKILL.md",
-      "computedHash": "de7a20d081cd19bf8bce4038bd62d038a0a88f218f85afb35320d09b052fb534"
+      "computedHash": "d8d267be1af449b19eaf05a7b1716ed903e1bc4de2e67a911f67859f341c5337"
     },
     "convex-best-practices": {
       "source": "waynesutton/convexskills",
       "sourceType": "github",
       "skillPath": "skills/convex-best-practices/SKILL.md",
       "computedHash": "3b24d2afbb5859e3a3640c1e47e2ac9ace81e9737ec76b891951999361c92ab1"
+    },
+    "convex-expert": {
+      "source": "get-convex/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/convex-expert/SKILL.md",
+      "computedHash": "5f1437f333902dcc030a1c9d8a46fe0b4a82741a36cfdb527120ea895359ec0a"
     },
     "convex-functions": {
       "source": "waynesutton/convexskills",
