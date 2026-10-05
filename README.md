@@ -21,10 +21,10 @@ The script then performs these steps:
 1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
 2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
 3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
-4. The animations.dev installer stages private skills in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
-5. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation.
-6. `~/.agents/skills` points to this repo's `.agents/skills`.
-7. `~/.claude/skills` points to this repo's `.claude/skills`.
+4. `~/.agents/skills` points to this repo's `.agents/skills`.
+5. `~/.claude/skills` points to this repo's `.claude/skills`.
+6. `install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
+7. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
 
 If a target path contains a directory, the script moves that directory to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
 
@@ -37,6 +37,15 @@ ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token \
   SKILLS_CLI_VERSION=1.5.23 \
   ./install.sh
 ```
+
+If private installation fails, refresh your credentials and rerun only the private installer:
+
+```sh
+eval "$(op signin)"
+./install-private-skills.sh
+```
+
+The private installer works from any directory and accepts `ANIMATIONSDEV_TOKEN` or `ANIMATIONSDEV_TOKEN_REF`. It does not restore public skills or recreate links.
 
 ## Skill changes
 
