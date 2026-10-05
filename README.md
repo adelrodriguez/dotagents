@@ -222,7 +222,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `animation-vocabulary` | Names a motion effect from a vague description. | Yes |
 | `motion-brief` | Interviews you about an animation until the brief has no blanks. | Yes |
 | `pick-ui-library` | Picks the animation or UI library for a task. | Yes |
-| `prototype-ui` | animations.dev's UI prototyping skill, renamed so it does not clash with `prototype`. | Not checked |
+| `prototype-ui` | Builds several different versions of a UI behind a live picker. Renamed so it does not clash with `prototype`. | No |
 | `find-animation-opportunities` | Finds the few places where motion would help. | No |
 | `improve-animations` | Audits a codebase's motion and writes plans another agent can run. | No |
 | `review-animations` | Reviews animation code against a high craft bar. | No |
