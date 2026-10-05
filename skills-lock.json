@@ -393,9 +393,10 @@
     },
     "react-doctor": {
       "source": "millionco/react-doctor",
+      "ref": "main",
       "sourceType": "github",
       "skillPath": "skills/react-doctor/SKILL.md",
-      "computedHash": "2e5bde473878686ffb1463b8385e07943c6545e63aa8e676ae3ff46cdb9b02fe"
+      "computedHash": "c2fe7246d704327c3757100ba675411cab545168374ec580645c3491073475ba"
     },
     "research": {
       "source": "mattpocock/skills",
