@@ -137,7 +137,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/file-pr/SKILL.md",
-      "computedHash": "cc62683495e9b2b37b59a45995535ecdcc93b5df657e8e321f8d0af9d81e331e"
+      "computedHash": "39d4b9e3c29d0dc6fa4c16201d65d2a2d0f77063e6ec4b669b2434d1900d7814"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
