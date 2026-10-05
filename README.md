@@ -52,6 +52,7 @@ Some skills were copied or adapted from other sources:
 - [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
 - [`bro`](https://github.com/cursor/plugins/blob/main/pstack/skills/bro/SKILL.md)
 - [`create-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/create-verification-skill/SKILL.md)
+- [`file-pr`](skills/file-pr/SKILL.md): the visual, evidence, and merge danger sections are adapted from Matt Pocock's [`pr`](https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md), whose visuals come from Dex Horthy's [`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
 - [`how`](https://github.com/cursor/plugins/blob/main/pstack/skills/how/SKILL.md)
 - [`interrogate`](https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md)
 - [`maintain-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/maintain-verification-skill/SKILL.md)

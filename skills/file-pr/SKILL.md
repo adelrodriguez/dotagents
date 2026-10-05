@@ -32,6 +32,39 @@ And another:
 
 > Stashing a prompt, switching providers, and restoring it didn't work. The stash was bucketed per provider instance, so after a switch the badge disappeared and the stash looked lost. Restoring also dragged the stash's model selection back, defeating the point of moving a prompt to a different provider. Now the stash lives in one global bucket and restoring keeps whatever model is currently selected.
 
+Use the terms defined in the repo's `GLOSSARY.md` when one exists.
+
+### Visual
+
+After the solution, add one small visual when it explains the change faster than prose. Pick the smallest view that makes the point, and keep only the calls, files, or states that matter:
+
+- Pseudocode for logic or an algorithm.
+- A call tree for runtime control flow.
+- A shallow file tree for a refactor that moves responsibilities.
+- A Mermaid diagram for interaction or data flow between components.
+- A `diff` of one of the above when the surrounding shape already exists and the point is what changed.
+
+```diff
+ submitForm
+   createSession
+     persistPrompt
++    expandSkillMention
+     launchAgent
+```
+
+Skip the visual for small or self-explanatory changes.
+
+### Evidence
+
+Show that the change works with a before and after. A screenshot is best for visual changes. Otherwise use execution output: the test that failed before and passes now, or the command output that changed.
+
+### Merge danger
+
+End with the risk of merging:
+
+- **Door:** two-way if the change is cheap to roll back, one-way if it isn't (data migrations, destructive actions, published API or config changes).
+- **Blast radius:** one word, plus what could break when it matters (consumers of a package, layout, mobile, CI).
+
 Add a blurb to the end of the PR description noting which model and harness made the changes.
 
 ## Drafts
