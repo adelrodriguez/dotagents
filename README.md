@@ -207,7 +207,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 
 ### animations.dev skills
 
-`install.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`.
+`install-private-skills.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`.
 
 | Skill | Use | Auto |
 | --- | --- | --- |
