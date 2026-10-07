@@ -138,7 +138,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | Skill | Use | Auto |
 | --- | --- | --- |
 | `file-pr` | Files a concise pull request. | Yes |
-| `monitor-pr` | Watches a pull request through review and CI. | Yes |
+| `monitor-pr` | Drives a pull request through review and CI with a shared watcher script that wakes the agent only when the PR needs it. | Yes |
 | `graphite` | Manages stacked PRs with the Graphite `gt` CLI. | Yes |
 | `write-changeset` | Writes or updates a changeset entry for staged changes. | Yes |
 | `git-guardrails-claude-code` | Adds Claude Code hooks that block destructive git commands. | Yes |
