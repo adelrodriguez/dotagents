@@ -174,6 +174,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | Skill | Use | Auto |
 | --- | --- | --- |
 | `frontend-design` | Sets an intentional visual direction for new or reshaped UI. | Yes |
+| `good-css` | Uses modern CSS techniques to reduce breakpoints, wrapper elements, and scripts. | Yes |
 | `emil-design-eng` | Emil Kowalski's approach to UI polish and animation decisions. | Yes |
 | `emil-design-engineering` | Design engineering patterns for polished, accessible web interfaces. | Yes |
 | `apple-design` | Apple-style interface design and physical motion for the web. | Yes |

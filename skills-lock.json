@@ -157,6 +157,12 @@
       "skillPath": "skills/misc/git-guardrails-claude-code/SKILL.md",
       "computedHash": "ccf581d304132095c2787b0a3bcb7b4ff125863c9f796fb16311d8f1cacef470"
     },
+    "good-css": {
+      "source": "vojtaholik/good-css",
+      "sourceType": "github",
+      "skillPath": "skills/good-css/SKILL.md",
+      "computedHash": "64871e84fee8d9f9da1cfc6e8831ad00ef425bccdcc76addcfaa25fbdc131055"
+    },
     "graphite": {
       "source": "withgraphite/agent-skills",
       "sourceType": "github",
