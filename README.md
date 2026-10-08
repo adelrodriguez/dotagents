@@ -10,25 +10,28 @@ The checked-in files have three roles:
 
 Generated skill files do not belong in Git. The Skills CLI restores them into `.agents/skills`, and `.gitignore` excludes both `.agents/` and `.claude/`.
 
-`scripts/install.sh` installs public and private skills. It does not copy or link the root instruction files.
+`scripts/sync.sh` restores the locked public skills and recreates the links. `scripts/install.sh` runs that sync and then installs the private animations.dev skills. Neither script copies or links the root instruction files.
 
 ## Installation
 
-The installation entry point is `scripts/install.sh`. The script works from any directory because it finds the repo root before it changes files.
+The installation entry point is `scripts/install.sh`. The scripts work from any directory because they find the repo root before they change files.
 
-The script then performs these steps:
+`scripts/install.sh` runs `scripts/sync.sh`, which performs these steps:
 
 1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
 2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
 3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
 4. `~/.agents/skills` points to this repo's `.agents/skills`.
 5. `~/.claude/skills` points to this repo's `.claude/skills`.
+
+The install script then runs the private installer:
+
 6. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
 7. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
 
 If a target path contains a directory, the script moves that directory to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
 
-The script requires Node.js and `npx`. It reads the animations.dev token from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI.
+The scripts require Node.js and `npx`. Only the private installer reads the animations.dev token. It reads it from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI.
 
 Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item. Set `SKILLS_CLI_VERSION` to use a Skills CLI version other than `latest`:
 
@@ -45,7 +48,17 @@ eval "$(op signin)"
 scripts/install-private-skills.sh
 ```
 
-The private installer works from any directory and accepts `ANIMATIONSDEV_TOKEN` or `ANIMATIONSDEV_TOKEN_REF`. It does not restore public skills or recreate links.
+The private installer works from any directory and accepts `ANIMATIONSDEV_TOKEN` or `ANIMATIONSDEV_TOKEN_REF`. It does not restore public skills or recreate links. Run `scripts/sync.sh` for those.
+
+## Syncing
+
+`scripts/sync.sh` runs the public half of the install: it restores the skills in `skills-lock.json`, verifies them, and recreates the links. It skips the private installer, so it needs no animations.dev token or 1Password access, and it leaves installed private skills in place.
+
+`SKILLS_CLI_VERSION` selects the Skills CLI version here too:
+
+```sh
+SKILLS_CLI_VERSION=1.5.23 scripts/sync.sh
+```
 
 ## Skill changes
 
