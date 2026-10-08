@@ -10,7 +10,7 @@ The checked-in files have three roles:
 
 Generated skill files do not belong in Git. The Skills CLI restores them into `.agents/skills`, and `.gitignore` excludes both `.agents/` and `.claude/`.
 
-`scripts/sync.sh` restores the locked public skills and recreates the links. `scripts/install.sh` runs that sync and then installs the private animations.dev skills. Neither script copies or links the root instruction files.
+`scripts/sync.sh` restores the locked public skills and runs `scripts/link.sh`, which links the skills and `AGENTS.md` into each agent's global location. `scripts/install.sh` runs that sync and then installs the private animations.dev skills. Run `scripts/link.sh` alone to relink without restoring.
 
 ## Installation
 
@@ -20,16 +20,18 @@ The installation entry point is `scripts/install.sh`. The scripts work from any 
 
 1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
 2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
-3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
-4. `~/.agents/skills` points to this repo's `.agents/skills`.
-5. `~/.claude/skills` points to this repo's `.claude/skills`.
+3. `scripts/link.sh` creates every symlink:
+   - `.claude/skills` points to `.agents/skills`, so both project paths use the same files.
+   - `~/.agents/skills` points to this repo's `.agents/skills`.
+   - `~/.claude/skills` points to this repo's `.claude/skills`.
+   - `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.config/opencode/AGENTS.md` and `~/.pi/agent/AGENTS.md` point to this repo's `AGENTS.md`. Grok reads `~/.claude/CLAUDE.md`.
 
 The install script then runs the private installer:
 
-6. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
-7. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
+4. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
+5. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
 
-If a target path contains a directory, the script moves that directory to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
+If a target path holds a file or directory, `scripts/link.sh` moves it to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
 
 The scripts require Node.js and `npx`. Only the private installer reads the animations.dev token. It reads it from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI.
 
