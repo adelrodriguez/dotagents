@@ -2,7 +2,7 @@
 
 set -eu
 
-REPO_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 ANIMATIONSDEV_TOKEN_REF=${ANIMATIONSDEV_TOKEN_REF:-op://Personal/animations.dev/token}
 ANIMATIONSDEV_HOME=
 

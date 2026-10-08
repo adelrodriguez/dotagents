@@ -2,7 +2,7 @@
 
 set -eu
 
-REPO_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 SKILLS_CLI_VERSION=${SKILLS_CLI_VERSION:-latest}
 backup_and_link() {
   source=$1
@@ -60,8 +60,8 @@ backup_and_link "$REPO_ROOT/.agents/skills" "$REPO_ROOT/.claude/skills"
 backup_and_link "$REPO_ROOT/.agents/skills" "$HOME/.agents/skills"
 backup_and_link "$REPO_ROOT/.claude/skills" "$HOME/.claude/skills"
 
-if ! "$REPO_ROOT/install-private-skills.sh"; then
-  printf 'Error: private skills installation failed. Refresh credentials and rerun %s/install-private-skills.sh.\n' "$REPO_ROOT" >&2
+if ! "$REPO_ROOT/scripts/install-private-skills.sh"; then
+  printf 'Error: private skills installation failed. Refresh credentials and rerun %s/scripts/install-private-skills.sh.\n' "$REPO_ROOT" >&2
   exit 1
 fi
 

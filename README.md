@@ -10,11 +10,11 @@ The checked-in files have three roles:
 
 Generated skill files do not belong in Git. The Skills CLI restores them into `.agents/skills`, and `.gitignore` excludes both `.agents/` and `.claude/`.
 
-`install.sh` installs public and private skills. It does not copy or link the root instruction files.
+`scripts/install.sh` installs public and private skills. It does not copy or link the root instruction files.
 
 ## Installation
 
-The installation entry point is `./install.sh`. The script works from any directory because it finds the repo root before it changes files.
+The installation entry point is `scripts/install.sh`. The script works from any directory because it finds the repo root before it changes files.
 
 The script then performs these steps:
 
@@ -23,7 +23,7 @@ The script then performs these steps:
 3. `.claude/skills` points to `.agents/skills` so both project paths use the same files.
 4. `~/.agents/skills` points to this repo's `.agents/skills`.
 5. `~/.claude/skills` points to this repo's `.claude/skills`.
-6. `install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
+6. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
 7. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
 
 If a target path contains a directory, the script moves that directory to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
@@ -35,14 +35,14 @@ Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item. Set `SKILLS_CL
 ```sh
 ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token \
   SKILLS_CLI_VERSION=1.5.23 \
-  ./install.sh
+  scripts/install.sh
 ```
 
 If private installation fails, refresh your credentials and rerun only the private installer:
 
 ```sh
 eval "$(op signin)"
-./install-private-skills.sh
+scripts/install-private-skills.sh
 ```
 
 The private installer works from any directory and accepts `ANIMATIONSDEV_TOKEN` or `ANIMATIONSDEV_TOKEN_REF`. It does not restore public skills or recreate links.
@@ -208,7 +208,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 
 ### animations.dev skills
 
-`install-private-skills.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`.
+`scripts/install-private-skills.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`.
 
 | Skill | Use | Auto |
 | --- | --- | --- |
