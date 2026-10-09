@@ -56,7 +56,7 @@ Skip the visual for small or self-explanatory changes.
 
 ### Evidence
 
-Show that the change works with a before and after. A screenshot is best for visual changes. Otherwise use execution output: the test that failed before and passes now, or the command output that changed.
+Show that the change works with a before and after. For a visual change, include the screenshots you took; do not leave them only in a local folder. Otherwise use execution output: the test that failed before and passes now, or the command output that changed.
 
 ### Merge danger
 
