@@ -28,7 +28,7 @@ The installation entry point is `scripts/install.sh`. The scripts work from any 
 
 The install script then runs the private installer:
 
-4. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate.
+4. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate. Private skills whose names appear in `skills-lock.json`, such as `animation-performance`, are skipped so the locked public version stays installed.
 5. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
 
 If a target path holds a file or directory, `scripts/link.sh` moves it to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
@@ -198,6 +198,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `break-ui` | Stress-tests a component with worst-case data and reports what broke. | Yes |
 | `mobile-native` | Makes a web app feel native on a phone. | Yes |
 | `animate-expo` | Builds animations in React Native and Expo. | Yes |
+| `animation-performance` | Keeps web animations inside the frame budget with composite-only properties. | Yes |
 
 ### Writing and communication
 
@@ -224,7 +225,7 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 
 ### animations.dev skills
 
-`scripts/install-private-skills.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`.
+`scripts/install-private-skills.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`. The installer also ships `animation-performance`, which is skipped in favour of Emil Kowalski's public version listed under UI and design.
 
 | Skill | Use | Auto |
 | --- | --- | --- |
@@ -234,7 +235,6 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `gesture-ui` | Builds drag, swipe, and sheet interactions that track the finger. | Yes |
 | `scroll-animations` | Builds scroll-triggered and scroll-driven animation. | Yes |
 | `animation-accessibility` | Adds reduced-motion variants for every animation. | Yes |
-| `animation-performance` | Keeps motion at 60fps with composite-only properties. | Yes |
 | `debug-animation` | Diagnoses why an animation feels off before changing code. | Yes |
 | `animation-vocabulary` | Names a motion effect from a vague description. | Yes |
 | `motion-brief` | Interviews you about an animation until the brief has no blanks. | Yes |

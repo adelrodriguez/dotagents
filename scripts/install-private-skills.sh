@@ -50,10 +50,11 @@ printf 'Installing animations.dev skills into the project...\n'
     --yes
 )
 
-node - "$ANIMATIONSDEV_HOME/.claude/skills" "$REPO_ROOT/.agents/skills" <<'NODE'
+node - "$ANIMATIONSDEV_HOME/.claude/skills" "$REPO_ROOT/.agents/skills" "$REPO_ROOT/skills-lock.json" <<'NODE'
 const fs = require("node:fs");
 const path = require("node:path");
-const [source, destination] = process.argv.slice(2);
+const [source, destination, lockFile] = process.argv.slice(2);
+const locked = JSON.parse(fs.readFileSync(lockFile, "utf8")).skills;
 const prototype = path.join(source, "prototype");
 const skillFile = path.join(prototype, "SKILL.md");
 const skill = fs.readFileSync(skillFile, "utf8");
@@ -63,7 +64,7 @@ if (!/^name: prototype\r?$/m.test(skill)) {
 fs.writeFileSync(skillFile, skill.replace(/^name: prototype\r?$/m, "name: prototype-ui"));
 fs.renameSync(prototype, path.join(source, "prototype-ui"));
 for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
-  if (!entry.isDirectory()) continue;
+  if (!entry.isDirectory() || Object.hasOwn(locked, entry.name)) continue;
   const target = path.join(destination, entry.name);
   fs.rmSync(target, { recursive: true, force: true });
   fs.cpSync(path.join(source, entry.name), target, { recursive: true });
