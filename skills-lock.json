@@ -323,13 +323,13 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-build-the-lever/SKILL.md",
-      "computedHash": "e1f77c1844113e90ed231ef51a6717fb76804723269c23436c65e30c30a42718"
+      "computedHash": "3090c545b2a7c3a252514c9b522e69d3ee6cce25342fd3e4d10c9fe6bcaafd53"
     },
     "principle-encode-lessons-in-structure": {
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
-      "computedHash": "13cb9b8bbf0aecd3c03a30803bbdfc012f6123f1a7d44db134bc8cce88a02d63"
+      "computedHash": "1630232f765bad8dc0b2366f54b824d6c33b4209f198c4c6054744e63162f6b5"
     },
     "principle-foundational-thinking": {
       "source": "cursor/plugins",
@@ -353,7 +353,7 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-minimize-reader-load/SKILL.md",
-      "computedHash": "094bf45ca1440596057715d2124c96534917087b730a4ba25c0314eff2447368"
+      "computedHash": "31dddf8eec76cd18a3b314d7343d783e35166344b4a89f0c5a07a90ed1d26539"
     },
     "principle-outcome-oriented-execution": {
       "source": "cursor/plugins",
@@ -383,19 +383,19 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
-      "computedHash": "c85188049e825fe715bb76bb0aa53adfa7f2f719a0b52db2b0c72daf6dd9aac7"
+      "computedHash": "93ef4445c6dc6c71256f4c5d3e965097dccd037019041468298095670c112fe7"
     },
     "principle-test-behavior-not-implementation": {
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
-      "computedHash": "41a7140188cc96559c6af4bde7ca3e9611458490846d2dc446776e962ad9f430"
+      "computedHash": "9f4f33a502d503ffe0e336c8a30d70c03c1b7d1f2c757f4d479c0db9e33a4ead"
     },
     "principle-type-system-discipline": {
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-type-system-discipline/SKILL.md",
-      "computedHash": "dbd4efbb3e6da61329f23b43301b8aa73fde79d6fca75be3d518f51abfd30e32"
+      "computedHash": "a0efd185c16f93ebf7e592e322b191a3dbf982525944ed392df0bc0e7d5e785a"
     },
     "product-description": {
       "source": "adelrodriguez/dotagents",
@@ -468,7 +468,7 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/technical-writing/SKILL.md",
-      "computedHash": "d8ecca1f5bfa2d531f5ead6da72001b320d293eebd4435a2e3e11f79fa3f6949"
+      "computedHash": "a7c43dc2b94eeff919575766da35b695d61b677ec44476bb8feb5d82c5fa0328"
     },
     "to-questionnaire": {
       "source": "mattpocock/skills",
@@ -504,7 +504,7 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/unslop/SKILL.md",
-      "computedHash": "6018ca8c329ba87c6b4298207f58d6b773fe23e44ff52a00a9a4d160c19bedc0"
+      "computedHash": "2e57ee5eac607dd836feb9cbb1bfa92bfe3cbb50c195dfcc3ae021e591efefe4"
     },
     "uv-package-manager": {
       "source": "wshobson/agents",
@@ -552,7 +552,7 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/why/SKILL.md",
-      "computedHash": "dcd1f2f7153173b03578053910038fd7dfd4e488aaed255d9051cc27cfccaa9d"
+      "computedHash": "35e5fe9b8dd5d9de4f2f8f6b46dcc1253dfad95c59365b21656318275c5bb509"
     },
     "wizard": {
       "source": "mattpocock/skills",

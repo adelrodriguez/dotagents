@@ -52,7 +52,7 @@ Do not remove a suppression merely to make the diff cleaner.
 
 ## Root-cause improvements
 
-When a comment compensates for confusing code, propose the smallest structural improvement: rename a symbol, introduce a domain type, extract a coherent operation, move validation to a boundary, add a test, or encode a machine-checkable rule.
+When a comment compensates for confusing code, propose the smallest structural improvement: rename a symbol, introduce a domain type, extract a coherent operation, move validation to a boundary, add a test, or encode a machine-checkable rule. Fix the real cause. Never bolt on a symptom guard.
 
 Do not turn every comment into an abstraction. A short accurate explanation can impose less reader load than another layer.
 
