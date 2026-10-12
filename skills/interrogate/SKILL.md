@@ -22,19 +22,19 @@ Give every reviewer the same intent, scope, evidence, and rubric. Do not assign 
 
 Each reviewer checks:
 
-- correctness, edge cases, failure modes, concurrency, and cleanup;
-- security, trust boundaries, validation, and information exposure;
-- compatibility, public contracts, serialization, packaging, and downstream consumers;
-- whether tests prove the intended behavior and important regressions;
-- unnecessary complexity, shallow abstractions, hidden coupling, and reader load;
-- scope drift, speculative infrastructure, dead compatibility paths, and missing deletion;
-- repository-specific standards and documented constraints.
+- correctness, edge cases, failure modes, concurrency, and cleanup
+- security, trust boundaries, validation, and information exposure
+- compatibility, public contracts, serialization, packaging, and downstream consumers
+- whether tests prove the intended behavior and important regressions
+- unnecessary complexity, shallow abstractions, hidden coupling, and reader load
+- scope drift, speculative infrastructure, dead compatibility paths, and missing deletion
+- repository-specific standards and documented constraints
 
-Every finding must include severity, location, failure scenario, evidence, and the smallest credible correction. Reviewers must distinguish observed defects from questions and preferences.
+Every finding must include severity, location, failure scenario, evidence, and the smallest credible correction. A security finding shows the input path from source to sink through the code. Reviewers must distinguish observed defects from questions and preferences.
 
 ## 3. Synthesize
 
-Deduplicate findings by underlying failure. Track which independent passes found each issue. Agreement raises confidence but does not replace evidence; one well-proven finding can outrank weak consensus.
+Deduplicate findings by underlying failure. Track which independent passes found each issue. Agreement raises confidence but does not replace evidence. One well-proven finding can outrank weak consensus.
 
 Resolve disagreements by checking source, tests, runtime behavior, or authoritative documentation. Do not decide by vote.
 

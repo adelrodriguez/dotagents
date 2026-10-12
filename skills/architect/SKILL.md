@@ -42,6 +42,8 @@ Each candidate includes:
 
 Use independent design passes when available, without requiring a particular model or orchestration tool. Screen candidates with [`references/design-red-flags.md`](references/design-red-flags.md).
 
+Screen with the next contributor in mind: an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repository.
+
 ## 4. Choose and record
 
 Prefer the design that hides necessary complexity behind the smallest coherent interface. Reject designs that are merely easier to implement but harder to call, test, or change.

@@ -6,67 +6,49 @@ disable-model-invocation: true
 
 # Arena
 
-Run several independent attempts at the same task, choose the strongest base, integrate the best parts of the alternatives, and verify the synthesized result.
+Run several independent attempts at the same task, choose the strongest base, graft the best parts of the others into it, and verify the result.
 
-Use six phases: frame, fan out, cross-judge, pick, graft, and verify. Track them with the harness's task-list facility when one is available.
+Track the six phases (frame, fan out, cross-judge, pick, graft, verify) with the harness's task-list facility when one is available, before launching anything.
 
 ## 1. Frame
 
-Define the artifact every candidate must produce. Derive three to six concrete, gradeable criteria from the task. For example, `Adds a --dry-run flag that skips writes` is gradeable; `Code is correct` is not.
+Every candidate gets the same task and grounding, so the task is the contract.
 
-Use four candidates by default when cost and agent capacity allow, with two as the minimum. Prefer different model families when the harness supports model selection. Otherwise use separate agent contexts so the attempts remain independent.
-
-Give every candidate the same task and grounding. Keep the rubric for judging rather than steering candidates toward one shape.
-
-Keep candidate writes isolated. Use separate worktrees or temporary workspaces when candidates must produce files. When isolated writable workspaces are unavailable, require candidates to return their artifacts without modifying the shared workspace. Only the coordinating agent writes the synthesized result.
-
-The frame is complete when the artifact, rubric, candidates, grounding, and isolation strategy are explicit.
+1. Define the artifact every candidate must produce.
+2. Derive three to six concrete, gradeable criteria for what success looks like on this task. `Adds a --dry-run flag that skips writes` is gradeable. `Code is correct` is not. The rubric is for judging. Candidates only see the task.
+3. Choose the candidates. Use at least two, and more when the arena covers several design directions. Prefer different model families when the harness supports model selection, and separate agent contexts otherwise. Use the same model several times when the work is generation-bound rather than judgment-sensitive.
+4. Isolate candidate writes. Give each candidate its own worktree or temporary workspace. When isolated writable workspaces are unavailable, have candidates return their artifacts without touching the shared workspace. Only the coordinating agent writes the synthesized result.
 
 ## 2. Fan Out
 
-Launch all candidates concurrently through the harness's available agent mechanism. Give each candidate:
+Launch all candidates concurrently through the harness's agent mechanism. Give each the task, the grounding, its own output location or response channel, and instructions to produce the artifact plus a short rationale naming the alternatives it considered and rejected. Without the rationale you cannot tell whether a candidate's structure is principled or accidental, which makes grafting unreliable.
 
-- the same task and grounding;
-- its own output location or response channel;
-- a requirement to produce the artifact and a short rationale;
-- a requirement to name alternatives considered and rejected.
-
-Proceed with the successful candidates if one drops out, provided at least two independent results remain. Otherwise report that the arena could not produce comparative evidence.
-
-Fan-out is complete when every surviving candidate has produced a complete artifact and rationale.
+If a candidate produces no output, proceed with the rest and note the dropout, provided at least two independent results remain. Otherwise report that the arena could not produce comparative evidence.
 
 ## 3. Cross-Judge
 
-After candidate outputs are stable, launch one independent, read-only judge. Prefer a model family not used by the coordinating agent when selectable; otherwise use a separate agent context.
+Wait until every candidate has finished. A judge launched while candidates are still writing sees partial or empty outputs and reports them as dropouts.
 
-Give the judge the rubric and anonymized or neutrally labeled candidate outputs. Ask it to score every candidate criterion by criterion and recommend a base with evidence. Run this judgment concurrently with the coordinating agent's own full reading of every candidate.
-
-Cross-judging is complete when both the judge and coordinating agent have evaluated every complete candidate.
+Then launch one independent, read-only judge, preferring a model family different from the coordinating agent's when selectable. Give it the rubric and neutrally labeled candidate outputs. Ask it to score every candidate criterion by criterion and recommend a base with evidence. It runs concurrently with your own reading in the pick phase.
 
 ## 4. Pick
 
-Score each candidate against every rubric criterion. Do not pick by familiarity, majority vote, or surface polish.
+Read every candidate end to end before picking. Skimming surfaces only the candidate that looks most familiar. Score each against the rubric criterion by criterion, not on holistic feel, majority vote, or surface polish, and compare with the judge. Agreement confirms the pick. Disagreement means one of you is biased or the rubric was ambiguous, so reread both rationales and the artifacts before deciding.
 
-Compare the independent judge's recommendation with the coordinating agent's assessment. Resolve disagreement by rereading the artifacts and rationales against the rubric. Prefer the candidate that a maintainer can extend without breaking its invariants; when otherwise tied, prefer the cleaner boundary and smaller surface area.
-
-Record the selected base and why it won. Picking is complete when one base is selected by evidence from the rubric.
+Pick the base a future maintainer can extend most easily without breaking invariants. When two feel tied, prefer the cleaner boundary or smaller API.
 
 ## 5. Graft
 
-Read each losing candidate again and identify the small number of ideas worth carrying into the base. Integrate them by hand so the result retains one coherent design. Do not mechanically paste incompatible structures together.
+Walk each losing candidate once more for what is worth porting into the base, usually one or two things per candidate, not most of it. Fold each graft in by hand so the result stays coherent under one mental model. Don't paste incompatible structures together.
 
-Record each graft's source and purpose, plus meaningful rejections and their reasons. If candidates converge on the same shape, record the convergence and skip unnecessary grafting. If they diverge so widely that the rubric cannot compare them, return to framing and rerun the arena instead of averaging incompatible answers.
-
-Grafting is complete when the result has one coherent mental model and every accepted or rejected alternative is accounted for.
+If the candidates converge on one shape, that is strong agreement. Note it and ship the consensus shape without grafting. If they diverge so widely that the rubric cannot compare them, the frame was under-specified. Reframe and rerun rather than averaging the divergence.
 
 ## 6. Verify
 
-Verify the synthesized artifact through the real project surface: run its tests, execute it, inspect the rendered result, or use the strongest applicable check. The arena does not substitute for verification.
+Verify the synthesized artifact like any other output, through the real project surface: run its tests, execute it, inspect the rendered result, or use the strongest applicable check. The arena does not earn a pass.
 
-If verification exposes a missed requirement, decide whether the frame was incomplete or a candidate already held the missing idea. Reframe and rerun, or return to grafting accordingly.
-
-Verification is complete when the final artifact passes the task's applicable checks or the remaining failure is reported explicitly.
+If verification finds a problem the arena missed, either the frame was wrong (reframe and rerun) or a candidate caught it and you missed the graft (return to grafting). Don't paper over it. If a failure remains, report it explicitly.
 
 ## Output
 
-Return one synthesized artifact and one concise synthesis note. The note names the base, rubric result, grafts and their sources, meaningful rejections, candidate dropouts, judge disagreement, and verification evidence. Store it beside the artifact when the work produces files; otherwise include it in the final response.
+One synthesized artifact, with a short synthesis note naming the base and why it won, the judge's verdict and any disagreement, each graft with its source candidate, what was rejected and why, any convergence or dropouts, and the verification result. Rejections are the highest-signal part of the note. Store the note beside the artifact when the work produces files, otherwise include it in the final response.
