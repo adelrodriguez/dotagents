@@ -56,7 +56,7 @@ Skip the visual for small or self-explanatory changes.
 
 ### Evidence
 
-Show that the change works with a before and after. For a visual change, include the screenshots you took; do not leave them only in a local folder. Otherwise use execution output: the test that failed before and passes now, or the command output that changed.
+Show that the change works with a before and after, and say how you verified it: the checks you ran and how you used the change (the page, the CLI, the endpoint). For a visual change, include the screenshots you took; do not leave them only in a local folder. Otherwise use execution output: the command output that changed, or, when the PR adds a regression test, the test that failed before and passes now. A passing test is not proof by itself.
 
 ### Merge danger
 
