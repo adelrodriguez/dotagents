@@ -25,6 +25,10 @@ Options:
                        (pullfrog, codex, coderabbit, greptile, or a login).
                        Default: every known bot that has engaged on the PR.
                        Use "none" to require CI only.
+  --max-behind <n>     Ask for a rebase once the base is <n> commits ahead
+                       (default 10). Conflicts always ask, and so does a base
+                       that requires branches to be up to date, once the PR
+                       is otherwise done.
   --once               Print the current status and exit without waiting.
   --reset              Forget what was already reported for these PRs.
   --self <login>       Login whose agent-authored posts are ignored
@@ -68,7 +72,7 @@ const PENDING_STATES = new Set(["PENDING", "EXPECTED"]);
 const MAX_CONSECUTIVE_ERRORS = 6;
 
 function parseArgs(argv) {
-  const opts = { prs: [], timeout: "25m", interval: "30s", stall: "15m" };
+  const opts = { prs: [], timeout: "25m", interval: "30s", stall: "15m", maxBehind: "10" };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     const value = () => {
@@ -82,6 +86,7 @@ function parseArgs(argv) {
       case "--timeout": opts.timeout = value(); break;
       case "--interval": opts.interval = value(); break;
       case "--stall": opts.stall = value(); break;
+      case "--max-behind": opts.maxBehind = value(); break;
       case "--require": opts.require = value(); break;
       case "--self": opts.self = value(); break;
       case "--once": opts.once = true; break;
@@ -92,6 +97,8 @@ function parseArgs(argv) {
     }
   }
   for (const key of ["timeout", "interval", "stall"]) opts[key] = parseDuration(opts[key], key);
+  if (!/^[1-9]\d*$/.test(opts.maxBehind)) fail("--max-behind must be a positive whole number");
+  opts.maxBehind = Number(opts.maxBehind);
   return opts;
 }
 
@@ -256,10 +263,12 @@ function analyze(pr, opts, self, now, botRuns = new Set()) {
     } else checks.passed++;
   }
 
-  // Merge state.
-  if (pr.mergeable === "CONFLICTING") add(`conflict:${head}`, "CONFLICT", `PR conflicts with ${pr.baseRef?.name}. Rebase onto it and force-push with --force-with-lease.`);
+  // Merge state. Each rebase restarts CI and the review bots, so a branch only a few commits behind stays put.
+  const conflicting = pr.mergeable === "CONFLICTING";
   const behind = pr.baseRef?.compare?.behindBy ?? (pr.mergeStateStatus === "BEHIND" ? 1 : 0);
-  if (behind > 0 && pr.mergeable !== "CONFLICTING") add(`behind:${head}`, "BASE MOVED", `${pr.baseRef?.name} is ${behind} commit(s) ahead of this branch. Rebase (never merge) and force-push with --force-with-lease.`);
+  const stale = !conflicting && behind >= opts.maxBehind;
+  if (conflicting) add(`conflict:${head}`, "CONFLICT", `PR conflicts with ${pr.baseRef?.name}. Rebase onto it and force-push with --force-with-lease.`);
+  if (stale) add(`behind:${head}`, "BASE MOVED", `${pr.baseRef?.name} is ${behind} commit(s) ahead of this branch (limit ${opts.maxBehind}). Rebase (never merge) and force-push with --force-with-lease.`);
 
   // Review-bot verdicts on the head commit.
   const verdicts = new Map(); // bot -> [{at, positive, source}]
@@ -354,10 +363,13 @@ function analyze(pr, opts, self, now, botRuns = new Set()) {
 
   const ciDone = checks.pending.length === 0;
   const ciGreen = ciDone && checks.failed.length === 0;
-  const clean = pr.mergeable !== "CONFLICTING" && behind === 0;
   const allApproved = bots.every((b) => b.state === "approved");
-  const done = ciGreen && clean && unresolved === 0 && allApproved && (required.length > 0 || opts.require === "none");
-  if (done) add(`done:${head}`, "DONE", `CI green, ${required.length ? `approved on head by ${required.join(", ")}` : "no review bots required"}, no unresolved threads, up to date with ${pr.baseRef?.name}.`);
+  const ready = ciGreen && !conflicting && !stale && unresolved === 0 && allApproved && (required.length > 0 || opts.require === "none");
+  // GitHub reports BEHIND only when the base requires up-to-date branches, so that rebase waits until nothing else is left.
+  const blockedBehind = ready && pr.mergeStateStatus === "BEHIND";
+  if (blockedBehind) add(`behind:${head}`, "BASE MOVED", `${pr.baseRef?.name} requires branches to be up to date and is ${behind} commit(s) ahead. Everything else is done: rebase (never merge) and force-push with --force-with-lease.`);
+  const done = ready && !blockedBehind;
+  if (done) add(`done:${head}`, "DONE", `CI green, ${required.length ? `approved on head by ${required.join(", ")}` : "no review bots required"}, no unresolved threads, ${behind ? `${behind} behind ${pr.baseRef?.name} (under the limit of ${opts.maxBehind})` : `up to date with ${pr.baseRef?.name}`}.`);
 
   // Stalled: CI settled, nothing new from a required bot on this head for --stall.
   const quietSince = Math.max(headDate, lastCompleted, ...[...activity.values()]);
@@ -379,7 +391,7 @@ function analyze(pr, opts, self, now, botRuns = new Set()) {
     `checks ${checks.passed} passed, ${checks.failed.length} failed, ${checks.pending.length} pending${checks.pending.length ? ` (${checks.pending.slice(0, 4).join(", ")}${checks.pending.length > 4 ? ", …" : ""})` : ""}`,
     `reviewers: ${bots.length ? bots.map((b) => `${b.bot} ${b.state}`).join(", ") : opts.require === "none" ? "none required" : "none engaged yet"}`,
     `threads: ${unresolved} unresolved${awaitingResolve ? ` (${awaitingResolve} answered by you, resolve them)` : ""}`,
-    `base: ${behind ? `${behind} behind ${pr.baseRef?.name}` : `up to date with ${pr.baseRef?.name}`}${pr.mergeable === "CONFLICTING" ? ", CONFLICTING" : ""}`,
+    `base: ${behind ? `${behind} behind ${pr.baseRef?.name} (limit ${opts.maxBehind})` : `up to date with ${pr.baseRef?.name}`}${conflicting ? ", CONFLICTING" : ""}`,
   ].join(" · ");
   return { pr, head, items, done, summary };
 }
