@@ -31,7 +31,7 @@ The watcher remembers what it already reported, per PR, so each rerun shows only
 - Verify every bot finding against the source before changing code.
 - Fix real findings and CI failures. Distinguish repository failures from infrastructure flakes.
 - If a bot finding is a false positive or not worth addressing, reply with a written reason and resolve the comment.
-- When the watcher reports `BASE MOVED` or `CONFLICT`, rebase so the PR stays fresh. Always rebase — never merge `main` in — and force-push with `--force-with-lease`.
+- Rebase only when the watcher reports `CONFLICT` or `BASE MOVED`. Each rebase restarts CI and every review bot, so do not rebase just because the base moved a few commits. The watcher reports `BASE MOVED` once the base is `--max-behind` commits ahead (default 10), or when the base requires up-to-date branches and nothing else is left. Always rebase — never merge `main` in — and force-push with `--force-with-lease`.
 - If an overlapping PR makes this one obsolete, stop monitoring, report to the user, and ask before closing — unless closure was explicitly authorized.
 
 ## Scope
@@ -58,4 +58,4 @@ Screenshots and videos help reviews. Upload them with the startline-publish skil
 
 ## Success criteria
 
-Loop until the watcher reports `DONE`: CI green, every review bot approved on the head commit, no unresolved threads, and up to date with the base branch. Do not monitor or wait on human reviewers. Merge only when the user asked you to.
+Loop until the watcher reports `DONE`: CI green, every review bot approved on the head commit, no unresolved threads, no conflicts, and fewer than `--max-behind` commits behind the base branch. Do not monitor or wait on human reviewers. Merge only when the user asked you to.
