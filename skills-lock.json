@@ -47,13 +47,13 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/architect/SKILL.md",
-      "computedHash": "3745e3d108226a6ed7abbc27fa6cfc2baf80500fd7d990113514b800c2eff358"
+      "computedHash": "8dd2ce580c08a1bbc2d31ca0aab118b027ee5ff96f446bbd80c4e44a6251cc4d"
     },
     "arena": {
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/arena/SKILL.md",
-      "computedHash": "317fd5b6caf20c51c16ee170ff16b14df2610c6aaec12fce1ebffe8a900fc2e0"
+      "computedHash": "cc90599a51af23d65f38b5e2c27ecaf8f326346200ad4eb32464808f259249a5"
     },
     "ask-matt": {
       "source": "mattpocock/skills",
@@ -143,7 +143,7 @@
       "source": "effect-ts/skills",
       "sourceType": "github",
       "skillPath": "skills/effect-ts/SKILL.md",
-      "computedHash": "6bdb9b95aa83071eca2f67ae947b7d398a22e9e6e08f6cfa35de9516b03efa6e"
+      "computedHash": "cb225ba5dda169883dfee680fba6c570c89245ba19242a9bc5c3f2ac8218a55f"
     },
     "emil-design-eng": {
       "source": "emilkowalski/skills",
@@ -161,7 +161,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/file-pr/SKILL.md",
-      "computedHash": "39d4b9e3c29d0dc6fa4c16201d65d2a2d0f77063e6ec4b669b2434d1900d7814"
+      "computedHash": "3673c86f20cd8ef50e023d88cb4446dfd5ac93b4937b09387c9a1a37b38ee60a"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -191,7 +191,7 @@
       "source": "vojtaholik/good-css",
       "sourceType": "github",
       "skillPath": "skills/good-css/SKILL.md",
-      "computedHash": "ee63883a1fe94f5a5f52d1fef723fe437fe18b65acd34f284f69d92080d5954b"
+      "computedHash": "882dc3f6cb2ad58b3569af84a8c67668cda0284b156b27f8a8d989bd98063958"
     },
     "graphite": {
       "source": "withgraphite/agent-skills",
@@ -227,7 +227,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/how/SKILL.md",
-      "computedHash": "11de850f947ac5b7dd87428143d1a4dea0c15c5d3e099aab287ef480eb8b30cb"
+      "computedHash": "b7c4eea404e908d2e528203ae845b90e921ac4cbce87f7ac339aa48aa3f385c6"
     },
     "html-communication": {
       "source": "adelrodriguez/dotagents",
@@ -257,7 +257,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/interrogate/SKILL.md",
-      "computedHash": "27db09dc1f42ca6acfeca3883483204be4d2986227d1fa6569ee67f22b84a626"
+      "computedHash": "418784909559830ba0cfda976002b94d99221b018941f9097d03e8569b0c25e9"
     },
     "linear": {
       "source": "openai/skills",
@@ -305,7 +305,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/no-comments/SKILL.md",
-      "computedHash": "dca5813ff42f6d9e967469683d2abeb2455a642de8ceb09ea2a1ba091bba3a20"
+      "computedHash": "7fa424484372f36362d8371299e21202f00f2ad6081d8d38ea3f67746f53595f"
     },
     "obsidian-bases": {
       "source": "kepano/obsidian-skills",
@@ -347,7 +347,7 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
-      "computedHash": "1630232f765bad8dc0b2366f54b824d6c33b4209f198c4c6054744e63162f6b5"
+      "computedHash": "200f578bf772cff030e7b18c582c935686375ddb6ebfe96b97bfee663434da21"
     },
     "principle-foundational-thinking": {
       "source": "cursor/plugins",
@@ -432,7 +432,7 @@
       "ref": "main",
       "sourceType": "github",
       "skillPath": "skills/react-doctor/SKILL.md",
-      "computedHash": "c2fe7246d704327c3757100ba675411cab545168374ec580645c3491073475ba"
+      "computedHash": "b9d5b1d47dcfef41a33119090c908a31bcf62320d2547d4d80929a37c3b607c1"
     },
     "research": {
       "source": "mattpocock/skills",
@@ -474,7 +474,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/show-me-your-work/SKILL.md",
-      "computedHash": "4c6bb8852d4d2d904e375e4a37c39bd3f571f8ad85e664d930c2747068c3a28c"
+      "computedHash": "124de8b89ba22acbb1f42ba58152c84c72cad15b6364f6a004e5041e175342b2"
     },
     "teach": {
       "source": "mattpocock/skills",
@@ -516,13 +516,13 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/typescript-best-practices/SKILL.md",
-      "computedHash": "80e61c0b94e8da5f86c953f6e86446d26272c91aeaa3e9b446584b2585d454f3"
+      "computedHash": "17876212eeb2b399125f91b66bada1b55c23f8d1eccbab2cd7804205d8e93535"
     },
     "unslop": {
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/unslop/SKILL.md",
-      "computedHash": "2e57ee5eac607dd836feb9cbb1bfa92bfe3cbb50c195dfcc3ae021e591efefe4"
+      "computedHash": "eca0ad9fa3a3867c83f3aaf3a058e247a569c8976a68ca423a569b93eb86de5d"
     },
     "uv-package-manager": {
       "source": "wshobson/agents",
@@ -570,13 +570,13 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/why/SKILL.md",
-      "computedHash": "35e5fe9b8dd5d9de4f2f8f6b46dcc1253dfad95c59365b21656318275c5bb509"
+      "computedHash": "fdda2567c16ef50ba341a4ada10190c79f46bc19b9b2a3c5ac75f66afc11537a"
     },
     "wizard": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/engineering/wizard/SKILL.md",
-      "computedHash": "3642db2041d66efa88407e958792268c5cace9e286ad0a93ae218bffc8aae448"
+      "computedHash": "49298bed80e7f722b071ad5d64798c75eb705bbbe0635b9bbffd08cd6fb81647"
     },
     "write-changeset": {
       "source": "adelrodriguez/dotagents",
