@@ -7,6 +7,16 @@ description: Monitor a pull request through review and CI. Use when the user ask
 
 All the repos we work in have at least one AI review bot. They've given helpful but sometimes unreliable feedback. Your job is to drive the PR to green and approved by all the bots.
 
+## Delegating
+
+Each watcher wake-up re-reads your whole context, so run the loop where the context is small. When you are the session that wrote the change, hand the loop to a background subagent and stay free for the user. Brief it with:
+
+- the PR numbers and the worktree path
+- the user's original goal, so it can hold the PR to that scope
+- an instruction to follow this skill from "Watching" on, and to leave merging to you
+
+The subagent returns one short report: `DONE`, or the decision it needs from the user (an obsolete PR, a finding that would widen scope, a blocker it cannot fix). Relay that report and merge only if the user asked. When you are the subagent, or your harness has no background subagents, run the loop yourself.
+
 ## Watching
 
 Watch with `scripts/watch-pr.mjs`, next to this file. It is the shared watcher; reuse it instead of writing a polling loop, and pass several PRs to watch a stack in one process. `--help` lists the options.
