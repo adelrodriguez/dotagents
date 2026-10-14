@@ -198,6 +198,8 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `break-ui` | Stress-tests a component with worst-case data and reports what broke. | Yes |
 | `mobile-native` | Makes a web app feel native on a phone. | Yes |
 | `animate-expo` | Builds animations in React Native and Expo. | Yes |
+| `expo-native-ui` | Styles native-feeling Expo screens with Apple HIG colors, controls, and effects. | Yes |
+| `expo-ui` | Builds native SwiftUI and Jetpack Compose UI in Expo with `@expo/ui`. | Yes |
 | `animate` | Designs and builds web animations: easing, duration, springs, and transitions. | Yes |
 | `animation-performance` | Keeps web animations inside the frame budget with composite-only properties. | Yes |
 | `animation-vocabulary` | Names a motion effect from a vague description. | Yes |

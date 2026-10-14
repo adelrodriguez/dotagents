@@ -157,6 +157,18 @@
       "skillPath": "skills/emil-design-engineering/SKILL.md",
       "computedHash": "504f779a4b7a05c2699c848ba3545af94a0470536f1b5f90152b2eee4ae3a869"
     },
+    "expo-native-ui": {
+      "source": "expo/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/expo/skills/expo-native-ui/SKILL.md",
+      "computedHash": "3e7374ba3679e4e57cbe6aa97c8bcc17c977b7c526b00e0e67b9e0ccd119ba68"
+    },
+    "expo-ui": {
+      "source": "expo/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/expo/skills/expo-ui/SKILL.md",
+      "computedHash": "b7cf8d50798a484d84d359c9361c08e80e74fa922a6cb4601e88ce2701f7c449"
+    },
     "file-pr": {
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
