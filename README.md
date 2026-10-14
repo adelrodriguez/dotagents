@@ -171,9 +171,6 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `migrate-to-shoehorn` | Replaces `as` assertions in tests with `@total-typescript/shoehorn`. | Yes |
 | `convex` | Routes Convex backend work to the right Convex guidance. | Yes |
 | `convex-expert` | Writes code inside a `convex/` directory: schemas, functions, indexes, and auth. | Yes |
-| `vercel-react-best-practices` | React and Next.js performance guidance. | Yes |
-| `vercel-composition-patterns` | React composition patterns for flexible component APIs. | Yes |
-| `vercel-react-native-skills` | React Native and Expo performance guidance. | Yes |
 | `react-doctor` | Scans React code for lint, accessibility, bundle, and architecture issues. | Yes |
 | `migrate-nativewind-to-uniwind` | Migrates a React Native project from NativeWind to Uniwind. | Yes |
 | `write-swift` | Modern Swift: value types, Swift 6 concurrency, and API design. | Yes |
@@ -194,7 +191,6 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `emil-design-eng` | Emil Kowalski's approach to UI polish and animation decisions. | Yes |
 | `emil-design-engineering` | Design engineering patterns for polished, accessible web interfaces. | Yes |
 | `apple-design` | Apple-style interface design and physical motion for the web. | Yes |
-| `web-design-guidelines` | Reviews UI code against the Web Interface Guidelines. | Yes |
 | `break-ui` | Stress-tests a component with worst-case data and reports what broke. | Yes |
 | `mobile-native` | Makes a web app feel native on a phone. | Yes |
 | `animate` | Designs and builds web animations: easing, duration, springs, and transitions. | Yes |
