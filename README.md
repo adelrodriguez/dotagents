@@ -89,7 +89,6 @@ The **Auto** column shows whether the agent can load a skill by itself when the 
 | `to-tickets` | Breaks a plan or spec into tracer-bullet tickets with blocking edges. | No |
 | `wayfinder` | Plans work too large for one session as a map of decision tickets. | No |
 | `improve-codebase-architecture` | Finds deepening opportunities, reports them as HTML, then grills through one. | No |
-| `setup-ts-deep-modules` | Wires dependency-cruiser so each TypeScript package is a deep module. | No |
 
 ### Implementation
 
