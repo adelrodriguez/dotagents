@@ -197,14 +197,41 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `web-design-guidelines` | Reviews UI code against the Web Interface Guidelines. | Yes |
 | `break-ui` | Stress-tests a component with worst-case data and reports what broke. | Yes |
 | `mobile-native` | Makes a web app feel native on a phone. | Yes |
-| `expo-animation` | Builds animations in React Native and Expo. | Yes |
-| `expo-native-ui` | Styles native-feeling Expo screens with Apple HIG colors, controls, and effects. | Yes |
-| `expo-router` | Builds Expo Router navigation: routes, stacks, tabs, modals, and headers. | Yes |
-| `expo-ui` | Builds native SwiftUI and Jetpack Compose UI in Expo with `@expo/ui`. | Yes |
 | `animate` | Designs and builds web animations: easing, duration, springs, and transitions. | Yes |
 | `animation-performance` | Keeps web animations inside the frame budget with composite-only properties. | Yes |
 | `animation-vocabulary` | Names a motion effect from a vague description. | Yes |
 | `ask-sonner` | Sets up, styles, and troubleshoots Sonner toasts. | Yes |
+
+### Expo
+
+All from [expo/skills](https://github.com/expo/skills). `expo-overview` is the entry point that routes to the others.
+
+| Skill | Use | Auto |
+| --- | --- | --- |
+| `expo-overview` | Routes any Expo or EAS task to the right skill. | Yes |
+| `expo-project-structure` | Lays out the folders of a new Expo Router app. | Yes |
+| `expo-router` | Builds Expo Router navigation: routes, stacks, tabs, modals, and headers. | Yes |
+| `expo-native-ui` | Styles native-feeling Expo screens with Apple HIG colors, controls, and effects. | Yes |
+| `expo-ui` | Builds native SwiftUI and Jetpack Compose UI in Expo with `@expo/ui`. | Yes |
+| `expo-design-system` | Builds a token-based design system and component conventions in an Expo app. | Yes |
+| `expo-animation` | Builds animations in React Native and Expo. | Yes |
+| `expo-data-fetching` | Implements network requests, caching, offline support, and Expo Router loaders. | Yes |
+| `expo-dom` | Runs web code in a webview on native with Expo DOM components. | Yes |
+| `expo-web-to-native` | Migrates a web React app to a native iOS and Android app. | Yes |
+| `expo-brownfield` | Embeds Expo and React Native in an existing native app. | Yes |
+| `expo-module` | Writes Expo native modules and views in Swift and Kotlin. | Yes |
+| `expo-app-clip` | Adds an iOS App Clip target to an Expo app. | Yes |
+| `expo-examples` | Finds Expo's official `with-*` example for a third-party integration. | Yes |
+| `expo-upgrade` | Upgrades the Expo SDK and fixes dependency issues. | Yes |
+| `expo-dev-client` | Builds and distributes development clients for internal testing. | Yes |
+| `expo-skill-feedback` | Sends feedback on Expo skills and controls their opt-in telemetry. | Yes |
+| `eas-app-stores` | Builds and submits apps to TestFlight, the App Store, and Google Play. | Yes |
+| `eas-update` | Publishes over-the-air updates with EAS Update. | Yes |
+| `eas-update-insights` | Checks crash rates, launches, and adoption of published EAS Updates. | Yes |
+| `eas-workflows` | Writes EAS workflow YAML for CI/CD. | Yes |
+| `eas-hosting` | Deploys Expo websites and API routes to EAS Hosting. | Yes |
+| `eas-observe` | Adds EAS Observe performance metrics to an Expo app. | Yes |
+| `eas-simulator` | Runs an app on a remote EAS cloud simulator. | Yes |
 
 ### Writing and communication
 
