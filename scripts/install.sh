@@ -14,4 +14,4 @@ if ! "$REPO_ROOT/scripts/install-private-skills.sh"; then
   exit 1
 fi
 
-printf 'Installed and linked all skills.\n'
+printf 'Installed all skills.\n'

@@ -39,9 +39,9 @@ fi
 
 # Stage private skills separately so duplicate names cannot overwrite public skills.
 ANIMATIONSDEV_HOME=$(mktemp -d)
-mkdir -p "$ANIMATIONSDEV_HOME/.claude" "$REPO_ROOT/.agents/skills"
+mkdir -p "$ANIMATIONSDEV_HOME/.claude" "$HOME/.claude/skills" "$HOME/.agents/skills"
 
-printf 'Installing animations.dev skills into the project...\n'
+printf 'Installing animations.dev skills...\n'
 (
   cd "$ANIMATIONSDEV_HOME"
   HOME="$ANIMATIONSDEV_HOME" npx --yes @animationsdev/install \
@@ -50,11 +50,15 @@ printf 'Installing animations.dev skills into the project...\n'
     --yes
 )
 
-node - "$ANIMATIONSDEV_HOME/.claude/skills" "$REPO_ROOT/.agents/skills" "$REPO_ROOT/skills-lock.json" <<'NODE'
+node - "$ANIMATIONSDEV_HOME/.claude/skills" "$REPO_ROOT" "$HOME/.claude/skills" "$HOME/.agents/skills" <<'NODE'
 const fs = require("node:fs");
 const path = require("node:path");
-const [source, destination, lockFile] = process.argv.slice(2);
-const locked = JSON.parse(fs.readFileSync(lockFile, "utf8")).skills;
+const [source, repoRoot, ...destinations] = process.argv.slice(2);
+const lock = fs.readFileSync(path.join(repoRoot, "apm.lock.yaml"), "utf8");
+const managed = new Set([
+  ...lock.matchAll(/^\s*- \.claude\/skills\/([^/\s]+)$/gm).map(([, name]) => name),
+  ...fs.readdirSync(path.join(repoRoot, "skills")),
+]);
 const prototype = path.join(source, "prototype");
 const skillFile = path.join(prototype, "SKILL.md");
 const skill = fs.readFileSync(skillFile, "utf8");
@@ -64,10 +68,12 @@ if (!/^name: prototype\r?$/m.test(skill)) {
 fs.writeFileSync(skillFile, skill.replace(/^name: prototype\r?$/m, "name: prototype-ui"));
 fs.renameSync(prototype, path.join(source, "prototype-ui"));
 for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
-  if (!entry.isDirectory() || Object.hasOwn(locked, entry.name)) continue;
-  const target = path.join(destination, entry.name);
-  fs.rmSync(target, { recursive: true, force: true });
-  fs.cpSync(path.join(source, entry.name), target, { recursive: true });
+  if (!entry.isDirectory() || managed.has(entry.name)) continue;
+  for (const destination of destinations) {
+    const target = path.join(destination, entry.name);
+    fs.rmSync(target, { recursive: true, force: true });
+    fs.cpSync(path.join(source, entry.name), target, { recursive: true });
+  }
 }
 NODE
 

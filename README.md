@@ -1,72 +1,72 @@
 # dotagents
 
-This repo stores my coding-agent setup. It keeps skills, global instructions, and the list of installed third-party skills under version control.
+This repo stores my coding-agent setup. It keeps skills, global instructions, and the list of installed third-party skills under version control, and [APM](https://github.com/microsoft/apm) installs them for Claude Code, Codex, OpenCode, and Grok.
 
-The checked-in files have three roles:
+The checked-in files have four roles:
 
 - [`skills/`](skills/) contains skills maintained in this repo.
-- [`skills-lock.json`](skills-lock.json) records every installed skill and its source.
-- [`AGENTS.md`](AGENTS.md) and [`CLAUDE.md`](CLAUDE.md) hold global agent instructions.
+- [`instructions/`](instructions/) is an APM package holding the global agent instructions.
+- [`apm.yml`](apm.yml) lists every third-party skill, the instructions package, and the agents to install for.
+- [`apm.lock.yaml`](apm.lock.yaml) pins each dependency to a commit and records the hash of every installed file.
 
-Generated skill files do not belong in Git. The Skills CLI restores them into `.agents/skills`, and `.gitignore` excludes both `.agents/` and `.claude/`.
-
-`scripts/sync.sh` restores the locked public skills and runs `scripts/link.sh`, which links the skills and `AGENTS.md` into each agent's global location. `scripts/install.sh` runs that sync and then installs the private animations.dev skills. Run `scripts/link.sh` alone to relink without restoring.
+The repo must be cloned to `~/.apm`. APM reads its user-scope manifest only from there and refuses a symlinked `~/.apm`.
 
 ## Installation
 
-The installation entry point is `scripts/install.sh`. The scripts work from any directory because they find the repo root before they change files.
-
-`scripts/install.sh` runs `scripts/sync.sh`, which performs these steps:
-
-1. `npx --yes skills@latest experimental_install` restores the skills in `skills-lock.json` to `.agents/skills`.
-2. A Node.js check confirms that every locked skill has a `SKILL.md` file.
-3. `scripts/link.sh` creates every symlink:
-   - `.claude/skills` points to `.agents/skills`, so both project paths use the same files.
-   - `~/.agents/skills` points to this repo's `.agents/skills`.
-   - `~/.claude/skills` points to this repo's `.claude/skills`.
-   - `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.config/opencode/AGENTS.md` and `~/.pi/agent/AGENTS.md` point to this repo's `AGENTS.md`. Grok reads `~/.claude/CLAUDE.md`.
-
-The install script then runs the private installer:
-
-4. `scripts/install-private-skills.sh` runs the animations.dev installer in a temporary project. Its `prototype` is renamed to `prototype-ui`, including the skill name, before the private skills are copied into `.agents/skills`. Matt Pocock's `prototype` remains separate. Private skills whose names appear in `skills-lock.json`, such as `animate`, are skipped so the locked public version stays installed.
-5. A temporary home directory limits the private installer to one project path. The script deletes that directory after installation, including on failure.
-
-If a target path holds a file or directory, `scripts/link.sh` moves it to a timestamped backup before it creates the symlink. A second run keeps correct symlinks in place.
-
-The scripts require Node.js and `npx`. Only the private installer reads the animations.dev token. It reads it from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI.
-
-Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item. Set `SKILLS_CLI_VERSION` to use a Skills CLI version other than `latest`:
+The scripts need [APM](https://github.com/microsoft/apm), Node.js and `npx`:
 
 ```sh
-ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token \
-  SKILLS_CLI_VERSION=1.5.23 \
-  scripts/install.sh
+uv tool install apm-cli
+git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
+~/.apm/scripts/install.sh
+```
+
+`scripts/install.sh` runs `scripts/sync.sh` and then `scripts/install-private-skills.sh`.
+
+`scripts/sync.sh` performs these steps:
+
+1. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
+   - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
+   - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync.
+   - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
+2. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
+
+`scripts/install-private-skills.sh` then installs the private animations.dev skills:
+
+1. It runs the animations.dev installer in a temporary home directory, so the installer only writes to one place. The directory is deleted afterwards, including on failure.
+2. It renames the installer's `prototype` to `prototype-ui`, including the skill name, so it doesn't clash with Matt Pocock's `prototype`.
+3. It copies the private skills into `~/.claude/skills` and `~/.agents/skills`. A skill that APM installs or that lives in `skills/`, such as `animate`, is skipped so that version stays installed. APM leaves files it didn't install alone.
+
+Only the private installer reads the animations.dev token. It reads it from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI. Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item:
+
+```sh
+ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token ~/.apm/scripts/install.sh
 ```
 
 If private installation fails, refresh your credentials and rerun only the private installer:
 
 ```sh
 eval "$(op signin)"
-scripts/install-private-skills.sh
+~/.apm/scripts/install-private-skills.sh
 ```
-
-The private installer works from any directory and accepts `ANIMATIONSDEV_TOKEN` or `ANIMATIONSDEV_TOKEN_REF`. It does not restore public skills or recreate links. Run `scripts/sync.sh` for those.
 
 ## Syncing
 
-`scripts/sync.sh` runs the public half of the install: it restores the skills in `skills-lock.json`, verifies them, and recreates the links. It skips the private installer, so it needs no animations.dev token or 1Password access, and it leaves installed private skills in place.
+`scripts/sync.sh` runs the public half of the install. It needs no animations.dev token or 1Password access, and it leaves installed private skills in place. Run it after pulling or after editing `skills/`.
 
-`SKILLS_CLI_VERSION` selects the Skills CLI version here too:
+## Changes
 
-```sh
-SKILLS_CLI_VERSION=1.5.23 scripts/sync.sh
-```
+| Task | Command |
+| --- | --- |
+| Add a skill | `apm install --global owner/repo --skill name` |
+| Update every dependency | `apm update --global && apm compile --global` |
+| Remove a dependency | `apm uninstall --global owner/repo` |
 
-## Skill changes
+Each command updates `apm.yml` or `apm.lock.yaml` in this repo. Commit the result.
 
-Files under `skills/` are the maintained source. Entries in `skills-lock.json` that point back to this repo restore the published GitHub version, not uncommitted files in the working tree.
+Repos that keep skills outside a flat `skills/<name>/` folder need one entry per skill, with its folder as `path:`.
 
-The Skills CLI adds or updates third-party skills and writes the result to `skills-lock.json`. The lock file is the installed-skill list. The generated `.agents/skills` directory is only a local copy.
+The instructions are fetched from `main` on GitHub, not read from the working tree. A change to `instructions/` reaches your agents after it is merged and you run `apm update --global && apm compile --global`.
 
 ## Skill catalog
 
@@ -219,7 +219,6 @@ All from [expo/skills](https://github.com/expo/skills). `expo-overview` is the e
 | `expo-examples` | Finds Expo's official `with-*` example for a third-party integration. | Yes |
 | `expo-upgrade` | Upgrades the Expo SDK and fixes dependency issues. | Yes |
 | `expo-dev-client` | Builds and distributes development clients for internal testing. | Yes |
-| `expo-skill-feedback` | Sends feedback on Expo skills and controls their opt-in telemetry. | Yes |
 | `eas-app-stores` | Builds and submits apps to TestFlight, the App Store, and Google Play. | Yes |
 | `eas-update` | Publishes over-the-air updates with EAS Update. | Yes |
 | `eas-update-insights` | Checks crash rates, launches, and adoption of published EAS Updates. | Yes |
@@ -253,7 +252,7 @@ All from [expo/skills](https://github.com/expo/skills). `expo-overview` is the e
 
 ### animations.dev skills
 
-`scripts/install-private-skills.sh` installs these from the private animations.dev installer. They are not in `skills-lock.json`. The installer also ships `animate`, `animation-performance`, and `animation-vocabulary`, which are skipped in favour of Emil Kowalski's public versions listed under UI and design.
+`scripts/install-private-skills.sh` installs these from the private animations.dev installer. They are not in `apm.yml`. The installer also ships `animate`, `animation-performance`, and `animation-vocabulary`, which are skipped in favour of Emil Kowalski's public versions listed under UI and design.
 
 | Skill | Use | Auto |
 | --- | --- | --- |
@@ -287,4 +286,4 @@ Some skills were copied or adapted from other sources:
 - [`show-me-your-work`](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
 - [`typescript-best-practices`](https://github.com/cursor/plugins/blob/main/pstack/skills/typescript-best-practices/SKILL.md)
 
-The animation skills come from [animations.dev skills](https://animations.dev/skills). They are installed separately and are not tracked in `skills/` or `skills-lock.json`.
+The animation skills come from [animations.dev skills](https://animations.dev/skills). They are installed separately and are not tracked in `skills/` or `apm.yml`.
