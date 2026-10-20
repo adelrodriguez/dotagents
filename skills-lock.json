@@ -299,7 +299,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/file-pr/SKILL.md",
-      "computedHash": "3673c86f20cd8ef50e023d88cb4446dfd5ac93b4937b09387c9a1a37b38ee60a"
+      "computedHash": "f46d9d6b2bd4c161deb12c9d85f3f7190233e43178feba926420c9b0b539e746"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -437,7 +437,7 @@
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
       "skillPath": "skills/monitor-pr/SKILL.md",
-      "computedHash": "64eba34fc84328c34e1943fe5bc50e3c38af89d9f24ee2e003ef10ab1b76f220"
+      "computedHash": "6d673a0ceb2f9c68a98ea7340d0a9e99d7adccd98b9f72f1c0fbcf0bcced8300"
     },
     "no-comments": {
       "source": "adelrodriguez/dotagents",
@@ -602,12 +602,6 @@
       "skillPath": "skills/misc/setup-pre-commit/SKILL.md",
       "computedHash": "7fc7b680161a5cb834b165e36efc2378ff63a1f80df0a9efd18448d366bea98a"
     },
-    "setup-ts-deep-modules": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "skillPath": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
-      "computedHash": "61508216ede38d8cfa712879197a76f75f4896615dbf7abc3f62571f8f5923cc"
-    },
     "show-me-your-work": {
       "source": "adelrodriguez/dotagents",
       "sourceType": "github",
@@ -708,7 +702,7 @@
       "source": "cursor/plugins",
       "sourceType": "github",
       "skillPath": "pstack/skills/why/SKILL.md",
-      "computedHash": "fdda2567c16ef50ba341a4ada10190c79f46bc19b9b2a3c5ac75f66afc11537a"
+      "computedHash": "250259b852c857557dd0fdd5ee26cf9d9c802ca77a28753f9a1b9f66ac4e9297"
     },
     "wizard": {
       "source": "mattpocock/skills",
