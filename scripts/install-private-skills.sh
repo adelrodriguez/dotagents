@@ -56,7 +56,7 @@ const path = require("node:path");
 const [source, repoRoot, ...destinations] = process.argv.slice(2);
 const lock = fs.readFileSync(path.join(repoRoot, "apm.lock.yaml"), "utf8");
 const managed = new Set([
-  ...lock.matchAll(/^\s*- \.claude\/skills\/([^/\s]+)$/gm).map(([, name]) => name),
+  ...Array.from(lock.matchAll(/^\s*- \.claude\/skills\/([^/\s]+)$/gm), ([, name]) => name),
   ...fs.readdirSync(path.join(repoRoot, "skills")),
 ]);
 const prototype = path.join(source, "prototype");

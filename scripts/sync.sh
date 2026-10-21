@@ -14,6 +14,22 @@ command -v apm >/dev/null 2>&1 || {
   exit 1
 }
 
+# The old scripts/link.sh symlinked these into the previous checkout. APM must
+# write real directories and files here, so drop the links, including broken
+# ones. Anything that isn't a symlink is left alone.
+for link in \
+  "$HOME/.claude/skills" \
+  "$HOME/.agents/skills" \
+  "$HOME/.claude/CLAUDE.md" \
+  "$HOME/.codex/AGENTS.md" \
+  "$HOME/.config/opencode/AGENTS.md" \
+  "$HOME/.pi/agent/AGENTS.md"; do
+  if [ -L "$link" ]; then
+    rm "$link"
+    printf 'Removed old link: %s\n' "$link"
+  fi
+done
+
 printf 'Installing locked skills and instructions...\n'
 apm install --global --frozen
 

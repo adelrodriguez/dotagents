@@ -25,11 +25,12 @@ git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
 
 `scripts/sync.sh` performs these steps:
 
-1. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
+1. It removes the symlinks the old `scripts/link.sh` created, such as `~/.claude/skills` and `~/.codex/AGENTS.md`, even when they are broken. Paths that aren't symlinks are left alone.
+2. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
    - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync.
    - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
-2. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
+3. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
 
 `scripts/install-private-skills.sh` then installs the private animations.dev skills:
 
