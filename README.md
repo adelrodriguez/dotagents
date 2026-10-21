@@ -21,14 +21,26 @@ git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
 make -C ~/.apm
 ```
 
-`make` runs `scripts/sync.sh`, which performs these steps:
+`make` runs two commands:
 
-1. It removes the symlinks the old `scripts/link.sh` created, such as `~/.claude/skills` and `~/.codex/AGENTS.md`, even when they are broken. Paths that aren't symlinks are left alone.
-2. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
+1. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
    - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync.
    - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
-3. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
+2. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
+
+### Switching from the old setup
+
+The old `scripts/link.sh` symlinked skill folders and `AGENTS.md` into a `~/dotagents` checkout. APM can't write through those links, so remove them once before the first `make`. This deletes only symlinks, including broken ones:
+
+```sh
+sh -c 'for link in ~/.claude/skills ~/.agents/skills ~/.claude/CLAUDE.md \
+  ~/.codex/AGENTS.md ~/.config/opencode/AGENTS.md ~/.pi/agent/AGENTS.md; do
+  if [ -L "$link" ]; then rm "$link"; fi
+done'
+```
+
+Then delete `~/dotagents`.
 
 ## Syncing
 
