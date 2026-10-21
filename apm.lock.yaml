@@ -60,6 +60,178 @@ dependencies:
   content_hash: sha256:e9a3015a4310e72fd307bdedd4a6a484bf6155af3eae961b834edbd8790c00b6
   skill_subset:
   - packref
+- repo_url: adelrodriguez/private-skills
+  name: private-skills
+  host: github.com
+  resolved_commit: bacf08b461b34b43bce121326b85d776ed2c118f
+  version: unknown
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/animation-accessibility
+  - .agents/skills/animation-accessibility/SKILL.md
+  - .agents/skills/animation-accessibility/SNIPPETS.md
+  - .agents/skills/css-animations
+  - .agents/skills/css-animations/RECIPES.md
+  - .agents/skills/css-animations/SKILL.md
+  - .agents/skills/debug-animation
+  - .agents/skills/debug-animation/SKILL.md
+  - .agents/skills/find-animation-opportunities
+  - .agents/skills/find-animation-opportunities/SKILL.md
+  - .agents/skills/gesture-ui
+  - .agents/skills/gesture-ui/SKILL.md
+  - .agents/skills/improve-animations
+  - .agents/skills/improve-animations/AUDIT.md
+  - .agents/skills/improve-animations/PLAN-TEMPLATE.md
+  - .agents/skills/improve-animations/SKILL.md
+  - .agents/skills/motion-brief
+  - .agents/skills/motion-brief/SKILL.md
+  - .agents/skills/motion-react
+  - .agents/skills/motion-react/RECIPES.md
+  - .agents/skills/motion-react/SKILL.md
+  - .agents/skills/pick-ui-library
+  - .agents/skills/pick-ui-library/SKILL.md
+  - .agents/skills/prototype-ui
+  - .agents/skills/prototype-ui/PICKER.md
+  - .agents/skills/prototype-ui/SKILL.md
+  - .agents/skills/review-animations
+  - .agents/skills/review-animations/SKILL.md
+  - .agents/skills/review-animations/STANDARDS.md
+  - .agents/skills/scroll-animations
+  - .agents/skills/scroll-animations/SKILL.md
+  - .claude/skills/animation-accessibility
+  - .claude/skills/animation-accessibility/SKILL.md
+  - .claude/skills/animation-accessibility/SNIPPETS.md
+  - .claude/skills/css-animations
+  - .claude/skills/css-animations/RECIPES.md
+  - .claude/skills/css-animations/SKILL.md
+  - .claude/skills/debug-animation
+  - .claude/skills/debug-animation/SKILL.md
+  - .claude/skills/find-animation-opportunities
+  - .claude/skills/find-animation-opportunities/SKILL.md
+  - .claude/skills/gesture-ui
+  - .claude/skills/gesture-ui/SKILL.md
+  - .claude/skills/improve-animations
+  - .claude/skills/improve-animations/AUDIT.md
+  - .claude/skills/improve-animations/PLAN-TEMPLATE.md
+  - .claude/skills/improve-animations/SKILL.md
+  - .claude/skills/motion-brief
+  - .claude/skills/motion-brief/SKILL.md
+  - .claude/skills/motion-react
+  - .claude/skills/motion-react/RECIPES.md
+  - .claude/skills/motion-react/SKILL.md
+  - .claude/skills/pick-ui-library
+  - .claude/skills/pick-ui-library/SKILL.md
+  - .claude/skills/prototype-ui
+  - .claude/skills/prototype-ui/PICKER.md
+  - .claude/skills/prototype-ui/SKILL.md
+  - .claude/skills/review-animations
+  - .claude/skills/review-animations/SKILL.md
+  - .claude/skills/review-animations/STANDARDS.md
+  - .claude/skills/scroll-animations
+  - .claude/skills/scroll-animations/SKILL.md
+  - .config/opencode/skills/animation-accessibility
+  - .config/opencode/skills/animation-accessibility/SKILL.md
+  - .config/opencode/skills/animation-accessibility/SNIPPETS.md
+  - .config/opencode/skills/css-animations
+  - .config/opencode/skills/css-animations/RECIPES.md
+  - .config/opencode/skills/css-animations/SKILL.md
+  - .config/opencode/skills/debug-animation
+  - .config/opencode/skills/debug-animation/SKILL.md
+  - .config/opencode/skills/find-animation-opportunities
+  - .config/opencode/skills/find-animation-opportunities/SKILL.md
+  - .config/opencode/skills/gesture-ui
+  - .config/opencode/skills/gesture-ui/SKILL.md
+  - .config/opencode/skills/improve-animations
+  - .config/opencode/skills/improve-animations/AUDIT.md
+  - .config/opencode/skills/improve-animations/PLAN-TEMPLATE.md
+  - .config/opencode/skills/improve-animations/SKILL.md
+  - .config/opencode/skills/motion-brief
+  - .config/opencode/skills/motion-brief/SKILL.md
+  - .config/opencode/skills/motion-react
+  - .config/opencode/skills/motion-react/RECIPES.md
+  - .config/opencode/skills/motion-react/SKILL.md
+  - .config/opencode/skills/pick-ui-library
+  - .config/opencode/skills/pick-ui-library/SKILL.md
+  - .config/opencode/skills/prototype-ui
+  - .config/opencode/skills/prototype-ui/PICKER.md
+  - .config/opencode/skills/prototype-ui/SKILL.md
+  - .config/opencode/skills/review-animations
+  - .config/opencode/skills/review-animations/SKILL.md
+  - .config/opencode/skills/review-animations/STANDARDS.md
+  - .config/opencode/skills/scroll-animations
+  - .config/opencode/skills/scroll-animations/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/animation-accessibility/SKILL.md: sha256:584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e
+    .agents/skills/animation-accessibility/SNIPPETS.md: sha256:f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1
+    .agents/skills/css-animations/RECIPES.md: sha256:9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1
+    .agents/skills/css-animations/SKILL.md: sha256:4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184
+    .agents/skills/debug-animation/SKILL.md: sha256:a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46
+    .agents/skills/find-animation-opportunities/SKILL.md: sha256:6591a928b0abcd85cecf26991b035ef7b4d9db66b0dd0e5ab7fe57f00e5db36a
+    .agents/skills/gesture-ui/SKILL.md: sha256:4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da
+    .agents/skills/improve-animations/AUDIT.md: sha256:1e686baff5cc9deb8d71c86092af5ddcfc9a686c50bc41cbf54f6c71b4ca1d32
+    .agents/skills/improve-animations/PLAN-TEMPLATE.md: sha256:33226753d37f5ecf8bfec11ea8701c095a5e829c8052594a4629c1887348235e
+    .agents/skills/improve-animations/SKILL.md: sha256:92373cf3a828576a482fc1fb7f9f68a0623bba65c2927ec5b6b8194100bc86d2
+    .agents/skills/motion-brief/SKILL.md: sha256:a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0
+    .agents/skills/motion-react/RECIPES.md: sha256:aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd
+    .agents/skills/motion-react/SKILL.md: sha256:fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af
+    .agents/skills/pick-ui-library/SKILL.md: sha256:97f1888dd5ccd67cd95597a3d118754e5b3d5f34f6c458639cdb61a8a0d9b594
+    .agents/skills/prototype-ui/PICKER.md: sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6
+    .agents/skills/prototype-ui/SKILL.md: sha256:b78bf3d46095f127d459639021c3c30b138ab4349e4a145968fe81c1c65333a7
+    .agents/skills/review-animations/SKILL.md: sha256:c04fa90301a259a805f2f05deaca88682932c81b0839319b90f3889acc7478e3
+    .agents/skills/review-animations/STANDARDS.md: sha256:35b0bb16fbd96961255300bf38751cd8edb6d20358f10d03596a578d5c7b8131
+    .agents/skills/scroll-animations/SKILL.md: sha256:746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157
+    .claude/skills/animation-accessibility/SKILL.md: sha256:584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e
+    .claude/skills/animation-accessibility/SNIPPETS.md: sha256:f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1
+    .claude/skills/css-animations/RECIPES.md: sha256:9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1
+    .claude/skills/css-animations/SKILL.md: sha256:4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184
+    .claude/skills/debug-animation/SKILL.md: sha256:a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46
+    .claude/skills/find-animation-opportunities/SKILL.md: sha256:6591a928b0abcd85cecf26991b035ef7b4d9db66b0dd0e5ab7fe57f00e5db36a
+    .claude/skills/gesture-ui/SKILL.md: sha256:4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da
+    .claude/skills/improve-animations/AUDIT.md: sha256:1e686baff5cc9deb8d71c86092af5ddcfc9a686c50bc41cbf54f6c71b4ca1d32
+    .claude/skills/improve-animations/PLAN-TEMPLATE.md: sha256:33226753d37f5ecf8bfec11ea8701c095a5e829c8052594a4629c1887348235e
+    .claude/skills/improve-animations/SKILL.md: sha256:92373cf3a828576a482fc1fb7f9f68a0623bba65c2927ec5b6b8194100bc86d2
+    .claude/skills/motion-brief/SKILL.md: sha256:a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0
+    .claude/skills/motion-react/RECIPES.md: sha256:aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd
+    .claude/skills/motion-react/SKILL.md: sha256:fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af
+    .claude/skills/pick-ui-library/SKILL.md: sha256:97f1888dd5ccd67cd95597a3d118754e5b3d5f34f6c458639cdb61a8a0d9b594
+    .claude/skills/prototype-ui/PICKER.md: sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6
+    .claude/skills/prototype-ui/SKILL.md: sha256:b78bf3d46095f127d459639021c3c30b138ab4349e4a145968fe81c1c65333a7
+    .claude/skills/review-animations/SKILL.md: sha256:c04fa90301a259a805f2f05deaca88682932c81b0839319b90f3889acc7478e3
+    .claude/skills/review-animations/STANDARDS.md: sha256:35b0bb16fbd96961255300bf38751cd8edb6d20358f10d03596a578d5c7b8131
+    .claude/skills/scroll-animations/SKILL.md: sha256:746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157
+    .config/opencode/skills/animation-accessibility/SKILL.md: sha256:584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e
+    .config/opencode/skills/animation-accessibility/SNIPPETS.md: sha256:f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1
+    .config/opencode/skills/css-animations/RECIPES.md: sha256:9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1
+    .config/opencode/skills/css-animations/SKILL.md: sha256:4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184
+    .config/opencode/skills/debug-animation/SKILL.md: sha256:a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46
+    .config/opencode/skills/find-animation-opportunities/SKILL.md: sha256:6591a928b0abcd85cecf26991b035ef7b4d9db66b0dd0e5ab7fe57f00e5db36a
+    .config/opencode/skills/gesture-ui/SKILL.md: sha256:4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da
+    .config/opencode/skills/improve-animations/AUDIT.md: sha256:1e686baff5cc9deb8d71c86092af5ddcfc9a686c50bc41cbf54f6c71b4ca1d32
+    .config/opencode/skills/improve-animations/PLAN-TEMPLATE.md: sha256:33226753d37f5ecf8bfec11ea8701c095a5e829c8052594a4629c1887348235e
+    .config/opencode/skills/improve-animations/SKILL.md: sha256:92373cf3a828576a482fc1fb7f9f68a0623bba65c2927ec5b6b8194100bc86d2
+    .config/opencode/skills/motion-brief/SKILL.md: sha256:a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0
+    .config/opencode/skills/motion-react/RECIPES.md: sha256:aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd
+    .config/opencode/skills/motion-react/SKILL.md: sha256:fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af
+    .config/opencode/skills/pick-ui-library/SKILL.md: sha256:97f1888dd5ccd67cd95597a3d118754e5b3d5f34f6c458639cdb61a8a0d9b594
+    .config/opencode/skills/prototype-ui/PICKER.md: sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6
+    .config/opencode/skills/prototype-ui/SKILL.md: sha256:b78bf3d46095f127d459639021c3c30b138ab4349e4a145968fe81c1c65333a7
+    .config/opencode/skills/review-animations/SKILL.md: sha256:c04fa90301a259a805f2f05deaca88682932c81b0839319b90f3889acc7478e3
+    .config/opencode/skills/review-animations/STANDARDS.md: sha256:35b0bb16fbd96961255300bf38751cd8edb6d20358f10d03596a578d5c7b8131
+    .config/opencode/skills/scroll-animations/SKILL.md: sha256:746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157
+  content_hash: sha256:30f8d91a91138bc28e4f0aca7a84b6935ecae325c5f87953cf938940c114f166
+  skill_subset:
+  - animation-accessibility
+  - css-animations
+  - debug-animation
+  - find-animation-opportunities
+  - gesture-ui
+  - improve-animations
+  - motion-brief
+  - motion-react
+  - pick-ui-library
+  - prototype-ui
+  - review-animations
+  - scroll-animations
 - repo_url: anthropics/skills
   name: f2db8404c222e36c
   host: github.com
@@ -89,7 +261,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: blast-radius
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/blast-radius
   is_virtual: true
@@ -109,7 +281,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-boundary-discipline
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-boundary-discipline
   is_virtual: true
@@ -129,7 +301,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-build-the-lever
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-build-the-lever
   is_virtual: true
@@ -149,7 +321,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-encode-lessons-in-structure
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-encode-lessons-in-structure
   is_virtual: true
@@ -169,7 +341,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-foundational-thinking
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-foundational-thinking
   is_virtual: true
@@ -189,7 +361,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-make-operations-idempotent
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-make-operations-idempotent
   is_virtual: true
@@ -209,7 +381,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-migrate-callers-then-delete-legacy-apis
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-migrate-callers-then-delete-legacy-apis
   is_virtual: true
@@ -229,7 +401,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-minimize-reader-load
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-minimize-reader-load
   is_virtual: true
@@ -249,7 +421,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-outcome-oriented-execution
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-outcome-oriented-execution
   is_virtual: true
@@ -269,7 +441,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-prove-it-works
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-prove-it-works
   is_virtual: true
@@ -289,7 +461,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-separate-before-serializing-shared-state
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-separate-before-serializing-shared-state
   is_virtual: true
@@ -309,7 +481,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-sequence-verifiable-units
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-sequence-verifiable-units
   is_virtual: true
@@ -329,7 +501,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-subtract-before-you-add
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-subtract-before-you-add
   is_virtual: true
@@ -349,7 +521,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-test-behavior-not-implementation
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-test-behavior-not-implementation
   is_virtual: true
@@ -369,7 +541,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: principle-type-system-discipline
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/principle-type-system-discipline
   is_virtual: true
@@ -389,7 +561,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: technical-writing
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/technical-writing
   is_virtual: true
@@ -409,7 +581,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: unslop
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/unslop
   is_virtual: true
@@ -429,7 +601,7 @@ dependencies:
 - repo_url: cursor/plugins
   name: why
   host: github.com
-  resolved_commit: 190d28736eff128ec94f502a22c7fe0c4b56cd37
+  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
   version: unknown
   virtual_path: pstack/skills/why
   is_virtual: true
@@ -2946,8 +3118,8 @@ dependencies:
 - repo_url: vercel-labs/agent-browser
   name: 7806f76343b67d4b
   host: github.com
-  resolved_commit: fd93075e55a21a47fcb36d7433361daa867a0580
-  version: fd93075
+  resolved_commit: 468c0526c884722afd9c10bcc0d5b09ed4c0c5d1
+  version: 468c052
   package_type: skill_bundle
   deployed_files:
   - .agents/skills/agent-browser
@@ -2960,7 +3132,7 @@ dependencies:
     .agents/skills/agent-browser/SKILL.md: sha256:3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac
     .claude/skills/agent-browser/SKILL.md: sha256:3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac
     .config/opencode/skills/agent-browser/SKILL.md: sha256:3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac
-  content_hash: sha256:6ffdcbd8c03805f6c382778f8c5713ccf9a7ac6ab8e6f7862d77206ebaa403b0
+  content_hash: sha256:2a3fe36bc526939dc17ea03a6d1865ca938a2b57f5d801968120de1454cde615
   skill_subset:
   - agent-browser
 - repo_url: vercel-labs/skills
@@ -3171,6 +3343,33 @@ deployments:
   - emilkowalski/skills
   active_owner: emilkowalski/skills
   content_hash: sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/animation-accessibility
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/animation-accessibility/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e
+- kind: project-relative
+  target: claude
+  value: .claude/skills/animation-accessibility/SNIPPETS.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1
 - kind: project-relative
   target: claude
   value: .claude/skills/animation-performance
@@ -3468,6 +3667,51 @@ deployments:
   - get-convex/agent-skills
   active_owner: get-convex/agent-skills
   content_hash: sha256:35608f235686f602c8aee455a168c16b8df4e857fbfee634e14deaa72dee15eb
+- kind: project-relative
+  target: claude
+  value: .claude/skills/css-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/css-animations/RECIPES.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1
+- kind: project-relative
+  target: claude
+  value: .claude/skills/css-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184
+- kind: project-relative
+  target: claude
+  value: .claude/skills/debug-animation
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/debug-animation/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46
 - kind: project-relative
   target: claude
   value: .claude/skills/diagnosing-bugs
@@ -4919,6 +5163,24 @@ deployments:
   content_hash: sha256:a883bc66356c11ec08ba2428f158db1d1f9b228d7b6ed5cc2ff84e2afc951fcb
 - kind: project-relative
   target: claude
+  value: .claude/skills/find-animation-opportunities
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/find-animation-opportunities/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:6591a928b0abcd85cecf26991b035ef7b4d9db66b0dd0e5ab7fe57f00e5db36a
+- kind: project-relative
+  target: claude
   value: .claude/skills/find-skills
   runtime: null
   scope: project
@@ -4962,6 +5224,24 @@ deployments:
   - anthropics/skills
   active_owner: anthropics/skills
   content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/gesture-ui
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/gesture-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da
 - kind: project-relative
   target: claude
   value: .claude/skills/git-guardrails-claude-code
@@ -5270,6 +5550,42 @@ deployments:
   content_hash: sha256:8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc
 - kind: project-relative
   target: claude
+  value: .claude/skills/improve-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/improve-animations/AUDIT.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:1e686baff5cc9deb8d71c86092af5ddcfc9a686c50bc41cbf54f6c71b4ca1d32
+- kind: project-relative
+  target: claude
+  value: .claude/skills/improve-animations/PLAN-TEMPLATE.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:33226753d37f5ecf8bfec11ea8701c095a5e829c8052594a4629c1887348235e
+- kind: project-relative
+  target: claude
+  value: .claude/skills/improve-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:92373cf3a828576a482fc1fb7f9f68a0623bba65c2927ec5b6b8194100bc86d2
+- kind: project-relative
+  target: claude
   value: .claude/skills/improve-codebase-architecture
   runtime: null
   scope: project
@@ -5450,6 +5766,51 @@ deployments:
   content_hash: sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55
 - kind: project-relative
   target: claude
+  value: .claude/skills/motion-brief
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/motion-brief/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0
+- kind: project-relative
+  target: claude
+  value: .claude/skills/motion-react
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/motion-react/RECIPES.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd
+- kind: project-relative
+  target: claude
+  value: .claude/skills/motion-react/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af
+- kind: project-relative
+  target: claude
   value: .claude/skills/obsidian-bases
   runtime: null
   scope: project
@@ -5565,6 +5926,24 @@ deployments:
   - adelrodriguez/packref
   active_owner: adelrodriguez/packref
   content_hash: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
+- kind: project-relative
+  target: claude
+  value: .claude/skills/pick-ui-library
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/pick-ui-library/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:97f1888dd5ccd67cd95597a3d118754e5b3d5f34f6c458639cdb61a8a0d9b594
 - kind: project-relative
   target: claude
   value: .claude/skills/principle-boundary-discipline
@@ -5828,6 +6207,33 @@ deployments:
   content_hash: null
 - kind: project-relative
   target: claude
+  value: .claude/skills/prototype-ui
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prototype-ui/PICKER.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prototype-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:b78bf3d46095f127d459639021c3c30b138ab4349e4a145968fe81c1c65333a7
+- kind: project-relative
+  target: claude
   value: .claude/skills/prototype/LOGIC.md
   runtime: null
   scope: project
@@ -5945,6 +6351,33 @@ deployments:
   content_hash: sha256:cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c
 - kind: project-relative
   target: claude
+  value: .claude/skills/review-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/review-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:c04fa90301a259a805f2f05deaca88682932c81b0839319b90f3889acc7478e3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/review-animations/STANDARDS.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:35b0bb16fbd96961255300bf38751cd8edb6d20358f10d03596a578d5c7b8131
+- kind: project-relative
+  target: claude
   value: .claude/skills/scaffold-exercises
   runtime: null
   scope: project
@@ -5970,6 +6403,24 @@ deployments:
   - mattpocock/skills/skills/misc/scaffold-exercises
   active_owner: mattpocock/skills/skills/misc/scaffold-exercises
   content_hash: sha256:525b33913340bea7947ad2de17f2a7c5fb94be543345fe80ae753b9a44ba601d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/scroll-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/scroll-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157
 - kind: project-relative
   target: claude
   value: .claude/skills/setup-matt-pocock-skills
@@ -6737,6 +7188,33 @@ deployments:
   content_hash: sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c
 - kind: project-relative
   target: codex
+  value: .agents/skills/animation-accessibility
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/animation-accessibility/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e
+- kind: project-relative
+  target: codex
+  value: .agents/skills/animation-accessibility/SNIPPETS.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1
+- kind: project-relative
+  target: codex
   value: .agents/skills/animation-performance
   runtime: null
   scope: project
@@ -7032,6 +7510,51 @@ deployments:
   - get-convex/agent-skills
   active_owner: get-convex/agent-skills
   content_hash: sha256:35608f235686f602c8aee455a168c16b8df4e857fbfee634e14deaa72dee15eb
+- kind: project-relative
+  target: codex
+  value: .agents/skills/css-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/css-animations/RECIPES.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1
+- kind: project-relative
+  target: codex
+  value: .agents/skills/css-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184
+- kind: project-relative
+  target: codex
+  value: .agents/skills/debug-animation
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/debug-animation/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46
 - kind: project-relative
   target: codex
   value: .agents/skills/diagnosing-bugs
@@ -8483,6 +9006,24 @@ deployments:
   content_hash: sha256:a883bc66356c11ec08ba2428f158db1d1f9b228d7b6ed5cc2ff84e2afc951fcb
 - kind: project-relative
   target: codex
+  value: .agents/skills/find-animation-opportunities
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/find-animation-opportunities/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:6591a928b0abcd85cecf26991b035ef7b4d9db66b0dd0e5ab7fe57f00e5db36a
+- kind: project-relative
+  target: codex
   value: .agents/skills/find-skills
   runtime: null
   scope: project
@@ -8526,6 +9067,24 @@ deployments:
   - anthropics/skills
   active_owner: anthropics/skills
   content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+- kind: project-relative
+  target: codex
+  value: .agents/skills/gesture-ui
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/gesture-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da
 - kind: project-relative
   target: codex
   value: .agents/skills/git-guardrails-claude-code
@@ -8834,6 +9393,42 @@ deployments:
   content_hash: sha256:8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc
 - kind: project-relative
   target: codex
+  value: .agents/skills/improve-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/improve-animations/AUDIT.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:1e686baff5cc9deb8d71c86092af5ddcfc9a686c50bc41cbf54f6c71b4ca1d32
+- kind: project-relative
+  target: codex
+  value: .agents/skills/improve-animations/PLAN-TEMPLATE.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:33226753d37f5ecf8bfec11ea8701c095a5e829c8052594a4629c1887348235e
+- kind: project-relative
+  target: codex
+  value: .agents/skills/improve-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:92373cf3a828576a482fc1fb7f9f68a0623bba65c2927ec5b6b8194100bc86d2
+- kind: project-relative
+  target: codex
   value: .agents/skills/improve-codebase-architecture
   runtime: null
   scope: project
@@ -9014,6 +9609,51 @@ deployments:
   content_hash: sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55
 - kind: project-relative
   target: codex
+  value: .agents/skills/motion-brief
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/motion-brief/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0
+- kind: project-relative
+  target: codex
+  value: .agents/skills/motion-react
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/motion-react/RECIPES.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd
+- kind: project-relative
+  target: codex
+  value: .agents/skills/motion-react/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af
+- kind: project-relative
+  target: codex
   value: .agents/skills/obsidian-bases
   runtime: null
   scope: project
@@ -9129,6 +9769,24 @@ deployments:
   - adelrodriguez/packref
   active_owner: adelrodriguez/packref
   content_hash: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
+- kind: project-relative
+  target: codex
+  value: .agents/skills/pick-ui-library
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/pick-ui-library/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:97f1888dd5ccd67cd95597a3d118754e5b3d5f34f6c458639cdb61a8a0d9b594
 - kind: project-relative
   target: codex
   value: .agents/skills/principle-boundary-discipline
@@ -9392,6 +10050,33 @@ deployments:
   content_hash: null
 - kind: project-relative
   target: codex
+  value: .agents/skills/prototype-ui
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/prototype-ui/PICKER.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6
+- kind: project-relative
+  target: codex
+  value: .agents/skills/prototype-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:b78bf3d46095f127d459639021c3c30b138ab4349e4a145968fe81c1c65333a7
+- kind: project-relative
+  target: codex
   value: .agents/skills/prototype/LOGIC.md
   runtime: null
   scope: project
@@ -9509,6 +10194,33 @@ deployments:
   content_hash: sha256:cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c
 - kind: project-relative
   target: codex
+  value: .agents/skills/review-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/review-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:c04fa90301a259a805f2f05deaca88682932c81b0839319b90f3889acc7478e3
+- kind: project-relative
+  target: codex
+  value: .agents/skills/review-animations/STANDARDS.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:35b0bb16fbd96961255300bf38751cd8edb6d20358f10d03596a578d5c7b8131
+- kind: project-relative
+  target: codex
   value: .agents/skills/scaffold-exercises
   runtime: null
   scope: project
@@ -9534,6 +10246,24 @@ deployments:
   - mattpocock/skills/skills/misc/scaffold-exercises
   active_owner: mattpocock/skills/skills/misc/scaffold-exercises
   content_hash: sha256:525b33913340bea7947ad2de17f2a7c5fb94be543345fe80ae753b9a44ba601d
+- kind: project-relative
+  target: codex
+  value: .agents/skills/scroll-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/scroll-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157
 - kind: project-relative
   target: codex
   value: .agents/skills/setup-matt-pocock-skills
@@ -10301,6 +11031,33 @@ deployments:
   content_hash: sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c
 - kind: project-relative
   target: opencode
+  value: .config/opencode/skills/animation-accessibility
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/animation-accessibility/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/animation-accessibility/SNIPPETS.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1
+- kind: project-relative
+  target: opencode
   value: .config/opencode/skills/animation-performance
   runtime: null
   scope: project
@@ -10596,6 +11353,51 @@ deployments:
   - get-convex/agent-skills
   active_owner: get-convex/agent-skills
   content_hash: sha256:35608f235686f602c8aee455a168c16b8df4e857fbfee634e14deaa72dee15eb
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/css-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/css-animations/RECIPES.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/css-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/debug-animation
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/debug-animation/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/diagnosing-bugs
@@ -12047,6 +12849,24 @@ deployments:
   content_hash: sha256:a883bc66356c11ec08ba2428f158db1d1f9b228d7b6ed5cc2ff84e2afc951fcb
 - kind: project-relative
   target: opencode
+  value: .config/opencode/skills/find-animation-opportunities
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/find-animation-opportunities/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:6591a928b0abcd85cecf26991b035ef7b4d9db66b0dd0e5ab7fe57f00e5db36a
+- kind: project-relative
+  target: opencode
   value: .config/opencode/skills/find-skills
   runtime: null
   scope: project
@@ -12090,6 +12910,24 @@ deployments:
   - anthropics/skills
   active_owner: anthropics/skills
   content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/gesture-ui
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/gesture-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/git-guardrails-claude-code
@@ -12398,6 +13236,42 @@ deployments:
   content_hash: sha256:8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc
 - kind: project-relative
   target: opencode
+  value: .config/opencode/skills/improve-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/improve-animations/AUDIT.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:1e686baff5cc9deb8d71c86092af5ddcfc9a686c50bc41cbf54f6c71b4ca1d32
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/improve-animations/PLAN-TEMPLATE.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:33226753d37f5ecf8bfec11ea8701c095a5e829c8052594a4629c1887348235e
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/improve-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:92373cf3a828576a482fc1fb7f9f68a0623bba65c2927ec5b6b8194100bc86d2
+- kind: project-relative
+  target: opencode
   value: .config/opencode/skills/improve-codebase-architecture
   runtime: null
   scope: project
@@ -12578,6 +13452,51 @@ deployments:
   content_hash: sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55
 - kind: project-relative
   target: opencode
+  value: .config/opencode/skills/motion-brief
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/motion-brief/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/motion-react
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/motion-react/RECIPES.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/motion-react/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af
+- kind: project-relative
+  target: opencode
   value: .config/opencode/skills/obsidian-bases
   runtime: null
   scope: project
@@ -12693,6 +13612,24 @@ deployments:
   - adelrodriguez/packref
   active_owner: adelrodriguez/packref
   content_hash: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/pick-ui-library
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/pick-ui-library/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:97f1888dd5ccd67cd95597a3d118754e5b3d5f34f6c458639cdb61a8a0d9b594
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/principle-boundary-discipline
@@ -12956,6 +13893,33 @@ deployments:
   content_hash: null
 - kind: project-relative
   target: opencode
+  value: .config/opencode/skills/prototype-ui
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/prototype-ui/PICKER.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/prototype-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:b78bf3d46095f127d459639021c3c30b138ab4349e4a145968fe81c1c65333a7
+- kind: project-relative
+  target: opencode
   value: .config/opencode/skills/prototype/LOGIC.md
   runtime: null
   scope: project
@@ -13073,6 +14037,33 @@ deployments:
   content_hash: sha256:cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c
 - kind: project-relative
   target: opencode
+  value: .config/opencode/skills/review-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/review-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:c04fa90301a259a805f2f05deaca88682932c81b0839319b90f3889acc7478e3
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/review-animations/STANDARDS.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:35b0bb16fbd96961255300bf38751cd8edb6d20358f10d03596a578d5c7b8131
+- kind: project-relative
+  target: opencode
   value: .config/opencode/skills/scaffold-exercises
   runtime: null
   scope: project
@@ -13098,6 +14089,24 @@ deployments:
   - mattpocock/skills/skills/misc/scaffold-exercises
   active_owner: mattpocock/skills/skills/misc/scaffold-exercises
   content_hash: sha256:525b33913340bea7947ad2de17f2a7c5fb94be543345fe80ae753b9a44ba601d
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/scroll-animations
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/scroll-animations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/private-skills
+  active_owner: adelrodriguez/private-skills
+  content_hash: sha256:746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/setup-matt-pocock-skills

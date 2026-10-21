@@ -1,10 +1,4 @@
-.PHONY: install sync private-skills
-
-install:
-	scripts/install.sh
+.PHONY: sync
 
 sync:
 	scripts/sync.sh
-
-private-skills:
-	scripts/install-private-skills.sh

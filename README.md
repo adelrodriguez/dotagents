@@ -13,7 +13,7 @@ The repo must be cloned to `~/.apm`. APM reads its user-scope manifest only from
 
 ## Installation
 
-The scripts need [APM](https://github.com/microsoft/apm), Node.js and `npx`:
+Installing needs [APM](https://github.com/microsoft/apm) and read access to the private [`adelrodriguez/private-skills`](https://github.com/adelrodriguez/private-skills) repo. APM uses your git credentials, so `gh auth login` is enough:
 
 ```sh
 uv tool install apm-cli
@@ -21,15 +21,7 @@ git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
 make -C ~/.apm
 ```
 
-Each script has a `make` target in `~/.apm`:
-
-| Target | Script |
-| --- | --- |
-| `make install` (default) | `scripts/install.sh`, which runs the other two in order |
-| `make sync` | `scripts/sync.sh` |
-| `make private-skills` | `scripts/install-private-skills.sh` |
-
-`scripts/sync.sh` performs these steps:
+`make` runs `scripts/sync.sh`, which performs these steps:
 
 1. It removes the symlinks the old `scripts/link.sh` created, such as `~/.claude/skills` and `~/.codex/AGENTS.md`, even when they are broken. Paths that aren't symlinks are left alone.
 2. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
@@ -38,28 +30,9 @@ Each script has a `make` target in `~/.apm`:
    - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
 3. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
 
-`scripts/install-private-skills.sh` then installs the private animations.dev skills:
-
-1. It runs the animations.dev installer in a temporary home directory, so the installer only writes to one place. The directory is deleted afterwards, including on failure.
-2. It renames the installer's `prototype` to `prototype-ui`, including the skill name, so it doesn't clash with Matt Pocock's `prototype`.
-3. It copies the private skills into `~/.claude/skills` and `~/.agents/skills`. A skill that APM installs or that lives in `skills/`, such as `animate`, is skipped so that version stays installed. APM leaves files it didn't install alone.
-
-Only the private installer reads the animations.dev token. It reads it from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI. Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item:
-
-```sh
-ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token make -C ~/.apm
-```
-
-If private installation fails, refresh your credentials and rerun only the private installer:
-
-```sh
-eval "$(op signin)"
-make -C ~/.apm private-skills
-```
-
 ## Syncing
 
-`make sync` runs the public half of the install. It needs no animations.dev token or 1Password access, and it leaves installed private skills in place. Run it after pulling or after editing `skills/`.
+Run `make -C ~/.apm` again after pulling or after editing `skills/`.
 
 ## Changes
 
@@ -259,7 +232,7 @@ All from [expo/skills](https://github.com/expo/skills). `expo-overview` is the e
 
 ### animations.dev skills
 
-`scripts/install-private-skills.sh` installs these from the private animations.dev installer. They are not in `apm.yml`. The installer also ships `animate`, `animation-performance`, and `animation-vocabulary`, which are skipped in favour of Emil Kowalski's public versions listed under UI and design.
+These come from the paid animations.dev course and live in the private [`adelrodriguez/private-skills`](https://github.com/adelrodriguez/private-skills) repo, which has a script to refresh them from the course. That repo leaves out `animate`, `animation-performance`, and `animation-vocabulary`, because the course versions match Emil Kowalski's public ones listed under UI and design.
 
 | Skill | Use | Auto |
 | --- | --- | --- |

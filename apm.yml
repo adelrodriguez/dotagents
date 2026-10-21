@@ -8,6 +8,8 @@ dependencies:
       skills: [adamantite]
     - git: adelrodriguez/packref
       skills: [packref]
+    - git: adelrodriguez/private-skills
+      skills: [animation-accessibility, css-animations, debug-animation, find-animation-opportunities, gesture-ui, improve-animations, motion-brief, motion-react, pick-ui-library, prototype-ui, review-animations, scroll-animations]
     - git: anthropics/skills
       skills: [frontend-design]
     - git: effect-ts/skills
