@@ -18,10 +18,16 @@ The scripts need [APM](https://github.com/microsoft/apm), Node.js and `npx`:
 ```sh
 uv tool install apm-cli
 git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
-~/.apm/scripts/install.sh
+make -C ~/.apm
 ```
 
-`scripts/install.sh` runs `scripts/sync.sh` and then `scripts/install-private-skills.sh`.
+Each script has a `make` target in `~/.apm`:
+
+| Target | Script |
+| --- | --- |
+| `make install` (default) | `scripts/install.sh`, which runs the other two in order |
+| `make sync` | `scripts/sync.sh` |
+| `make private-skills` | `scripts/install-private-skills.sh` |
 
 `scripts/sync.sh` performs these steps:
 
@@ -41,19 +47,19 @@ git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
 Only the private installer reads the animations.dev token. It reads it from `ANIMATIONSDEV_TOKEN` when that variable is set. Otherwise, it reads `op://Personal/animations.dev/token` with the 1Password CLI. Set `ANIMATIONSDEV_TOKEN_REF` to read a different 1Password item:
 
 ```sh
-ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token ~/.apm/scripts/install.sh
+ANIMATIONSDEV_TOKEN_REF=op://Personal/animations.dev/token make -C ~/.apm
 ```
 
 If private installation fails, refresh your credentials and rerun only the private installer:
 
 ```sh
 eval "$(op signin)"
-~/.apm/scripts/install-private-skills.sh
+make -C ~/.apm private-skills
 ```
 
 ## Syncing
 
-`scripts/sync.sh` runs the public half of the install. It needs no animations.dev token or 1Password access, and it leaves installed private skills in place. Run it after pulling or after editing `skills/`.
+`make sync` runs the public half of the install. It needs no animations.dev token or 1Password access, and it leaves installed private skills in place. Run it after pulling or after editing `skills/`.
 
 ## Changes
 
