@@ -31,7 +31,19 @@ make -C ~/.apm
 
 ### Switching from the old setup
 
-The old `scripts/link.sh` symlinked skill folders and `AGENTS.md` into a `~/dotagents` checkout. APM can't write through those links, so remove them once before the first `make`. This deletes only symlinks, including broken ones:
+The old `scripts/link.sh` symlinked skill folders and `AGENTS.md` into a `~/dotagents` checkout. APM can't write through those links, so remove them once before the first `make`.
+
+First, check that no skill lives only in the old checkout. Removing the links hides anything APM doesn't install. This lists the old skills that are neither locked nor in `skills/`:
+
+```sh
+sh -c 'cd ~/.apm && for skill in $(ls ~/dotagents/.agents/skills); do
+  [ -d "skills/$skill" ] || grep -q -- "- .claude/skills/$skill\$" apm.lock.yaml || echo "$skill"
+done'
+```
+
+Add any you want to keep to `apm.yml` or `skills/`. A `synced` folder is Claude's own cache of its built-in skills, and Claude recreates it.
+
+Then remove the links. This deletes only symlinks, including broken ones:
 
 ```sh
 sh -c 'for link in ~/.claude/skills ~/.agents/skills ~/.claude/CLAUDE.md \
