@@ -16,7 +16,7 @@ The repo must be cloned to `~/.apm`. APM reads its user-scope manifest only from
 Installing needs [APM](https://github.com/microsoft/apm) and read access to the private [`adelrodriguez/private-skills`](https://github.com/adelrodriguez/private-skills) repo. APM uses your git credentials, so `gh auth login` is enough:
 
 ```sh
-uv tool install apm-cli
+brew install apm
 git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
 make -C ~/.apm
 ```
@@ -31,12 +31,12 @@ make -C ~/.apm
 
 ### Switching from the old setup
 
-The old `scripts/link.sh` symlinked skill folders and `AGENTS.md` into a `~/dotagents` checkout. APM can't write through those links, so remove them once before the first `make`.
+The old `scripts/link.sh` symlinked skill folders and `AGENTS.md` into whichever dotagents checkout ran it. APM can't write through those links, so remove them once before the first `make`.
 
-First, check that no skill lives only in the old checkout. Removing the links hides anything APM doesn't install. This lists the old skills that are neither locked nor in `skills/`:
+First, check that no skill lives only in the old checkout. Removing the links hides anything APM doesn't install. `~/.agents/skills` still points at the old skills, so this lists the ones that are neither locked nor in `skills/`:
 
 ```sh
-sh -c 'cd ~/.apm && for skill in $(ls ~/dotagents/.agents/skills); do
+sh -c 'cd ~/.apm && for skill in $(ls "$(readlink ~/.agents/skills)"); do
   [ -d "skills/$skill" ] || grep -q -- "- .claude/skills/$skill\$" apm.lock.yaml || echo "$skill"
 done'
 ```
@@ -52,7 +52,7 @@ sh -c 'for link in ~/.claude/skills ~/.agents/skills ~/.claude/CLAUDE.md \
 done'
 ```
 
-Then delete `~/dotagents`.
+Then delete the old checkout. If you still use it for development, delete only its untracked `.agents/` and `.claude/` folders.
 
 ## Syncing
 
