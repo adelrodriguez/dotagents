@@ -1,0 +1,190 @@
+name: dotagents
+version: 1.0.0
+targets: [claude, codex, opencode]
+dependencies:
+  apm:
+    - adelrodriguez/dotagents/instructions
+    - git: adelrodriguez/adamantite
+      skills: [adamantite]
+    - git: adelrodriguez/packref
+      skills: [packref]
+    - git: adelrodriguez/private-skills
+      skills: [animation-accessibility, css-animations, debug-animation, find-animation-opportunities, gesture-ui, improve-animations, motion-brief, motion-react, pick-ui-library, prototype-ui, review-animations, scroll-animations]
+    - git: anthropics/skills
+      skills: [frontend-design]
+    - git: effect-ts/skills
+      skills: [effect-ts]
+    - git: emilkowalski/skills
+      skills: [animate, animation-performance, animation-vocabulary, apple-design, ask-sonner, break-ui, emil-design-eng, mobile-native, write-swift]
+    - git: get-convex/agent-skills
+      skills: [convex, convex-expert]
+    - git: kepano/obsidian-skills
+      skills: [obsidian-bases, obsidian-cli, obsidian-markdown]
+    - git: kitlangton/skills
+      skills: [effect]
+    - git: millionco/react-doctor
+      skills: [react-doctor]
+    - git: uni-stack/uniwind
+      skills: [migrate-nativewind-to-uniwind]
+    - git: vercel-labs/agent-browser
+      skills: [agent-browser]
+    - git: vercel-labs/skills
+      skills: [find-skills]
+    - git: vojtaholik/good-css
+      skills: [good-css]
+    - git: withgraphite/agent-skills
+      skills: [graphite]
+    - git: cursor/plugins
+      path: pstack/skills/blast-radius
+    - git: cursor/plugins
+      path: pstack/skills/principle-boundary-discipline
+    - git: cursor/plugins
+      path: pstack/skills/principle-build-the-lever
+    - git: cursor/plugins
+      path: pstack/skills/principle-encode-lessons-in-structure
+    - git: cursor/plugins
+      path: pstack/skills/principle-foundational-thinking
+    - git: cursor/plugins
+      path: pstack/skills/principle-make-operations-idempotent
+    - git: cursor/plugins
+      path: pstack/skills/principle-migrate-callers-then-delete-legacy-apis
+    - git: cursor/plugins
+      path: pstack/skills/principle-minimize-reader-load
+    - git: cursor/plugins
+      path: pstack/skills/principle-outcome-oriented-execution
+    - git: cursor/plugins
+      path: pstack/skills/principle-prove-it-works
+    - git: cursor/plugins
+      path: pstack/skills/principle-separate-before-serializing-shared-state
+    - git: cursor/plugins
+      path: pstack/skills/principle-sequence-verifiable-units
+    - git: cursor/plugins
+      path: pstack/skills/principle-subtract-before-you-add
+    - git: cursor/plugins
+      path: pstack/skills/principle-test-behavior-not-implementation
+    - git: cursor/plugins
+      path: pstack/skills/principle-type-system-discipline
+    - git: cursor/plugins
+      path: pstack/skills/technical-writing
+    - git: cursor/plugins
+      path: pstack/skills/unslop
+    - git: cursor/plugins
+      path: pstack/skills/why
+    - git: expo/skills
+      path: plugins/expo/skills/eas-app-stores
+    - git: expo/skills
+      path: plugins/expo/skills/eas-hosting
+    - git: expo/skills
+      path: plugins/expo/skills/eas-observe
+    - git: expo/skills
+      path: plugins/expo/skills/eas-simulator
+    - git: expo/skills
+      path: plugins/expo/skills/eas-update
+    - git: expo/skills
+      path: plugins/expo/skills/eas-update-insights
+    - git: expo/skills
+      path: plugins/expo/skills/eas-workflows
+    - git: expo/skills
+      path: plugins/expo/skills/expo-animation
+    - git: expo/skills
+      path: plugins/expo/skills/expo-app-clip
+    - git: expo/skills
+      path: plugins/expo/skills/expo-brownfield
+    - git: expo/skills
+      path: plugins/expo/skills/expo-data-fetching
+    - git: expo/skills
+      path: plugins/expo/skills/expo-design-system
+    - git: expo/skills
+      path: plugins/expo/skills/expo-dev-client
+    - git: expo/skills
+      path: plugins/expo/skills/expo-dom
+    - git: expo/skills
+      path: plugins/expo/skills/expo-examples
+    - git: expo/skills
+      path: plugins/expo/skills/expo-module
+    - git: expo/skills
+      path: plugins/expo/skills/expo-native-ui
+    - git: expo/skills
+      path: plugins/expo/skills/expo-overview
+    - git: expo/skills
+      path: plugins/expo/skills/expo-project-structure
+    - git: expo/skills
+      path: plugins/expo/skills/expo-router
+    - git: expo/skills
+      path: plugins/expo/skills/expo-ui
+    - git: expo/skills
+      path: plugins/expo/skills/expo-upgrade
+    - git: expo/skills
+      path: plugins/expo/skills/expo-web-to-native
+    - git: mattpocock/skills
+      path: skills/engineering/ask-matt
+    - git: mattpocock/skills
+      path: skills/engineering/code-review
+    - git: mattpocock/skills
+      path: skills/engineering/codebase-design
+    - git: mattpocock/skills
+      path: skills/engineering/diagnosing-bugs
+    - git: mattpocock/skills
+      path: skills/engineering/domain-modeling
+    - git: mattpocock/skills
+      path: skills/engineering/grill-with-docs
+    - git: mattpocock/skills
+      path: skills/engineering/implement
+    - git: mattpocock/skills
+      path: skills/engineering/implement-spec
+    - git: mattpocock/skills
+      path: skills/engineering/improve-codebase-architecture
+    - git: mattpocock/skills
+      path: skills/engineering/prototype
+    - git: mattpocock/skills
+      path: skills/engineering/research
+    - git: mattpocock/skills
+      path: skills/engineering/retro
+    - git: mattpocock/skills
+      path: skills/engineering/setup-matt-pocock-skills
+    - git: mattpocock/skills
+      path: skills/engineering/to-spec
+    - git: mattpocock/skills
+      path: skills/engineering/to-tickets
+    - git: mattpocock/skills
+      path: skills/engineering/triage
+    - git: mattpocock/skills
+      path: skills/engineering/wayfinder
+    - git: mattpocock/skills
+      path: skills/engineering/wizard
+    - git: mattpocock/skills
+      path: skills/in-progress/claude-handoff
+    - git: mattpocock/skills
+      path: skills/in-progress/loop-me
+    - git: mattpocock/skills
+      path: skills/in-progress/writing-beats
+    - git: mattpocock/skills
+      path: skills/in-progress/writing-fragments
+    - git: mattpocock/skills
+      path: skills/in-progress/writing-shape
+    - git: mattpocock/skills
+      path: skills/misc/git-guardrails-claude-code
+    - git: mattpocock/skills
+      path: skills/misc/migrate-to-shoehorn
+    - git: mattpocock/skills
+      path: skills/misc/scaffold-exercises
+    - git: mattpocock/skills
+      path: skills/misc/setup-pre-commit
+    - git: mattpocock/skills
+      path: skills/productivity/grill-me
+    - git: mattpocock/skills
+      path: skills/productivity/grilling
+    - git: mattpocock/skills
+      path: skills/productivity/handoff
+    - git: mattpocock/skills
+      path: skills/productivity/teach
+    - git: mattpocock/skills
+      path: skills/productivity/to-questionnaire
+    - git: mattpocock/skills
+      path: skills/productivity/wait-what
+    - git: mattpocock/skills
+      path: skills/productivity/writing-for-agents
+    - git: openai/skills
+      path: skills/.curated/linear
+    - git: wshobson/agents
+      path: plugins/python-development/skills/uv-package-manager
