@@ -12,6 +12,8 @@ dependencies:
       skills: [animation-accessibility, css-animations, debug-animation, find-animation-opportunities, gesture-ui, improve-animations, motion-brief, motion-react, pick-ui-library, prototype-ui, review-animations, scroll-animations]
     - git: anthropics/skills
       skills: [frontend-design]
+    - git: cloudflare/security-audit-skill
+      skills: [security-audit]
     - git: effect-ts/skills
       skills: [effect-ts]
     - git: emilkowalski/skills
