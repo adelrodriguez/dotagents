@@ -124,6 +124,7 @@ The **Auto** column shows whether the agent can load a skill by itself when the 
 | `code-review` | Reviews changes since a fixed point against repo standards and the originating spec. | Yes |
 | `interrogate` | Runs an adversarial review of a diff or design and gives a verdict. | Yes |
 | `no-comments` | Audits comments and suppressions for stale narration and hidden debt. | Yes |
+| `security-audit` | Reviews code for vulnerabilities and runs full audits with verified, machine-readable findings. | Yes |
 | `create-verification-skill` | Generates a project-local skill that verifies behavior through real surfaces. | Yes |
 | `maintain-verification-skill` | Audits and repairs a project's verification skill when it drifts. | Yes |
 | `product-description` | Builds a repo of documents that describe a product from the outside in, then verifies it. | No |
