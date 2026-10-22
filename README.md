@@ -15,16 +15,16 @@ The repo must be cloned to `~/.apm`. APM reads its user-scope manifest only from
 
 Installing needs [APM](https://github.com/microsoft/apm) and read access to the private [`adelrodriguez/private-skills`](https://github.com/adelrodriguez/private-skills) repo. APM uses your git credentials, so `gh auth login` is enough.
 
-Install APM on macOS with Homebrew:
+Install APM with Homebrew, on macOS or Linux:
 
 ```sh
 brew install apm
 ```
 
-On Linux, install it with uv:
+On Linux without Homebrew, use APM's installer instead:
 
 ```sh
-uv tool install apm-cli
+curl -sSL https://aka.ms/apm-unix | sh
 ```
 
 Then clone the repo and sync:
