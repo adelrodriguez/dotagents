@@ -15,6 +15,12 @@ The repo must be cloned to `~/.apm`. APM reads its user-scope manifest only from
 
 Installing needs [APM](https://github.com/microsoft/apm) and read access to the private [`adelrodriguez/private-skills`](https://github.com/adelrodriguez/private-skills) repo. APM uses your git credentials, so `gh auth login` is enough.
 
+Clone the repo first. APM writes its own files to `~/.apm`, and `git clone` refuses a folder that isn't empty:
+
+```sh
+git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
+```
+
 Install APM with Homebrew, on macOS or Linux:
 
 ```sh
@@ -27,10 +33,9 @@ On Linux without Homebrew, use APM's installer instead:
 curl -sSL https://aka.ms/apm-unix | sh
 ```
 
-Then clone the repo and sync:
+Then sync:
 
 ```sh
-git clone https://github.com/adelrodriguez/dotagents.git ~/.apm
 make -C ~/.apm
 ```
 
