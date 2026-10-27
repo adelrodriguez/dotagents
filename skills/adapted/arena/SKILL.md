@@ -2,6 +2,8 @@
 name: arena
 description: Spawn parallel candidates for the same task, select a base, and graft the strongest parts into one verified result.
 disable-model-invocation: true
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md"
 ---
 
 # Arena

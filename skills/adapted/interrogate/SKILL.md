@@ -2,6 +2,8 @@
 name: interrogate
 description: Run an adversarial, independent review of a diff or code selection and synthesize a lead verdict. Use when asked to challenge, stress-test, interrogate, tear apart, or find blind spots in code or a design.
 license: MIT
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md"
 ---
 
 # Interrogate

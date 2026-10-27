@@ -1,6 +1,8 @@
 ---
 name: maintain-verification-skill
 description: Audit and repair a project-local verification skill while preserving its harness-agnostic behavior and evidence contracts. Use when a verify skill, feature map, or adapter may have drifted from the product.
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/maintain-verification-skill/SKILL.md"
 ---
 
 # Maintain a verification skill

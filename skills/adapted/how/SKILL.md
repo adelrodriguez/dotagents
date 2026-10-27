@@ -2,6 +2,8 @@
 name: how
 description: Explain how a subsystem, feature flow, or module works from source evidence. Use for code walkthroughs, runtime traces, ownership questions, and layering questions.
 license: MIT
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/how/SKILL.md"
 ---
 
 # How

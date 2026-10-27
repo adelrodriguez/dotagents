@@ -1,6 +1,9 @@
 ---
 name: file-pr
 description: File a concise pull request. Use when the user asks to file, open, or create a PR.
+metadata:
+  source: "https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md"
+  notes: "The visual, evidence, and merge danger sections are adapted from Matt Pocock's pr, whose visuals come from Dex Horthy's show-me: https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
 ---
 
 # File PR

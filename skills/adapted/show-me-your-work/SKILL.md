@@ -2,6 +2,8 @@
 name: show-me-your-work
 description: Keep a reviewable decision and evidence trail for long-running, unattended, or high-risk work. Use when a person will review the work later and needs more than a final summary to trust it.
 license: MIT
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md"
 ---
 
 # Show me your work

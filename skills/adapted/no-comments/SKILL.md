@@ -2,6 +2,8 @@
 name: no-comments
 description: Audit comments and suppressions for stale narration, hidden design debt, and constraints that should be encoded in code. Use when asked to review, reduce, or remove comments without losing essential rationale or public contracts.
 license: MIT
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/no-comments/SKILL.md"
 ---
 
 # No comments

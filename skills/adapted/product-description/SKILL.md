@@ -2,6 +2,9 @@
 name: product-description
 description: Build a "product description" repo for a software product — a set of prose documents describing, from the outside in, what the user sees, what they can do, and exactly what happens when they do it, written from the code and tests, then verified against the running product and triaged into a bug list. Works for any product with a user (canvas editors, web apps, CLIs, chat products, mobile apps).
 disable-model-invocation: true
+metadata:
+  source: "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f"
+  author: "Steve Ruiz"
 ---
 
 # Product description repo

@@ -2,6 +2,8 @@
 name: architect
 description: Design caller usage, types, signatures, and module boundaries before implementation. Use for durable APIs, cross-module changes, ownership decisions, or work where coding first could lock in the wrong shape.
 license: MIT
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md"
 ---
 
 # Architect

@@ -1,6 +1,8 @@
 ---
 name: create-verification-skill
 description: Generate a project-local, harness-agnostic verification skill that proves behavior through a project's real user-facing surfaces. Use when a repository lacks a repeatable way to verify its application, service, CLI, library, or integration.
+metadata:
+  source: "https://github.com/cursor/plugins/blob/main/pstack/skills/create-verification-skill/SKILL.md"
 ---
 
 # Create a verification skill
