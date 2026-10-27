@@ -19,17 +19,17 @@ dependencies:
   - .config/opencode/skills/architect/references/design-red-flags.md
   - .config/opencode/skills/architect/references/rationale-template.md
   deployed_file_hashes:
-    .agents/skills/architect/SKILL.md: sha256:02cdfc9cfbef636947f40706eb9d9e1e52166d74c2fc9eca697615429376b432
+    .agents/skills/architect/SKILL.md: sha256:5c15be98179813b372adb2572e7d7712ae44fd21d066e3caa0d834910ed34f77
     .agents/skills/architect/references/design-red-flags.md: sha256:9e607ee25c152683cae2cc3b468fa3759edc066c39c7302a4af0da3ecf15caf5
     .agents/skills/architect/references/rationale-template.md: sha256:96481fcc3a3dc4264ba06ed35800453d6ea24d9b69f910a3cc5aff75c08ae8b5
-    .claude/skills/architect/SKILL.md: sha256:02cdfc9cfbef636947f40706eb9d9e1e52166d74c2fc9eca697615429376b432
+    .claude/skills/architect/SKILL.md: sha256:5c15be98179813b372adb2572e7d7712ae44fd21d066e3caa0d834910ed34f77
     .claude/skills/architect/references/design-red-flags.md: sha256:9e607ee25c152683cae2cc3b468fa3759edc066c39c7302a4af0da3ecf15caf5
     .claude/skills/architect/references/rationale-template.md: sha256:96481fcc3a3dc4264ba06ed35800453d6ea24d9b69f910a3cc5aff75c08ae8b5
-    .config/opencode/skills/architect/SKILL.md: sha256:02cdfc9cfbef636947f40706eb9d9e1e52166d74c2fc9eca697615429376b432
+    .config/opencode/skills/architect/SKILL.md: sha256:5c15be98179813b372adb2572e7d7712ae44fd21d066e3caa0d834910ed34f77
     .config/opencode/skills/architect/references/design-red-flags.md: sha256:9e607ee25c152683cae2cc3b468fa3759edc066c39c7302a4af0da3ecf15caf5
     .config/opencode/skills/architect/references/rationale-template.md: sha256:96481fcc3a3dc4264ba06ed35800453d6ea24d9b69f910a3cc5aff75c08ae8b5
   source: local
-  local_path: ~/.apm/skills/planning/architect
+  local_path: ~/.apm/skills/adapted/architect
 - repo_url: _local/arena
   name: arena
   version: unknown
@@ -42,11 +42,11 @@ dependencies:
   - .config/opencode/skills/arena
   - .config/opencode/skills/arena/SKILL.md
   deployed_file_hashes:
-    .agents/skills/arena/SKILL.md: sha256:4ad40f265176734e0e4a7dca8986784d0bbf57df43aa7d01b37e39bb453fe4cc
-    .claude/skills/arena/SKILL.md: sha256:4ad40f265176734e0e4a7dca8986784d0bbf57df43aa7d01b37e39bb453fe4cc
-    .config/opencode/skills/arena/SKILL.md: sha256:4ad40f265176734e0e4a7dca8986784d0bbf57df43aa7d01b37e39bb453fe4cc
+    .agents/skills/arena/SKILL.md: sha256:09f1c27371075056c6ed68f1a008cb3cc98c4d894d507bd556479f3f1301651c
+    .claude/skills/arena/SKILL.md: sha256:09f1c27371075056c6ed68f1a008cb3cc98c4d894d507bd556479f3f1301651c
+    .config/opencode/skills/arena/SKILL.md: sha256:09f1c27371075056c6ed68f1a008cb3cc98c4d894d507bd556479f3f1301651c
   source: local
-  local_path: ~/.apm/skills/implementation/arena
+  local_path: ~/.apm/skills/adapted/arena
 - repo_url: _local/bro
   name: bro
   version: unknown
@@ -59,11 +59,11 @@ dependencies:
   - .config/opencode/skills/bro
   - .config/opencode/skills/bro/SKILL.md
   deployed_file_hashes:
-    .agents/skills/bro/SKILL.md: sha256:dbdf176f656fc4d49495c9a221b8612f8880be225827a6e74c11ce8616edb809
-    .claude/skills/bro/SKILL.md: sha256:dbdf176f656fc4d49495c9a221b8612f8880be225827a6e74c11ce8616edb809
-    .config/opencode/skills/bro/SKILL.md: sha256:dbdf176f656fc4d49495c9a221b8612f8880be225827a6e74c11ce8616edb809
+    .agents/skills/bro/SKILL.md: sha256:5046dc14c446d68be42ec3229e204fe680c5f8a4c602bf66c0e887dd53facbb0
+    .claude/skills/bro/SKILL.md: sha256:5046dc14c446d68be42ec3229e204fe680c5f8a4c602bf66c0e887dd53facbb0
+    .config/opencode/skills/bro/SKILL.md: sha256:5046dc14c446d68be42ec3229e204fe680c5f8a4c602bf66c0e887dd53facbb0
   source: local
-  local_path: ~/.apm/skills/writing/bro
+  local_path: ~/.apm/skills/adapted/bro
 - repo_url: _local/create-verification-skill
   name: create-verification-skill
   version: unknown
@@ -79,73 +79,14 @@ dependencies:
   - .config/opencode/skills/create-verification-skill/SKILL.md
   - .config/opencode/skills/create-verification-skill/references/feature-map-template.md
   deployed_file_hashes:
-    .agents/skills/create-verification-skill/SKILL.md: sha256:dca9c13036fcc8264464380351eeca75b112c7e74cec1fbced74e99e6c0fc3bc
+    .agents/skills/create-verification-skill/SKILL.md: sha256:e96a6de143a66502ff7dc4b70805470eaf223ec3e30bc13c57b0dfcfc0dd3711
     .agents/skills/create-verification-skill/references/feature-map-template.md: sha256:03121a4eac1c5f16afba4b11274558d2dd50de88d3ae2be4368f76c15039ad71
-    .claude/skills/create-verification-skill/SKILL.md: sha256:dca9c13036fcc8264464380351eeca75b112c7e74cec1fbced74e99e6c0fc3bc
+    .claude/skills/create-verification-skill/SKILL.md: sha256:e96a6de143a66502ff7dc4b70805470eaf223ec3e30bc13c57b0dfcfc0dd3711
     .claude/skills/create-verification-skill/references/feature-map-template.md: sha256:03121a4eac1c5f16afba4b11274558d2dd50de88d3ae2be4368f76c15039ad71
-    .config/opencode/skills/create-verification-skill/SKILL.md: sha256:dca9c13036fcc8264464380351eeca75b112c7e74cec1fbced74e99e6c0fc3bc
+    .config/opencode/skills/create-verification-skill/SKILL.md: sha256:e96a6de143a66502ff7dc4b70805470eaf223ec3e30bc13c57b0dfcfc0dd3711
     .config/opencode/skills/create-verification-skill/references/feature-map-template.md: sha256:03121a4eac1c5f16afba4b11274558d2dd50de88d3ae2be4368f76c15039ad71
   source: local
-  local_path: ~/.apm/skills/review/create-verification-skill
-- repo_url: _local/emil-design-engineering
-  name: emil-design-engineering
-  version: unknown
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/emil-design-engineering
-  - .agents/skills/emil-design-engineering/SKILL.md
-  - .agents/skills/emil-design-engineering/animations.md
-  - .agents/skills/emil-design-engineering/component-design.md
-  - .agents/skills/emil-design-engineering/forms-controls.md
-  - .agents/skills/emil-design-engineering/marketing.md
-  - .agents/skills/emil-design-engineering/performance.md
-  - .agents/skills/emil-design-engineering/touch-accessibility.md
-  - .agents/skills/emil-design-engineering/ui-polish.md
-  - .claude/skills/emil-design-engineering
-  - .claude/skills/emil-design-engineering/SKILL.md
-  - .claude/skills/emil-design-engineering/animations.md
-  - .claude/skills/emil-design-engineering/component-design.md
-  - .claude/skills/emil-design-engineering/forms-controls.md
-  - .claude/skills/emil-design-engineering/marketing.md
-  - .claude/skills/emil-design-engineering/performance.md
-  - .claude/skills/emil-design-engineering/touch-accessibility.md
-  - .claude/skills/emil-design-engineering/ui-polish.md
-  - .config/opencode/skills/emil-design-engineering
-  - .config/opencode/skills/emil-design-engineering/SKILL.md
-  - .config/opencode/skills/emil-design-engineering/animations.md
-  - .config/opencode/skills/emil-design-engineering/component-design.md
-  - .config/opencode/skills/emil-design-engineering/forms-controls.md
-  - .config/opencode/skills/emil-design-engineering/marketing.md
-  - .config/opencode/skills/emil-design-engineering/performance.md
-  - .config/opencode/skills/emil-design-engineering/touch-accessibility.md
-  - .config/opencode/skills/emil-design-engineering/ui-polish.md
-  deployed_file_hashes:
-    .agents/skills/emil-design-engineering/SKILL.md: sha256:bbdd3a804ed108bbf2a47d7743a995c07911442b6662d4428cee8228fb1af638
-    .agents/skills/emil-design-engineering/animations.md: sha256:5fb07baa9cbbb88308d53f9e15d43ddaa27339aca36f4bfeb848574ed51b81d1
-    .agents/skills/emil-design-engineering/component-design.md: sha256:eb5cf5840d590a2c44f3abbc34d645b097055db54bbfa9f7c6938a40741b8e62
-    .agents/skills/emil-design-engineering/forms-controls.md: sha256:cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5
-    .agents/skills/emil-design-engineering/marketing.md: sha256:5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb
-    .agents/skills/emil-design-engineering/performance.md: sha256:c5d2bc42e54b6e567eaa62be812d344b3cfa353ce223a349ebac17b7e0275f1b
-    .agents/skills/emil-design-engineering/touch-accessibility.md: sha256:30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12
-    .agents/skills/emil-design-engineering/ui-polish.md: sha256:90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da
-    .claude/skills/emil-design-engineering/SKILL.md: sha256:bbdd3a804ed108bbf2a47d7743a995c07911442b6662d4428cee8228fb1af638
-    .claude/skills/emil-design-engineering/animations.md: sha256:5fb07baa9cbbb88308d53f9e15d43ddaa27339aca36f4bfeb848574ed51b81d1
-    .claude/skills/emil-design-engineering/component-design.md: sha256:eb5cf5840d590a2c44f3abbc34d645b097055db54bbfa9f7c6938a40741b8e62
-    .claude/skills/emil-design-engineering/forms-controls.md: sha256:cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5
-    .claude/skills/emil-design-engineering/marketing.md: sha256:5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb
-    .claude/skills/emil-design-engineering/performance.md: sha256:c5d2bc42e54b6e567eaa62be812d344b3cfa353ce223a349ebac17b7e0275f1b
-    .claude/skills/emil-design-engineering/touch-accessibility.md: sha256:30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12
-    .claude/skills/emil-design-engineering/ui-polish.md: sha256:90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da
-    .config/opencode/skills/emil-design-engineering/SKILL.md: sha256:bbdd3a804ed108bbf2a47d7743a995c07911442b6662d4428cee8228fb1af638
-    .config/opencode/skills/emil-design-engineering/animations.md: sha256:5fb07baa9cbbb88308d53f9e15d43ddaa27339aca36f4bfeb848574ed51b81d1
-    .config/opencode/skills/emil-design-engineering/component-design.md: sha256:eb5cf5840d590a2c44f3abbc34d645b097055db54bbfa9f7c6938a40741b8e62
-    .config/opencode/skills/emil-design-engineering/forms-controls.md: sha256:cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5
-    .config/opencode/skills/emil-design-engineering/marketing.md: sha256:5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb
-    .config/opencode/skills/emil-design-engineering/performance.md: sha256:c5d2bc42e54b6e567eaa62be812d344b3cfa353ce223a349ebac17b7e0275f1b
-    .config/opencode/skills/emil-design-engineering/touch-accessibility.md: sha256:30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12
-    .config/opencode/skills/emil-design-engineering/ui-polish.md: sha256:90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da
-  source: local
-  local_path: ~/.apm/skills/design/emil-design-engineering
+  local_path: ~/.apm/skills/adapted/create-verification-skill
 - repo_url: _local/file-pr
   name: file-pr
   version: unknown
@@ -158,11 +99,11 @@ dependencies:
   - .config/opencode/skills/file-pr
   - .config/opencode/skills/file-pr/SKILL.md
   deployed_file_hashes:
-    .agents/skills/file-pr/SKILL.md: sha256:bd5ec713dd2205cad8a3218365cdf11f5874a42e826863c2acecb93df0b3d829
-    .claude/skills/file-pr/SKILL.md: sha256:bd5ec713dd2205cad8a3218365cdf11f5874a42e826863c2acecb93df0b3d829
-    .config/opencode/skills/file-pr/SKILL.md: sha256:bd5ec713dd2205cad8a3218365cdf11f5874a42e826863c2acecb93df0b3d829
+    .agents/skills/file-pr/SKILL.md: sha256:2e7d9eef236d6f12aeec13f4126533754fb63f666d666a6a173ff9f3f179632d
+    .claude/skills/file-pr/SKILL.md: sha256:2e7d9eef236d6f12aeec13f4126533754fb63f666d666a6a173ff9f3f179632d
+    .config/opencode/skills/file-pr/SKILL.md: sha256:2e7d9eef236d6f12aeec13f4126533754fb63f666d666a6a173ff9f3f179632d
   source: local
-  local_path: ~/.apm/skills/git/file-pr
+  local_path: ~/.apm/skills/adapted/file-pr
 - repo_url: _local/full-send
   name: full-send
   version: unknown
@@ -179,7 +120,7 @@ dependencies:
     .claude/skills/full-send/SKILL.md: sha256:c1db485117dba806b31b5aefe75b0abb622795f7cd18e8096cf35f2152528c40
     .config/opencode/skills/full-send/SKILL.md: sha256:c1db485117dba806b31b5aefe75b0abb622795f7cd18e8096cf35f2152528c40
   source: local
-  local_path: ~/.apm/skills/git/full-send
+  local_path: ~/.apm/skills/original/full-send
 - repo_url: _local/how
   name: how
   version: unknown
@@ -192,11 +133,11 @@ dependencies:
   - .config/opencode/skills/how
   - .config/opencode/skills/how/SKILL.md
   deployed_file_hashes:
-    .agents/skills/how/SKILL.md: sha256:31fe93b20720583c8decc206793415362a339ce82a085d961818d219d34e7a40
-    .claude/skills/how/SKILL.md: sha256:31fe93b20720583c8decc206793415362a339ce82a085d961818d219d34e7a40
-    .config/opencode/skills/how/SKILL.md: sha256:31fe93b20720583c8decc206793415362a339ce82a085d961818d219d34e7a40
+    .agents/skills/how/SKILL.md: sha256:260db3df6bae705a4e814c1f0cce2be9ff355a8ec913a04e6e58f459652a7a23
+    .claude/skills/how/SKILL.md: sha256:260db3df6bae705a4e814c1f0cce2be9ff355a8ec913a04e6e58f459652a7a23
+    .config/opencode/skills/how/SKILL.md: sha256:260db3df6bae705a4e814c1f0cce2be9ff355a8ec913a04e6e58f459652a7a23
   source: local
-  local_path: ~/.apm/skills/understanding/how
+  local_path: ~/.apm/skills/adapted/how
 - repo_url: _local/html-communication
   name: html-communication
   version: unknown
@@ -213,7 +154,7 @@ dependencies:
     .claude/skills/html-communication/SKILL.md: sha256:13e6eaa4ef6e1b369db768a318e2b8333cccf52e35b882d77f4b72931661402f
     .config/opencode/skills/html-communication/SKILL.md: sha256:13e6eaa4ef6e1b369db768a318e2b8333cccf52e35b882d77f4b72931661402f
   source: local
-  local_path: ~/.apm/skills/writing/html-communication
+  local_path: ~/.apm/skills/original/html-communication
 - repo_url: _local/interrogate
   name: interrogate
   version: unknown
@@ -226,11 +167,11 @@ dependencies:
   - .config/opencode/skills/interrogate
   - .config/opencode/skills/interrogate/SKILL.md
   deployed_file_hashes:
-    .agents/skills/interrogate/SKILL.md: sha256:e3d755a2ec064bfacd4cfa88e40da7b98db81fe6e92df77b629b91ea1dfd95d4
-    .claude/skills/interrogate/SKILL.md: sha256:e3d755a2ec064bfacd4cfa88e40da7b98db81fe6e92df77b629b91ea1dfd95d4
-    .config/opencode/skills/interrogate/SKILL.md: sha256:e3d755a2ec064bfacd4cfa88e40da7b98db81fe6e92df77b629b91ea1dfd95d4
+    .agents/skills/interrogate/SKILL.md: sha256:e4a6cde390b17fdb054ac89e8a415eb85b8b03e49f25b4fd2614eb2c5f23f514
+    .claude/skills/interrogate/SKILL.md: sha256:e4a6cde390b17fdb054ac89e8a415eb85b8b03e49f25b4fd2614eb2c5f23f514
+    .config/opencode/skills/interrogate/SKILL.md: sha256:e4a6cde390b17fdb054ac89e8a415eb85b8b03e49f25b4fd2614eb2c5f23f514
   source: local
-  local_path: ~/.apm/skills/review/interrogate
+  local_path: ~/.apm/skills/adapted/interrogate
 - repo_url: _local/maintain-verification-skill
   name: maintain-verification-skill
   version: unknown
@@ -243,11 +184,11 @@ dependencies:
   - .config/opencode/skills/maintain-verification-skill
   - .config/opencode/skills/maintain-verification-skill/SKILL.md
   deployed_file_hashes:
-    .agents/skills/maintain-verification-skill/SKILL.md: sha256:21d03c6e222008744fe837ae6e712a4d34083b7db5080877218fd5895057c70b
-    .claude/skills/maintain-verification-skill/SKILL.md: sha256:21d03c6e222008744fe837ae6e712a4d34083b7db5080877218fd5895057c70b
-    .config/opencode/skills/maintain-verification-skill/SKILL.md: sha256:21d03c6e222008744fe837ae6e712a4d34083b7db5080877218fd5895057c70b
+    .agents/skills/maintain-verification-skill/SKILL.md: sha256:16a70cda8be1c74a0b55166ea93647dcccc7953f8764ddb6a633689d22c96530
+    .claude/skills/maintain-verification-skill/SKILL.md: sha256:16a70cda8be1c74a0b55166ea93647dcccc7953f8764ddb6a633689d22c96530
+    .config/opencode/skills/maintain-verification-skill/SKILL.md: sha256:16a70cda8be1c74a0b55166ea93647dcccc7953f8764ddb6a633689d22c96530
   source: local
-  local_path: ~/.apm/skills/review/maintain-verification-skill
+  local_path: ~/.apm/skills/adapted/maintain-verification-skill
 - repo_url: _local/monitor-pr
   name: monitor-pr
   version: unknown
@@ -270,7 +211,7 @@ dependencies:
     .config/opencode/skills/monitor-pr/SKILL.md: sha256:09b98e1cb094e9ec1a2c8ce34a1ba53a3711090c8ecfcd36f59d476d99e98c28
     .config/opencode/skills/monitor-pr/scripts/watch-pr.mjs: sha256:a83bb410d6a599c5bef73786bf432970eedadf22e21bc3fa64080c170609616c
   source: local
-  local_path: ~/.apm/skills/git/monitor-pr
+  local_path: ~/.apm/skills/original/monitor-pr
 - repo_url: _local/no-comments
   name: no-comments
   version: unknown
@@ -283,11 +224,11 @@ dependencies:
   - .config/opencode/skills/no-comments
   - .config/opencode/skills/no-comments/SKILL.md
   deployed_file_hashes:
-    .agents/skills/no-comments/SKILL.md: sha256:eaade1a376cc8e59f8b7782f42fa91832f8ddc4588d1a950ec8b0325ee3f4b20
-    .claude/skills/no-comments/SKILL.md: sha256:eaade1a376cc8e59f8b7782f42fa91832f8ddc4588d1a950ec8b0325ee3f4b20
-    .config/opencode/skills/no-comments/SKILL.md: sha256:eaade1a376cc8e59f8b7782f42fa91832f8ddc4588d1a950ec8b0325ee3f4b20
+    .agents/skills/no-comments/SKILL.md: sha256:7f10b40856e5c23697b26bd3bd9e7062bdbca09316b6903793ecf02e4937dc9d
+    .claude/skills/no-comments/SKILL.md: sha256:7f10b40856e5c23697b26bd3bd9e7062bdbca09316b6903793ecf02e4937dc9d
+    .config/opencode/skills/no-comments/SKILL.md: sha256:7f10b40856e5c23697b26bd3bd9e7062bdbca09316b6903793ecf02e4937dc9d
   source: local
-  local_path: ~/.apm/skills/review/no-comments
+  local_path: ~/.apm/skills/adapted/no-comments
 - repo_url: _local/product-description
   name: product-description
   version: unknown
@@ -324,7 +265,7 @@ dependencies:
   - .config/opencode/skills/product-description/references/product-kinds.md
   - .config/opencode/skills/product-description/references/verification-template.md
   deployed_file_hashes:
-    .agents/skills/product-description/SKILL.md: sha256:7aa89543f5cf1cb4ba63c8c235767a04df70d112cf1de8940c373898da6480ae
+    .agents/skills/product-description/SKILL.md: sha256:e992a175d655658a2b261f64b0c0ce7d854e02c46b0bf7ba1ef49bf09c49048c
     .agents/skills/product-description/references/README-template.md: sha256:97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167
     .agents/skills/product-description/references/bug-triage-template.md: sha256:d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4
     .agents/skills/product-description/references/check-links.py: sha256:2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b
@@ -333,7 +274,7 @@ dependencies:
     .agents/skills/product-description/references/goal-template.md: sha256:dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67
     .agents/skills/product-description/references/product-kinds.md: sha256:710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079
     .agents/skills/product-description/references/verification-template.md: sha256:39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6
-    .claude/skills/product-description/SKILL.md: sha256:7aa89543f5cf1cb4ba63c8c235767a04df70d112cf1de8940c373898da6480ae
+    .claude/skills/product-description/SKILL.md: sha256:e992a175d655658a2b261f64b0c0ce7d854e02c46b0bf7ba1ef49bf09c49048c
     .claude/skills/product-description/references/README-template.md: sha256:97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167
     .claude/skills/product-description/references/bug-triage-template.md: sha256:d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4
     .claude/skills/product-description/references/check-links.py: sha256:2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b
@@ -342,7 +283,7 @@ dependencies:
     .claude/skills/product-description/references/goal-template.md: sha256:dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67
     .claude/skills/product-description/references/product-kinds.md: sha256:710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079
     .claude/skills/product-description/references/verification-template.md: sha256:39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6
-    .config/opencode/skills/product-description/SKILL.md: sha256:7aa89543f5cf1cb4ba63c8c235767a04df70d112cf1de8940c373898da6480ae
+    .config/opencode/skills/product-description/SKILL.md: sha256:e992a175d655658a2b261f64b0c0ce7d854e02c46b0bf7ba1ef49bf09c49048c
     .config/opencode/skills/product-description/references/README-template.md: sha256:97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167
     .config/opencode/skills/product-description/references/bug-triage-template.md: sha256:d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4
     .config/opencode/skills/product-description/references/check-links.py: sha256:2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b
@@ -352,7 +293,7 @@ dependencies:
     .config/opencode/skills/product-description/references/product-kinds.md: sha256:710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079
     .config/opencode/skills/product-description/references/verification-template.md: sha256:39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6
   source: local
-  local_path: ~/.apm/skills/review/product-description
+  local_path: ~/.apm/skills/adapted/product-description
 - repo_url: _local/show-me-your-work
   name: show-me-your-work
   version: unknown
@@ -368,14 +309,14 @@ dependencies:
   - .config/opencode/skills/show-me-your-work/SKILL.md
   - .config/opencode/skills/show-me-your-work/references/decision-log-template.tsv
   deployed_file_hashes:
-    .agents/skills/show-me-your-work/SKILL.md: sha256:4336936d62ca3dc29ec60e333e4382771867e70989aabec0fd1d8bb6661cb2e5
+    .agents/skills/show-me-your-work/SKILL.md: sha256:3cc81a6af45cb94dd712d1e6615b27c806fd98fa5f44a22b6a1c46ebad7a8382
     .agents/skills/show-me-your-work/references/decision-log-template.tsv: sha256:6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76
-    .claude/skills/show-me-your-work/SKILL.md: sha256:4336936d62ca3dc29ec60e333e4382771867e70989aabec0fd1d8bb6661cb2e5
+    .claude/skills/show-me-your-work/SKILL.md: sha256:3cc81a6af45cb94dd712d1e6615b27c806fd98fa5f44a22b6a1c46ebad7a8382
     .claude/skills/show-me-your-work/references/decision-log-template.tsv: sha256:6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76
-    .config/opencode/skills/show-me-your-work/SKILL.md: sha256:4336936d62ca3dc29ec60e333e4382771867e70989aabec0fd1d8bb6661cb2e5
+    .config/opencode/skills/show-me-your-work/SKILL.md: sha256:3cc81a6af45cb94dd712d1e6615b27c806fd98fa5f44a22b6a1c46ebad7a8382
     .config/opencode/skills/show-me-your-work/references/decision-log-template.tsv: sha256:6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76
   source: local
-  local_path: ~/.apm/skills/implementation/show-me-your-work
+  local_path: ~/.apm/skills/adapted/show-me-your-work
 - repo_url: _local/typescript-best-practices
   name: typescript-best-practices
   version: unknown
@@ -391,14 +332,14 @@ dependencies:
   - .config/opencode/skills/typescript-best-practices/SKILL.md
   - .config/opencode/skills/typescript-best-practices/references/patterns.md
   deployed_file_hashes:
-    .agents/skills/typescript-best-practices/SKILL.md: sha256:81f9e0bba34c24974826fec26cab10fa17d6dba6abf39ca254e742860036268d
+    .agents/skills/typescript-best-practices/SKILL.md: sha256:cea897c28d3dccf7e1082f5a681c1ac326fbb85dd8e34986c82390bd835b65bd
     .agents/skills/typescript-best-practices/references/patterns.md: sha256:1a0bc80eed4f2295a758938320dd121cf6a7ac12b2ed95b45e7b786fa7349c2a
-    .claude/skills/typescript-best-practices/SKILL.md: sha256:81f9e0bba34c24974826fec26cab10fa17d6dba6abf39ca254e742860036268d
+    .claude/skills/typescript-best-practices/SKILL.md: sha256:cea897c28d3dccf7e1082f5a681c1ac326fbb85dd8e34986c82390bd835b65bd
     .claude/skills/typescript-best-practices/references/patterns.md: sha256:1a0bc80eed4f2295a758938320dd121cf6a7ac12b2ed95b45e7b786fa7349c2a
-    .config/opencode/skills/typescript-best-practices/SKILL.md: sha256:81f9e0bba34c24974826fec26cab10fa17d6dba6abf39ca254e742860036268d
+    .config/opencode/skills/typescript-best-practices/SKILL.md: sha256:cea897c28d3dccf7e1082f5a681c1ac326fbb85dd8e34986c82390bd835b65bd
     .config/opencode/skills/typescript-best-practices/references/patterns.md: sha256:1a0bc80eed4f2295a758938320dd121cf6a7ac12b2ed95b45e7b786fa7349c2a
   source: local
-  local_path: ~/.apm/skills/languages/typescript-best-practices
+  local_path: ~/.apm/skills/adapted/typescript-best-practices
 - repo_url: _local/write-changeset
   name: write-changeset
   version: unknown
@@ -415,7 +356,7 @@ dependencies:
     .claude/skills/write-changeset/SKILL.md: sha256:128af2dcc948c2aa933174cafde300c3471b2b8758af41e2e6410d978f4ecd9b
     .config/opencode/skills/write-changeset/SKILL.md: sha256:128af2dcc948c2aa933174cafde300c3471b2b8758af41e2e6410d978f4ecd9b
   source: local
-  local_path: ~/.apm/skills/git/write-changeset
+  local_path: ~/.apm/skills/original/write-changeset
 - repo_url: adelrodriguez/adamantite
   name: adamantite
   host: github.com
@@ -3979,8 +3920,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: null
 - kind: project-relative
   target: claude
@@ -3988,17 +3929,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
-  content_hash: sha256:02cdfc9cfbef636947f40706eb9d9e1e52166d74c2fc9eca697615429376b432
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
+  content_hash: sha256:5c15be98179813b372adb2572e7d7712ae44fd21d066e3caa0d834910ed34f77
 - kind: project-relative
   target: claude
   value: .claude/skills/architect/references/design-red-flags.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: sha256:9e607ee25c152683cae2cc3b468fa3759edc066c39c7302a4af0da3ecf15caf5
 - kind: project-relative
   target: claude
@@ -4006,8 +3947,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: sha256:96481fcc3a3dc4264ba06ed35800453d6ea24d9b69f910a3cc5aff75c08ae8b5
 - kind: project-relative
   target: claude
@@ -4015,8 +3956,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/arena
-  active_owner: ~/.apm/skills/implementation/arena
+  - ~/.apm/skills/adapted/arena
+  active_owner: ~/.apm/skills/adapted/arena
   content_hash: null
 - kind: project-relative
   target: claude
@@ -4024,9 +3965,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/arena
-  active_owner: ~/.apm/skills/implementation/arena
-  content_hash: sha256:4ad40f265176734e0e4a7dca8986784d0bbf57df43aa7d01b37e39bb453fe4cc
+  - ~/.apm/skills/adapted/arena
+  active_owner: ~/.apm/skills/adapted/arena
+  content_hash: sha256:09f1c27371075056c6ed68f1a008cb3cc98c4d894d507bd556479f3f1301651c
 - kind: project-relative
   target: claude
   value: .claude/skills/ask-matt
@@ -4141,8 +4082,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/bro
-  active_owner: ~/.apm/skills/writing/bro
+  - ~/.apm/skills/adapted/bro
+  active_owner: ~/.apm/skills/adapted/bro
   content_hash: null
 - kind: project-relative
   target: claude
@@ -4150,9 +4091,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/bro
-  active_owner: ~/.apm/skills/writing/bro
-  content_hash: sha256:dbdf176f656fc4d49495c9a221b8612f8880be225827a6e74c11ce8616edb809
+  - ~/.apm/skills/adapted/bro
+  active_owner: ~/.apm/skills/adapted/bro
+  content_hash: sha256:5046dc14c446d68be42ec3229e204fe680c5f8a4c602bf66c0e887dd53facbb0
 - kind: project-relative
   target: claude
   value: .claude/skills/claude-handoff
@@ -4294,8 +4235,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
   content_hash: null
 - kind: project-relative
   target: claude
@@ -4303,17 +4244,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
-  content_hash: sha256:dca9c13036fcc8264464380351eeca75b112c7e74cec1fbced74e99e6c0fc3bc
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
+  content_hash: sha256:e96a6de143a66502ff7dc4b70805470eaf223ec3e30bc13c57b0dfcfc0dd3711
 - kind: project-relative
   target: claude
   value: .claude/skills/create-verification-skill/references/feature-map-template.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
   content_hash: sha256:03121a4eac1c5f16afba4b11274558d2dd50de88d3ae2be4368f76c15039ad71
 - kind: project-relative
   target: claude
@@ -4927,87 +4868,6 @@ deployments:
   - emilkowalski/skills
   active_owner: emilkowalski/skills
   content_hash: sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:bbdd3a804ed108bbf2a47d7743a995c07911442b6662d4428cee8228fb1af638
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/animations.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:5fb07baa9cbbb88308d53f9e15d43ddaa27339aca36f4bfeb848574ed51b81d1
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/component-design.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:eb5cf5840d590a2c44f3abbc34d645b097055db54bbfa9f7c6938a40741b8e62
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/forms-controls.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/marketing.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/performance.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:c5d2bc42e54b6e567eaa62be812d344b3cfa353ce223a349ebac17b7e0275f1b
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/touch-accessibility.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12
-- kind: project-relative
-  target: claude
-  value: .claude/skills/emil-design-engineering/ui-polish.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da
 - kind: project-relative
   target: claude
   value: .claude/skills/expo-animation
@@ -5896,8 +5756,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/file-pr
-  active_owner: ~/.apm/skills/git/file-pr
+  - ~/.apm/skills/adapted/file-pr
+  active_owner: ~/.apm/skills/adapted/file-pr
   content_hash: null
 - kind: project-relative
   target: claude
@@ -5905,9 +5765,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/file-pr
-  active_owner: ~/.apm/skills/git/file-pr
-  content_hash: sha256:bd5ec713dd2205cad8a3218365cdf11f5874a42e826863c2acecb93df0b3d829
+  - ~/.apm/skills/adapted/file-pr
+  active_owner: ~/.apm/skills/adapted/file-pr
+  content_hash: sha256:2e7d9eef236d6f12aeec13f4126533754fb63f666d666a6a173ff9f3f179632d
 - kind: project-relative
   target: claude
   value: .claude/skills/find-animation-opportunities
@@ -5977,8 +5837,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/full-send
-  active_owner: ~/.apm/skills/git/full-send
+  - ~/.apm/skills/original/full-send
+  active_owner: ~/.apm/skills/original/full-send
   content_hash: null
 - kind: project-relative
   target: claude
@@ -5986,8 +5846,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/full-send
-  active_owner: ~/.apm/skills/git/full-send
+  - ~/.apm/skills/original/full-send
+  active_owner: ~/.apm/skills/original/full-send
   content_hash: sha256:c1db485117dba806b31b5aefe75b0abb622795f7cd18e8096cf35f2152528c40
 - kind: project-relative
   target: claude
@@ -6265,8 +6125,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/understanding/how
-  active_owner: ~/.apm/skills/understanding/how
+  - ~/.apm/skills/adapted/how
+  active_owner: ~/.apm/skills/adapted/how
   content_hash: null
 - kind: project-relative
   target: claude
@@ -6274,17 +6134,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/understanding/how
-  active_owner: ~/.apm/skills/understanding/how
-  content_hash: sha256:31fe93b20720583c8decc206793415362a339ce82a085d961818d219d34e7a40
+  - ~/.apm/skills/adapted/how
+  active_owner: ~/.apm/skills/adapted/how
+  content_hash: sha256:260db3df6bae705a4e814c1f0cce2be9ff355a8ec913a04e6e58f459652a7a23
 - kind: project-relative
   target: claude
   value: .claude/skills/html-communication
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/html-communication
-  active_owner: ~/.apm/skills/writing/html-communication
+  - ~/.apm/skills/original/html-communication
+  active_owner: ~/.apm/skills/original/html-communication
   content_hash: null
 - kind: project-relative
   target: claude
@@ -6292,8 +6152,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/html-communication
-  active_owner: ~/.apm/skills/writing/html-communication
+  - ~/.apm/skills/original/html-communication
+  active_owner: ~/.apm/skills/original/html-communication
   content_hash: sha256:13e6eaa4ef6e1b369db768a318e2b8333cccf52e35b882d77f4b72931661402f
 - kind: project-relative
   target: claude
@@ -6427,8 +6287,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/interrogate
-  active_owner: ~/.apm/skills/review/interrogate
+  - ~/.apm/skills/adapted/interrogate
+  active_owner: ~/.apm/skills/adapted/interrogate
   content_hash: null
 - kind: project-relative
   target: claude
@@ -6436,9 +6296,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/interrogate
-  active_owner: ~/.apm/skills/review/interrogate
-  content_hash: sha256:e3d755a2ec064bfacd4cfa88e40da7b98db81fe6e92df77b629b91ea1dfd95d4
+  - ~/.apm/skills/adapted/interrogate
+  active_owner: ~/.apm/skills/adapted/interrogate
+  content_hash: sha256:e4a6cde390b17fdb054ac89e8a415eb85b8b03e49f25b4fd2614eb2c5f23f514
 - kind: project-relative
   target: claude
   value: .claude/skills/linear
@@ -6526,8 +6386,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/maintain-verification-skill
-  active_owner: ~/.apm/skills/review/maintain-verification-skill
+  - ~/.apm/skills/adapted/maintain-verification-skill
+  active_owner: ~/.apm/skills/adapted/maintain-verification-skill
   content_hash: null
 - kind: project-relative
   target: claude
@@ -6535,9 +6395,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/maintain-verification-skill
-  active_owner: ~/.apm/skills/review/maintain-verification-skill
-  content_hash: sha256:21d03c6e222008744fe837ae6e712a4d34083b7db5080877218fd5895057c70b
+  - ~/.apm/skills/adapted/maintain-verification-skill
+  active_owner: ~/.apm/skills/adapted/maintain-verification-skill
+  content_hash: sha256:16a70cda8be1c74a0b55166ea93647dcccc7953f8764ddb6a633689d22c96530
 - kind: project-relative
   target: claude
   value: .claude/skills/migrate-nativewind-to-uniwind
@@ -6607,8 +6467,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: null
 - kind: project-relative
   target: claude
@@ -6616,8 +6476,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: sha256:09b98e1cb094e9ec1a2c8ce34a1ba53a3711090c8ecfcd36f59d476d99e98c28
 - kind: project-relative
   target: claude
@@ -6625,8 +6485,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: sha256:a83bb410d6a599c5bef73786bf432970eedadf22e21bc3fa64080c170609616c
 - kind: project-relative
   target: claude
@@ -6679,8 +6539,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/no-comments
-  active_owner: ~/.apm/skills/review/no-comments
+  - ~/.apm/skills/adapted/no-comments
+  active_owner: ~/.apm/skills/adapted/no-comments
   content_hash: null
 - kind: project-relative
   target: claude
@@ -6688,9 +6548,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/no-comments
-  active_owner: ~/.apm/skills/review/no-comments
-  content_hash: sha256:eaade1a376cc8e59f8b7782f42fa91832f8ddc4588d1a950ec8b0325ee3f4b20
+  - ~/.apm/skills/adapted/no-comments
+  active_owner: ~/.apm/skills/adapted/no-comments
+  content_hash: sha256:7f10b40856e5c23697b26bd3bd9e7062bdbca09316b6903793ecf02e4937dc9d
 - kind: project-relative
   target: claude
   value: .claude/skills/obsidian-bases
@@ -7084,8 +6944,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: null
 - kind: project-relative
   target: claude
@@ -7093,17 +6953,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
-  content_hash: sha256:7aa89543f5cf1cb4ba63c8c235767a04df70d112cf1de8940c373898da6480ae
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
+  content_hash: sha256:e992a175d655658a2b261f64b0c0ce7d854e02c46b0bf7ba1ef49bf09c49048c
 - kind: project-relative
   target: claude
   value: .claude/skills/product-description/references/README-template.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167
 - kind: project-relative
   target: claude
@@ -7111,8 +6971,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4
 - kind: project-relative
   target: claude
@@ -7120,8 +6980,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b
 - kind: project-relative
   target: claude
@@ -7129,8 +6989,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:d099e7e15f1287e758cd8e732d1959eaf266ed214fb7ad3ee80098e5ca8a5d88
 - kind: project-relative
   target: claude
@@ -7138,8 +6998,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:1ee3581be11a5254b0736f8ea09c795aaa78922d5051707a506abfb19794d9da
 - kind: project-relative
   target: claude
@@ -7147,8 +7007,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67
 - kind: project-relative
   target: claude
@@ -7156,8 +7016,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079
 - kind: project-relative
   target: claude
@@ -7165,8 +7025,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6
 - kind: project-relative
   target: claude
@@ -7687,8 +7547,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
   content_hash: null
 - kind: project-relative
   target: claude
@@ -7696,17 +7556,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
-  content_hash: sha256:4336936d62ca3dc29ec60e333e4382771867e70989aabec0fd1d8bb6661cb2e5
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
+  content_hash: sha256:3cc81a6af45cb94dd712d1e6615b27c806fd98fa5f44a22b6a1c46ebad7a8382
 - kind: project-relative
   target: claude
   value: .claude/skills/show-me-your-work/references/decision-log-template.tsv
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
   content_hash: sha256:6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76
 - kind: project-relative
   target: claude
@@ -7921,8 +7781,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
   content_hash: null
 - kind: project-relative
   target: claude
@@ -7930,17 +7790,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
-  content_hash: sha256:81f9e0bba34c24974826fec26cab10fa17d6dba6abf39ca254e742860036268d
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
+  content_hash: sha256:cea897c28d3dccf7e1082f5a681c1ac326fbb85dd8e34986c82390bd835b65bd
 - kind: project-relative
   target: claude
   value: .claude/skills/typescript-best-practices/references/patterns.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
   content_hash: sha256:1a0bc80eed4f2295a758938320dd121cf6a7ac12b2ed95b45e7b786fa7349c2a
 - kind: project-relative
   target: claude
@@ -8209,8 +8069,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/write-changeset
-  active_owner: ~/.apm/skills/git/write-changeset
+  - ~/.apm/skills/original/write-changeset
+  active_owner: ~/.apm/skills/original/write-changeset
   content_hash: null
 - kind: project-relative
   target: claude
@@ -8218,8 +8078,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/write-changeset
-  active_owner: ~/.apm/skills/git/write-changeset
+  - ~/.apm/skills/original/write-changeset
+  active_owner: ~/.apm/skills/original/write-changeset
   content_hash: sha256:128af2dcc948c2aa933174cafde300c3471b2b8758af41e2e6410d978f4ecd9b
 - kind: project-relative
   target: claude
@@ -8506,8 +8366,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: null
 - kind: project-relative
   target: codex
@@ -8515,17 +8375,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
-  content_hash: sha256:02cdfc9cfbef636947f40706eb9d9e1e52166d74c2fc9eca697615429376b432
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
+  content_hash: sha256:5c15be98179813b372adb2572e7d7712ae44fd21d066e3caa0d834910ed34f77
 - kind: project-relative
   target: codex
   value: .agents/skills/architect/references/design-red-flags.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: sha256:9e607ee25c152683cae2cc3b468fa3759edc066c39c7302a4af0da3ecf15caf5
 - kind: project-relative
   target: codex
@@ -8533,8 +8393,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: sha256:96481fcc3a3dc4264ba06ed35800453d6ea24d9b69f910a3cc5aff75c08ae8b5
 - kind: project-relative
   target: codex
@@ -8542,8 +8402,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/arena
-  active_owner: ~/.apm/skills/implementation/arena
+  - ~/.apm/skills/adapted/arena
+  active_owner: ~/.apm/skills/adapted/arena
   content_hash: null
 - kind: project-relative
   target: codex
@@ -8551,9 +8411,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/arena
-  active_owner: ~/.apm/skills/implementation/arena
-  content_hash: sha256:4ad40f265176734e0e4a7dca8986784d0bbf57df43aa7d01b37e39bb453fe4cc
+  - ~/.apm/skills/adapted/arena
+  active_owner: ~/.apm/skills/adapted/arena
+  content_hash: sha256:09f1c27371075056c6ed68f1a008cb3cc98c4d894d507bd556479f3f1301651c
 - kind: project-relative
   target: codex
   value: .agents/skills/ask-matt
@@ -8668,8 +8528,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/bro
-  active_owner: ~/.apm/skills/writing/bro
+  - ~/.apm/skills/adapted/bro
+  active_owner: ~/.apm/skills/adapted/bro
   content_hash: null
 - kind: project-relative
   target: codex
@@ -8677,9 +8537,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/bro
-  active_owner: ~/.apm/skills/writing/bro
-  content_hash: sha256:dbdf176f656fc4d49495c9a221b8612f8880be225827a6e74c11ce8616edb809
+  - ~/.apm/skills/adapted/bro
+  active_owner: ~/.apm/skills/adapted/bro
+  content_hash: sha256:5046dc14c446d68be42ec3229e204fe680c5f8a4c602bf66c0e887dd53facbb0
 - kind: project-relative
   target: codex
   value: .agents/skills/claude-handoff
@@ -8821,8 +8681,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
   content_hash: null
 - kind: project-relative
   target: codex
@@ -8830,17 +8690,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
-  content_hash: sha256:dca9c13036fcc8264464380351eeca75b112c7e74cec1fbced74e99e6c0fc3bc
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
+  content_hash: sha256:e96a6de143a66502ff7dc4b70805470eaf223ec3e30bc13c57b0dfcfc0dd3711
 - kind: project-relative
   target: codex
   value: .agents/skills/create-verification-skill/references/feature-map-template.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
   content_hash: sha256:03121a4eac1c5f16afba4b11274558d2dd50de88d3ae2be4368f76c15039ad71
 - kind: project-relative
   target: codex
@@ -9454,87 +9314,6 @@ deployments:
   - emilkowalski/skills
   active_owner: emilkowalski/skills
   content_hash: sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: null
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:bbdd3a804ed108bbf2a47d7743a995c07911442b6662d4428cee8228fb1af638
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/animations.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:5fb07baa9cbbb88308d53f9e15d43ddaa27339aca36f4bfeb848574ed51b81d1
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/component-design.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:eb5cf5840d590a2c44f3abbc34d645b097055db54bbfa9f7c6938a40741b8e62
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/forms-controls.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/marketing.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/performance.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:c5d2bc42e54b6e567eaa62be812d344b3cfa353ce223a349ebac17b7e0275f1b
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/touch-accessibility.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12
-- kind: project-relative
-  target: codex
-  value: .agents/skills/emil-design-engineering/ui-polish.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da
 - kind: project-relative
   target: codex
   value: .agents/skills/expo-animation
@@ -10423,8 +10202,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/file-pr
-  active_owner: ~/.apm/skills/git/file-pr
+  - ~/.apm/skills/adapted/file-pr
+  active_owner: ~/.apm/skills/adapted/file-pr
   content_hash: null
 - kind: project-relative
   target: codex
@@ -10432,9 +10211,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/file-pr
-  active_owner: ~/.apm/skills/git/file-pr
-  content_hash: sha256:bd5ec713dd2205cad8a3218365cdf11f5874a42e826863c2acecb93df0b3d829
+  - ~/.apm/skills/adapted/file-pr
+  active_owner: ~/.apm/skills/adapted/file-pr
+  content_hash: sha256:2e7d9eef236d6f12aeec13f4126533754fb63f666d666a6a173ff9f3f179632d
 - kind: project-relative
   target: codex
   value: .agents/skills/find-animation-opportunities
@@ -10504,8 +10283,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/full-send
-  active_owner: ~/.apm/skills/git/full-send
+  - ~/.apm/skills/original/full-send
+  active_owner: ~/.apm/skills/original/full-send
   content_hash: null
 - kind: project-relative
   target: codex
@@ -10513,8 +10292,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/full-send
-  active_owner: ~/.apm/skills/git/full-send
+  - ~/.apm/skills/original/full-send
+  active_owner: ~/.apm/skills/original/full-send
   content_hash: sha256:c1db485117dba806b31b5aefe75b0abb622795f7cd18e8096cf35f2152528c40
 - kind: project-relative
   target: codex
@@ -10792,8 +10571,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/understanding/how
-  active_owner: ~/.apm/skills/understanding/how
+  - ~/.apm/skills/adapted/how
+  active_owner: ~/.apm/skills/adapted/how
   content_hash: null
 - kind: project-relative
   target: codex
@@ -10801,17 +10580,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/understanding/how
-  active_owner: ~/.apm/skills/understanding/how
-  content_hash: sha256:31fe93b20720583c8decc206793415362a339ce82a085d961818d219d34e7a40
+  - ~/.apm/skills/adapted/how
+  active_owner: ~/.apm/skills/adapted/how
+  content_hash: sha256:260db3df6bae705a4e814c1f0cce2be9ff355a8ec913a04e6e58f459652a7a23
 - kind: project-relative
   target: codex
   value: .agents/skills/html-communication
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/html-communication
-  active_owner: ~/.apm/skills/writing/html-communication
+  - ~/.apm/skills/original/html-communication
+  active_owner: ~/.apm/skills/original/html-communication
   content_hash: null
 - kind: project-relative
   target: codex
@@ -10819,8 +10598,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/html-communication
-  active_owner: ~/.apm/skills/writing/html-communication
+  - ~/.apm/skills/original/html-communication
+  active_owner: ~/.apm/skills/original/html-communication
   content_hash: sha256:13e6eaa4ef6e1b369db768a318e2b8333cccf52e35b882d77f4b72931661402f
 - kind: project-relative
   target: codex
@@ -10954,8 +10733,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/interrogate
-  active_owner: ~/.apm/skills/review/interrogate
+  - ~/.apm/skills/adapted/interrogate
+  active_owner: ~/.apm/skills/adapted/interrogate
   content_hash: null
 - kind: project-relative
   target: codex
@@ -10963,9 +10742,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/interrogate
-  active_owner: ~/.apm/skills/review/interrogate
-  content_hash: sha256:e3d755a2ec064bfacd4cfa88e40da7b98db81fe6e92df77b629b91ea1dfd95d4
+  - ~/.apm/skills/adapted/interrogate
+  active_owner: ~/.apm/skills/adapted/interrogate
+  content_hash: sha256:e4a6cde390b17fdb054ac89e8a415eb85b8b03e49f25b4fd2614eb2c5f23f514
 - kind: project-relative
   target: codex
   value: .agents/skills/linear
@@ -11053,8 +10832,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/maintain-verification-skill
-  active_owner: ~/.apm/skills/review/maintain-verification-skill
+  - ~/.apm/skills/adapted/maintain-verification-skill
+  active_owner: ~/.apm/skills/adapted/maintain-verification-skill
   content_hash: null
 - kind: project-relative
   target: codex
@@ -11062,9 +10841,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/maintain-verification-skill
-  active_owner: ~/.apm/skills/review/maintain-verification-skill
-  content_hash: sha256:21d03c6e222008744fe837ae6e712a4d34083b7db5080877218fd5895057c70b
+  - ~/.apm/skills/adapted/maintain-verification-skill
+  active_owner: ~/.apm/skills/adapted/maintain-verification-skill
+  content_hash: sha256:16a70cda8be1c74a0b55166ea93647dcccc7953f8764ddb6a633689d22c96530
 - kind: project-relative
   target: codex
   value: .agents/skills/migrate-nativewind-to-uniwind
@@ -11134,8 +10913,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: null
 - kind: project-relative
   target: codex
@@ -11143,8 +10922,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: sha256:09b98e1cb094e9ec1a2c8ce34a1ba53a3711090c8ecfcd36f59d476d99e98c28
 - kind: project-relative
   target: codex
@@ -11152,8 +10931,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: sha256:a83bb410d6a599c5bef73786bf432970eedadf22e21bc3fa64080c170609616c
 - kind: project-relative
   target: codex
@@ -11206,8 +10985,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/no-comments
-  active_owner: ~/.apm/skills/review/no-comments
+  - ~/.apm/skills/adapted/no-comments
+  active_owner: ~/.apm/skills/adapted/no-comments
   content_hash: null
 - kind: project-relative
   target: codex
@@ -11215,9 +10994,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/no-comments
-  active_owner: ~/.apm/skills/review/no-comments
-  content_hash: sha256:eaade1a376cc8e59f8b7782f42fa91832f8ddc4588d1a950ec8b0325ee3f4b20
+  - ~/.apm/skills/adapted/no-comments
+  active_owner: ~/.apm/skills/adapted/no-comments
+  content_hash: sha256:7f10b40856e5c23697b26bd3bd9e7062bdbca09316b6903793ecf02e4937dc9d
 - kind: project-relative
   target: codex
   value: .agents/skills/obsidian-bases
@@ -11611,8 +11390,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: null
 - kind: project-relative
   target: codex
@@ -11620,17 +11399,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
-  content_hash: sha256:7aa89543f5cf1cb4ba63c8c235767a04df70d112cf1de8940c373898da6480ae
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
+  content_hash: sha256:e992a175d655658a2b261f64b0c0ce7d854e02c46b0bf7ba1ef49bf09c49048c
 - kind: project-relative
   target: codex
   value: .agents/skills/product-description/references/README-template.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167
 - kind: project-relative
   target: codex
@@ -11638,8 +11417,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4
 - kind: project-relative
   target: codex
@@ -11647,8 +11426,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b
 - kind: project-relative
   target: codex
@@ -11656,8 +11435,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:d099e7e15f1287e758cd8e732d1959eaf266ed214fb7ad3ee80098e5ca8a5d88
 - kind: project-relative
   target: codex
@@ -11665,8 +11444,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:1ee3581be11a5254b0736f8ea09c795aaa78922d5051707a506abfb19794d9da
 - kind: project-relative
   target: codex
@@ -11674,8 +11453,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67
 - kind: project-relative
   target: codex
@@ -11683,8 +11462,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079
 - kind: project-relative
   target: codex
@@ -11692,8 +11471,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6
 - kind: project-relative
   target: codex
@@ -12214,8 +11993,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
   content_hash: null
 - kind: project-relative
   target: codex
@@ -12223,17 +12002,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
-  content_hash: sha256:4336936d62ca3dc29ec60e333e4382771867e70989aabec0fd1d8bb6661cb2e5
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
+  content_hash: sha256:3cc81a6af45cb94dd712d1e6615b27c806fd98fa5f44a22b6a1c46ebad7a8382
 - kind: project-relative
   target: codex
   value: .agents/skills/show-me-your-work/references/decision-log-template.tsv
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
   content_hash: sha256:6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76
 - kind: project-relative
   target: codex
@@ -12448,8 +12227,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
   content_hash: null
 - kind: project-relative
   target: codex
@@ -12457,17 +12236,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
-  content_hash: sha256:81f9e0bba34c24974826fec26cab10fa17d6dba6abf39ca254e742860036268d
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
+  content_hash: sha256:cea897c28d3dccf7e1082f5a681c1ac326fbb85dd8e34986c82390bd835b65bd
 - kind: project-relative
   target: codex
   value: .agents/skills/typescript-best-practices/references/patterns.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
   content_hash: sha256:1a0bc80eed4f2295a758938320dd121cf6a7ac12b2ed95b45e7b786fa7349c2a
 - kind: project-relative
   target: codex
@@ -12736,8 +12515,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/write-changeset
-  active_owner: ~/.apm/skills/git/write-changeset
+  - ~/.apm/skills/original/write-changeset
+  active_owner: ~/.apm/skills/original/write-changeset
   content_hash: null
 - kind: project-relative
   target: codex
@@ -12745,8 +12524,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/write-changeset
-  active_owner: ~/.apm/skills/git/write-changeset
+  - ~/.apm/skills/original/write-changeset
+  active_owner: ~/.apm/skills/original/write-changeset
   content_hash: sha256:128af2dcc948c2aa933174cafde300c3471b2b8758af41e2e6410d978f4ecd9b
 - kind: project-relative
   target: codex
@@ -13033,8 +12812,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -13042,17 +12821,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
-  content_hash: sha256:02cdfc9cfbef636947f40706eb9d9e1e52166d74c2fc9eca697615429376b432
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
+  content_hash: sha256:5c15be98179813b372adb2572e7d7712ae44fd21d066e3caa0d834910ed34f77
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/architect/references/design-red-flags.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: sha256:9e607ee25c152683cae2cc3b468fa3759edc066c39c7302a4af0da3ecf15caf5
 - kind: project-relative
   target: opencode
@@ -13060,8 +12839,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/planning/architect
-  active_owner: ~/.apm/skills/planning/architect
+  - ~/.apm/skills/adapted/architect
+  active_owner: ~/.apm/skills/adapted/architect
   content_hash: sha256:96481fcc3a3dc4264ba06ed35800453d6ea24d9b69f910a3cc5aff75c08ae8b5
 - kind: project-relative
   target: opencode
@@ -13069,8 +12848,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/arena
-  active_owner: ~/.apm/skills/implementation/arena
+  - ~/.apm/skills/adapted/arena
+  active_owner: ~/.apm/skills/adapted/arena
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -13078,9 +12857,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/arena
-  active_owner: ~/.apm/skills/implementation/arena
-  content_hash: sha256:4ad40f265176734e0e4a7dca8986784d0bbf57df43aa7d01b37e39bb453fe4cc
+  - ~/.apm/skills/adapted/arena
+  active_owner: ~/.apm/skills/adapted/arena
+  content_hash: sha256:09f1c27371075056c6ed68f1a008cb3cc98c4d894d507bd556479f3f1301651c
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/ask-matt
@@ -13195,8 +12974,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/bro
-  active_owner: ~/.apm/skills/writing/bro
+  - ~/.apm/skills/adapted/bro
+  active_owner: ~/.apm/skills/adapted/bro
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -13204,9 +12983,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/bro
-  active_owner: ~/.apm/skills/writing/bro
-  content_hash: sha256:dbdf176f656fc4d49495c9a221b8612f8880be225827a6e74c11ce8616edb809
+  - ~/.apm/skills/adapted/bro
+  active_owner: ~/.apm/skills/adapted/bro
+  content_hash: sha256:5046dc14c446d68be42ec3229e204fe680c5f8a4c602bf66c0e887dd53facbb0
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/claude-handoff
@@ -13348,8 +13127,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -13357,17 +13136,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
-  content_hash: sha256:dca9c13036fcc8264464380351eeca75b112c7e74cec1fbced74e99e6c0fc3bc
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
+  content_hash: sha256:e96a6de143a66502ff7dc4b70805470eaf223ec3e30bc13c57b0dfcfc0dd3711
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/create-verification-skill/references/feature-map-template.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/create-verification-skill
-  active_owner: ~/.apm/skills/review/create-verification-skill
+  - ~/.apm/skills/adapted/create-verification-skill
+  active_owner: ~/.apm/skills/adapted/create-verification-skill
   content_hash: sha256:03121a4eac1c5f16afba4b11274558d2dd50de88d3ae2be4368f76c15039ad71
 - kind: project-relative
   target: opencode
@@ -13981,87 +13760,6 @@ deployments:
   - emilkowalski/skills
   active_owner: emilkowalski/skills
   content_hash: sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: null
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:bbdd3a804ed108bbf2a47d7743a995c07911442b6662d4428cee8228fb1af638
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/animations.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:5fb07baa9cbbb88308d53f9e15d43ddaa27339aca36f4bfeb848574ed51b81d1
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/component-design.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:eb5cf5840d590a2c44f3abbc34d645b097055db54bbfa9f7c6938a40741b8e62
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/forms-controls.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/marketing.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/performance.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:c5d2bc42e54b6e567eaa62be812d344b3cfa353ce223a349ebac17b7e0275f1b
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/touch-accessibility.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12
-- kind: project-relative
-  target: opencode
-  value: .config/opencode/skills/emil-design-engineering/ui-polish.md
-  runtime: null
-  scope: project
-  owners:
-  - ~/.apm/skills/design/emil-design-engineering
-  active_owner: ~/.apm/skills/design/emil-design-engineering
-  content_hash: sha256:90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/expo-animation
@@ -14950,8 +14648,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/file-pr
-  active_owner: ~/.apm/skills/git/file-pr
+  - ~/.apm/skills/adapted/file-pr
+  active_owner: ~/.apm/skills/adapted/file-pr
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -14959,9 +14657,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/file-pr
-  active_owner: ~/.apm/skills/git/file-pr
-  content_hash: sha256:bd5ec713dd2205cad8a3218365cdf11f5874a42e826863c2acecb93df0b3d829
+  - ~/.apm/skills/adapted/file-pr
+  active_owner: ~/.apm/skills/adapted/file-pr
+  content_hash: sha256:2e7d9eef236d6f12aeec13f4126533754fb63f666d666a6a173ff9f3f179632d
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/find-animation-opportunities
@@ -15031,8 +14729,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/full-send
-  active_owner: ~/.apm/skills/git/full-send
+  - ~/.apm/skills/original/full-send
+  active_owner: ~/.apm/skills/original/full-send
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15040,8 +14738,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/full-send
-  active_owner: ~/.apm/skills/git/full-send
+  - ~/.apm/skills/original/full-send
+  active_owner: ~/.apm/skills/original/full-send
   content_hash: sha256:c1db485117dba806b31b5aefe75b0abb622795f7cd18e8096cf35f2152528c40
 - kind: project-relative
   target: opencode
@@ -15319,8 +15017,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/understanding/how
-  active_owner: ~/.apm/skills/understanding/how
+  - ~/.apm/skills/adapted/how
+  active_owner: ~/.apm/skills/adapted/how
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15328,17 +15026,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/understanding/how
-  active_owner: ~/.apm/skills/understanding/how
-  content_hash: sha256:31fe93b20720583c8decc206793415362a339ce82a085d961818d219d34e7a40
+  - ~/.apm/skills/adapted/how
+  active_owner: ~/.apm/skills/adapted/how
+  content_hash: sha256:260db3df6bae705a4e814c1f0cce2be9ff355a8ec913a04e6e58f459652a7a23
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/html-communication
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/html-communication
-  active_owner: ~/.apm/skills/writing/html-communication
+  - ~/.apm/skills/original/html-communication
+  active_owner: ~/.apm/skills/original/html-communication
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15346,8 +15044,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/writing/html-communication
-  active_owner: ~/.apm/skills/writing/html-communication
+  - ~/.apm/skills/original/html-communication
+  active_owner: ~/.apm/skills/original/html-communication
   content_hash: sha256:13e6eaa4ef6e1b369db768a318e2b8333cccf52e35b882d77f4b72931661402f
 - kind: project-relative
   target: opencode
@@ -15481,8 +15179,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/interrogate
-  active_owner: ~/.apm/skills/review/interrogate
+  - ~/.apm/skills/adapted/interrogate
+  active_owner: ~/.apm/skills/adapted/interrogate
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15490,9 +15188,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/interrogate
-  active_owner: ~/.apm/skills/review/interrogate
-  content_hash: sha256:e3d755a2ec064bfacd4cfa88e40da7b98db81fe6e92df77b629b91ea1dfd95d4
+  - ~/.apm/skills/adapted/interrogate
+  active_owner: ~/.apm/skills/adapted/interrogate
+  content_hash: sha256:e4a6cde390b17fdb054ac89e8a415eb85b8b03e49f25b4fd2614eb2c5f23f514
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/linear
@@ -15580,8 +15278,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/maintain-verification-skill
-  active_owner: ~/.apm/skills/review/maintain-verification-skill
+  - ~/.apm/skills/adapted/maintain-verification-skill
+  active_owner: ~/.apm/skills/adapted/maintain-verification-skill
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15589,9 +15287,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/maintain-verification-skill
-  active_owner: ~/.apm/skills/review/maintain-verification-skill
-  content_hash: sha256:21d03c6e222008744fe837ae6e712a4d34083b7db5080877218fd5895057c70b
+  - ~/.apm/skills/adapted/maintain-verification-skill
+  active_owner: ~/.apm/skills/adapted/maintain-verification-skill
+  content_hash: sha256:16a70cda8be1c74a0b55166ea93647dcccc7953f8764ddb6a633689d22c96530
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/migrate-nativewind-to-uniwind
@@ -15661,8 +15359,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15670,8 +15368,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: sha256:09b98e1cb094e9ec1a2c8ce34a1ba53a3711090c8ecfcd36f59d476d99e98c28
 - kind: project-relative
   target: opencode
@@ -15679,8 +15377,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/monitor-pr
-  active_owner: ~/.apm/skills/git/monitor-pr
+  - ~/.apm/skills/original/monitor-pr
+  active_owner: ~/.apm/skills/original/monitor-pr
   content_hash: sha256:a83bb410d6a599c5bef73786bf432970eedadf22e21bc3fa64080c170609616c
 - kind: project-relative
   target: opencode
@@ -15733,8 +15431,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/no-comments
-  active_owner: ~/.apm/skills/review/no-comments
+  - ~/.apm/skills/adapted/no-comments
+  active_owner: ~/.apm/skills/adapted/no-comments
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -15742,9 +15440,9 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/no-comments
-  active_owner: ~/.apm/skills/review/no-comments
-  content_hash: sha256:eaade1a376cc8e59f8b7782f42fa91832f8ddc4588d1a950ec8b0325ee3f4b20
+  - ~/.apm/skills/adapted/no-comments
+  active_owner: ~/.apm/skills/adapted/no-comments
+  content_hash: sha256:7f10b40856e5c23697b26bd3bd9e7062bdbca09316b6903793ecf02e4937dc9d
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/obsidian-bases
@@ -16138,8 +15836,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -16147,17 +15845,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
-  content_hash: sha256:7aa89543f5cf1cb4ba63c8c235767a04df70d112cf1de8940c373898da6480ae
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
+  content_hash: sha256:e992a175d655658a2b261f64b0c0ce7d854e02c46b0bf7ba1ef49bf09c49048c
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/product-description/references/README-template.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167
 - kind: project-relative
   target: opencode
@@ -16165,8 +15863,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4
 - kind: project-relative
   target: opencode
@@ -16174,8 +15872,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b
 - kind: project-relative
   target: opencode
@@ -16183,8 +15881,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:d099e7e15f1287e758cd8e732d1959eaf266ed214fb7ad3ee80098e5ca8a5d88
 - kind: project-relative
   target: opencode
@@ -16192,8 +15890,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:1ee3581be11a5254b0736f8ea09c795aaa78922d5051707a506abfb19794d9da
 - kind: project-relative
   target: opencode
@@ -16201,8 +15899,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67
 - kind: project-relative
   target: opencode
@@ -16210,8 +15908,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079
 - kind: project-relative
   target: opencode
@@ -16219,8 +15917,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/review/product-description
-  active_owner: ~/.apm/skills/review/product-description
+  - ~/.apm/skills/adapted/product-description
+  active_owner: ~/.apm/skills/adapted/product-description
   content_hash: sha256:39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6
 - kind: project-relative
   target: opencode
@@ -16741,8 +16439,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -16750,17 +16448,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
-  content_hash: sha256:4336936d62ca3dc29ec60e333e4382771867e70989aabec0fd1d8bb6661cb2e5
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
+  content_hash: sha256:3cc81a6af45cb94dd712d1e6615b27c806fd98fa5f44a22b6a1c46ebad7a8382
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/show-me-your-work/references/decision-log-template.tsv
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/implementation/show-me-your-work
-  active_owner: ~/.apm/skills/implementation/show-me-your-work
+  - ~/.apm/skills/adapted/show-me-your-work
+  active_owner: ~/.apm/skills/adapted/show-me-your-work
   content_hash: sha256:6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76
 - kind: project-relative
   target: opencode
@@ -16975,8 +16673,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -16984,17 +16682,17 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
-  content_hash: sha256:81f9e0bba34c24974826fec26cab10fa17d6dba6abf39ca254e742860036268d
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
+  content_hash: sha256:cea897c28d3dccf7e1082f5a681c1ac326fbb85dd8e34986c82390bd835b65bd
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/typescript-best-practices/references/patterns.md
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/languages/typescript-best-practices
-  active_owner: ~/.apm/skills/languages/typescript-best-practices
+  - ~/.apm/skills/adapted/typescript-best-practices
+  active_owner: ~/.apm/skills/adapted/typescript-best-practices
   content_hash: sha256:1a0bc80eed4f2295a758938320dd121cf6a7ac12b2ed95b45e7b786fa7349c2a
 - kind: project-relative
   target: opencode
@@ -17263,8 +16961,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/write-changeset
-  active_owner: ~/.apm/skills/git/write-changeset
+  - ~/.apm/skills/original/write-changeset
+  active_owner: ~/.apm/skills/original/write-changeset
   content_hash: null
 - kind: project-relative
   target: opencode
@@ -17272,8 +16970,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - ~/.apm/skills/git/write-changeset
-  active_owner: ~/.apm/skills/git/write-changeset
+  - ~/.apm/skills/original/write-changeset
+  active_owner: ~/.apm/skills/original/write-changeset
   content_hash: sha256:128af2dcc948c2aa933174cafde300c3471b2b8758af41e2e6410d978f4ecd9b
 - kind: project-relative
   target: opencode

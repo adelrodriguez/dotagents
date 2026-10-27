@@ -4,7 +4,7 @@ This repo stores my coding-agent setup. It keeps skills, global instructions, an
 
 The checked-in files have four roles:
 
-- [`skills/`](skills/) contains skills maintained in this repo, one folder per category.
+- [`skills/`](skills/) contains skills maintained in this repo. `skills/original/` holds the ones I wrote, and `skills/adapted/` holds ones I changed from another source, which each record in their `metadata.source` frontmatter.
 - [`instructions/`](instructions/) is an APM package holding the global agent instructions.
 - [`apm.yml`](apm.yml) lists every third-party skill, the instructions package, and the agents to install for.
 - [`apm.lock.yaml`](apm.lock.yaml) pins each dependency to a commit and records the hash of every installed file.
@@ -81,7 +81,7 @@ Run `make -C ~/.apm` again after pulling or after editing `skills/`.
 | Task | Command |
 | --- | --- |
 | Add a skill | `apm install --global owner/repo --skill name` |
-| Add a skill of your own | Create `skills/<category>/<name>/SKILL.md`, add `- ~/.apm/skills/<category>/<name>` to `apm.yml`, then run `apm install --global` |
+| Add a skill of your own | Create `skills/original/<name>/SKILL.md`, add `- ~/.apm/skills/original/<name>` to `apm.yml`, then run `apm install --global`. For one changed from another source, use `skills/adapted/` and set `metadata.source` to the original. |
 | Update every dependency | `apm update --global && apm compile --global` |
 | Remove a dependency | `apm uninstall --global owner/repo` |
 
@@ -212,7 +212,6 @@ These are all user-invoked (**Auto: No**). Each one applies a single rule from C
 | `frontend-design` | Sets an intentional visual direction for new or reshaped UI. | Yes |
 | `good-css` | Uses modern CSS techniques to reduce breakpoints, wrapper elements, and scripts. | Yes |
 | `emil-design-eng` | Emil Kowalski's approach to UI polish and animation decisions. | Yes |
-| `emil-design-engineering` | Design engineering patterns for polished, accessible web interfaces. | Yes |
 | `apple-design` | Apple-style interface design and physical motion for the web. | Yes |
 | `break-ui` | Stress-tests a component with worst-case data and reports what broke. | Yes |
 | `mobile-native` | Makes a web app feel native on a phone. | Yes |
@@ -292,22 +291,3 @@ These come from the paid animations.dev course and live in the private [`adelrod
 | `find-animation-opportunities` | Finds the few places where motion would help. | No |
 | `improve-animations` | Audits a codebase's motion and writes plans another agent can run. | No |
 | `review-animations` | Reviews animation code against a high craft bar. | No |
-
-## Attribution
-
-Some skills were copied or adapted from other sources:
-
-- [`architect`](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md)
-- [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
-- [`bro`](https://github.com/cursor/plugins/blob/main/pstack/skills/bro/SKILL.md)
-- [`create-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/create-verification-skill/SKILL.md)
-- [`file-pr`](skills/git/file-pr/SKILL.md): the visual, evidence, and merge danger sections are adapted from Matt Pocock's [`pr`](https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md), whose visuals come from Dex Horthy's [`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
-- [`how`](https://github.com/cursor/plugins/blob/main/pstack/skills/how/SKILL.md)
-- [`interrogate`](https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md)
-- [`maintain-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/maintain-verification-skill/SKILL.md)
-- [`no-comments`](https://github.com/cursor/plugins/blob/main/pstack/skills/no-comments/SKILL.md)
-- [`product-description`](https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f) by [Steve Ruiz](https://github.com/steveruizok)
-- [`show-me-your-work`](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
-- [`typescript-best-practices`](https://github.com/cursor/plugins/blob/main/pstack/skills/typescript-best-practices/SKILL.md)
-
-The animation skills come from [animations.dev skills](https://animations.dev/skills). They are installed separately and are not tracked in `skills/` or `apm.yml`.

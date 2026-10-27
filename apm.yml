@@ -4,23 +4,22 @@ targets: [claude, codex, opencode]
 dependencies:
   apm:
     - adelrodriguez/dotagents/instructions
-    - ~/.apm/skills/design/emil-design-engineering
-    - ~/.apm/skills/git/file-pr
-    - ~/.apm/skills/git/full-send
-    - ~/.apm/skills/git/monitor-pr
-    - ~/.apm/skills/git/write-changeset
-    - ~/.apm/skills/implementation/arena
-    - ~/.apm/skills/implementation/show-me-your-work
-    - ~/.apm/skills/languages/typescript-best-practices
-    - ~/.apm/skills/planning/architect
-    - ~/.apm/skills/review/create-verification-skill
-    - ~/.apm/skills/review/interrogate
-    - ~/.apm/skills/review/maintain-verification-skill
-    - ~/.apm/skills/review/no-comments
-    - ~/.apm/skills/review/product-description
-    - ~/.apm/skills/understanding/how
-    - ~/.apm/skills/writing/bro
-    - ~/.apm/skills/writing/html-communication
+    - ~/.apm/skills/original/full-send
+    - ~/.apm/skills/original/html-communication
+    - ~/.apm/skills/original/monitor-pr
+    - ~/.apm/skills/original/write-changeset
+    - ~/.apm/skills/adapted/architect
+    - ~/.apm/skills/adapted/arena
+    - ~/.apm/skills/adapted/bro
+    - ~/.apm/skills/adapted/create-verification-skill
+    - ~/.apm/skills/adapted/file-pr
+    - ~/.apm/skills/adapted/how
+    - ~/.apm/skills/adapted/interrogate
+    - ~/.apm/skills/adapted/maintain-verification-skill
+    - ~/.apm/skills/adapted/no-comments
+    - ~/.apm/skills/adapted/product-description
+    - ~/.apm/skills/adapted/show-me-your-work
+    - ~/.apm/skills/adapted/typescript-best-practices
     - git: adelrodriguez/adamantite
       skills: [adamantite]
     - git: adelrodriguez/packref
