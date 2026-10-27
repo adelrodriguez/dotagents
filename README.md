@@ -4,7 +4,7 @@ This repo stores my coding-agent setup. It keeps skills, global instructions, an
 
 The checked-in files have four roles:
 
-- [`skills/`](skills/) contains skills maintained in this repo.
+- [`skills/`](skills/) contains skills maintained in this repo, one folder per category.
 - [`instructions/`](instructions/) is an APM package holding the global agent instructions.
 - [`apm.yml`](apm.yml) lists every third-party skill, the instructions package, and the agents to install for.
 - [`apm.lock.yaml`](apm.lock.yaml) pins each dependency to a commit and records the hash of every installed file.
@@ -43,7 +43,7 @@ make -C ~/.apm
 
 1. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
-   - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync.
+   - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync. APM installs only the ones listed in `apm.yml` by path.
    - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
 2. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
 
@@ -51,15 +51,15 @@ make -C ~/.apm
 
 The old `scripts/link.sh` symlinked skill folders and `AGENTS.md` into whichever dotagents checkout ran it. APM can't write through those links, so remove them once before the first `make`.
 
-First, check that no skill lives only in the old checkout. Removing the links hides anything APM doesn't install. `~/.agents/skills` still points at the old skills, so this lists the ones that are neither locked nor in `skills/`:
+First, check that no skill lives only in the old checkout. Removing the links hides anything APM doesn't install. `~/.agents/skills` still points at the old skills, so this lists the ones missing from the lock:
 
 ```sh
 sh -c 'cd ~/.apm && for skill in $(ls "$(readlink ~/.agents/skills)"); do
-  [ -d "skills/$skill" ] || grep -q -- "- .claude/skills/$skill\$" apm.lock.yaml || echo "$skill"
+  grep -q -- "- .claude/skills/$skill\$" apm.lock.yaml || echo "$skill"
 done'
 ```
 
-Add any you want to keep to `apm.yml` or `skills/`. A `synced` folder is Claude's own cache of its built-in skills, and Claude recreates it.
+Add any you want to keep to `apm.yml`, or to `skills/` with an entry in `apm.yml`. A `synced` folder is Claude's own cache of its built-in skills, and Claude recreates it.
 
 Then remove the links. This deletes only symlinks, including broken ones:
 
@@ -81,6 +81,7 @@ Run `make -C ~/.apm` again after pulling or after editing `skills/`.
 | Task | Command |
 | --- | --- |
 | Add a skill | `apm install --global owner/repo --skill name` |
+| Add a skill of your own | Create `skills/<category>/<name>/SKILL.md`, add `- ~/.apm/skills/<category>/<name>` to `apm.yml`, then run `apm install --global` |
 | Update every dependency | `apm update --global && apm compile --global` |
 | Remove a dependency | `apm uninstall --global owner/repo` |
 
@@ -300,7 +301,7 @@ Some skills were copied or adapted from other sources:
 - [`arena`](https://github.com/cursor/plugins/blob/main/pstack/skills/arena/SKILL.md)
 - [`bro`](https://github.com/cursor/plugins/blob/main/pstack/skills/bro/SKILL.md)
 - [`create-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/create-verification-skill/SKILL.md)
-- [`file-pr`](skills/file-pr/SKILL.md): the visual, evidence, and merge danger sections are adapted from Matt Pocock's [`pr`](https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md), whose visuals come from Dex Horthy's [`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
+- [`file-pr`](skills/git/file-pr/SKILL.md): the visual, evidence, and merge danger sections are adapted from Matt Pocock's [`pr`](https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md), whose visuals come from Dex Horthy's [`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
 - [`how`](https://github.com/cursor/plugins/blob/main/pstack/skills/how/SKILL.md)
 - [`interrogate`](https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md)
 - [`maintain-verification-skill`](https://github.com/cursor/plugins/blob/main/pstack/skills/maintain-verification-skill/SKILL.md)

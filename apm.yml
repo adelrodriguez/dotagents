@@ -4,6 +4,23 @@ targets: [claude, codex, opencode]
 dependencies:
   apm:
     - adelrodriguez/dotagents/instructions
+    - ~/.apm/skills/design/emil-design-engineering
+    - ~/.apm/skills/git/file-pr
+    - ~/.apm/skills/git/full-send
+    - ~/.apm/skills/git/monitor-pr
+    - ~/.apm/skills/git/write-changeset
+    - ~/.apm/skills/implementation/arena
+    - ~/.apm/skills/implementation/show-me-your-work
+    - ~/.apm/skills/languages/typescript-best-practices
+    - ~/.apm/skills/planning/architect
+    - ~/.apm/skills/review/create-verification-skill
+    - ~/.apm/skills/review/interrogate
+    - ~/.apm/skills/review/maintain-verification-skill
+    - ~/.apm/skills/review/no-comments
+    - ~/.apm/skills/review/product-description
+    - ~/.apm/skills/understanding/how
+    - ~/.apm/skills/writing/bro
+    - ~/.apm/skills/writing/html-communication
     - git: adelrodriguez/adamantite
       skills: [adamantite]
     - git: adelrodriguez/packref
