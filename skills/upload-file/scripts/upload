@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+# Upload a file to a public R2 bucket and print its URL.
+#
+# Usage: upload <file>
+#
+# The file is stored as <sha256>.<ext>, named by its content. The same file
+# always gets the same URL, so a file already in the bucket is not uploaded
+# again, and every URL can be cached forever.
+#
+# Each setting comes from its FILE_UPLOAD_* environment variable, falling back
+# to the matching field of the 1Password item at FILE_UPLOAD_OP_REF.
+#
+# Works on macOS and Linux with curl >= 7.75 (for --aws-sigv4).
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+  echo "usage: upload <file>" >&2
+  exit 64
+fi
+
+path=$1
+if [[ ! -f $path ]]; then
+  echo "upload: not a file: $path" >&2
+  exit 66
+fi
+
+ref=${FILE_UPLOAD_OP_REF:-op://Agents/FILE_UPLOAD}
+
+setting() { # setting <ENV_NAME> <1password-field>
+  [[ -n ${!1:-} ]] && return
+  if ! command -v op >/dev/null; then
+    echo "upload: set $1 or install the 1Password CLI" >&2
+    exit 78
+  fi
+  local value
+  value=$(op read "$ref/$2") || { echo "upload: could not read $ref/$2" >&2; exit 78; }
+  printf -v "$1" %s "$value"
+}
+
+setting FILE_UPLOAD_ACCESS_KEY_ID access_key_id
+setting FILE_UPLOAD_SECRET_ACCESS_KEY secret_access_key
+setting FILE_UPLOAD_ACCOUNT_ID account_id
+setting FILE_UPLOAD_BUCKET bucket
+setting FILE_UPLOAD_PUBLIC_URL public_url
+
+if command -v sha256sum >/dev/null; then
+  hash=$(sha256sum "$path" | cut -c1-64)
+else
+  hash=$(shasum -a 256 "$path" | cut -c1-64)
+fi
+
+# Keep a short alphanumeric extension so downloads and viewers recognize the file.
+name=$(basename "$path")
+ext=$(printf %s "${name##*.}" | tr 'A-Z' 'a-z')
+if [[ $name == *.* && $ext =~ ^[a-z0-9]{1,10}$ ]]; then
+  key="$hash.$ext"
+else
+  key=$hash
+fi
+
+if command -v file >/dev/null; then
+  type=$(file --brief --mime-type "$path")
+else
+  type=application/octet-stream
+fi
+
+object="https://$FILE_UPLOAD_ACCOUNT_ID.r2.cloudflarestorage.com/$FILE_UPLOAD_BUCKET/$key"
+auth=(
+  --aws-sigv4 "aws:amz:auto:s3"
+  --user "$FILE_UPLOAD_ACCESS_KEY_ID:$FILE_UPLOAD_SECRET_ACCESS_KEY"
+  --header "x-amz-content-sha256: UNSIGNED-PAYLOAD"
+)
+
+status=$(curl --silent --show-error --head --output /dev/null --write-out '%{http_code}' "${auth[@]}" "$object")
+case $status in
+  200) ;; # already uploaded
+  404)
+    curl --fail-with-body --silent --show-error "${auth[@]}" \
+      --header "Content-Type: $type" \
+      --header "Cache-Control: public, max-age=31536000, immutable" \
+      --upload-file "$path" \
+      "$object" >/dev/null
+    ;;
+  *)
+    echo "upload: R2 answered HTTP $status when checking $key" >&2
+    exit 1
+    ;;
+esac
+
+echo "${FILE_UPLOAD_PUBLIC_URL%/}/$key"
