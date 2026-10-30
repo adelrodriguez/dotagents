@@ -1,5 +1,5 @@
 .PHONY: sync
 
 sync:
-	apm install --global --frozen
+	apm install --global
 	apm compile --global
