@@ -163,6 +163,17 @@ dependencies:
   source: local
   local_path: ~/.apm/skills/html-communication
   content_hash: sha256:a2fd98c4a945f62abbfb94d9511bfd7ac927ceed99fe4b42965cdfadfef8c075
+- repo_url: _local/instructions
+  name: instructions
+  version: 1.0.0
+  package_type: apm_package
+  deployed_files:
+  - .claude/rules/coding-standards.md
+  deployed_file_hashes:
+    .claude/rules/coding-standards.md: sha256:cb27a0bee6e4b4c81eee490e8035f3ede956b23ae8b1a512ee9643d5f3d443fb
+  source: local
+  local_path: ~/.apm/instructions
+  content_hash: sha256:22d32b9479686a7ea1298ea6f7e8aefd48ef371ed8f7501289676fddcb57a79e
 - repo_url: _local/interrogate
   name: interrogate
   version: unknown
@@ -411,19 +422,6 @@ dependencies:
   content_hash: sha256:1901ebbcdb163c0ece75313b5291a6d9b836929c8f0776134b697e66da13fbd0
   skill_subset:
   - adamantite
-- repo_url: adelrodriguez/dotagents
-  name: instructions
-  host: github.com
-  resolved_commit: fdaa035ee5f43248a5f02d3fe950e85f7d8d2326
-  version: 1.0.0
-  virtual_path: instructions
-  is_virtual: true
-  package_type: apm_package
-  deployed_files:
-  - .claude/rules/coding-standards.md
-  deployed_file_hashes:
-    .claude/rules/coding-standards.md: sha256:cb27a0bee6e4b4c81eee490e8035f3ede956b23ae8b1a512ee9643d5f3d443fb
-  content_hash: sha256:22d32b9479686a7ea1298ea6f7e8aefd48ef371ed8f7501289676fddcb57a79e
 - repo_url: adelrodriguez/packref
   name: packref
   host: github.com
@@ -3781,8 +3779,8 @@ deployments:
   runtime: null
   scope: project
   owners:
-  - adelrodriguez/dotagents/instructions
-  active_owner: adelrodriguez/dotagents/instructions
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
   content_hash: sha256:cb27a0bee6e4b4c81eee490e8035f3ede956b23ae8b1a512ee9643d5f3d443fb
 - kind: project-relative
   target: claude

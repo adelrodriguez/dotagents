@@ -5,7 +5,7 @@ This repo stores my coding-agent setup. It keeps skills, global instructions, an
 The checked-in files have four roles:
 
 - [`skills/`](skills/) contains skills maintained in this repo. A skill changed from another source records the original in its `metadata.source` frontmatter.
-- [`instructions/`](instructions/) is an APM package holding the global agent instructions.
+- [`instructions/`](instructions/) is an APM package holding the global agent instructions. `apm.yml` installs it by path, like the skills.
 - [`apm.yml`](apm.yml) lists every third-party skill, the instructions package, and the agents to install for.
 - [`apm.lock.yaml`](apm.lock.yaml) pins each dependency to a commit and records the hash of every installed file.
 
@@ -39,13 +39,14 @@ Then sync:
 make -C ~/.apm
 ```
 
-`make` runs two commands:
+`make` runs three commands:
 
 1. `apm install --global` installs everything in `apm.lock.yaml`. If `apm.yml` and the lock disagree, it updates the lock to match, so check `git status` after a sync.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
    - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync. APM installs only the ones listed in `apm.yml` by path.
-   - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
-2. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
+   - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too. Like the skills, they come from the working tree, so local edits apply on the next sync.
+2. `apm prune` deletes packages in `apm_modules/` that `apm.yml` no longer lists. Global compile reads every instruction in `apm_modules/`, so a removed package's instructions would otherwise stay in `AGENTS.md`.
+3. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
 
 ### Switching from the old setup
 
@@ -94,8 +95,6 @@ rm -r ~/.claude/skills/unslop ~/.agents/skills/unslop ~/.config/opencode/skills/
 Each command updates `apm.yml` or `apm.lock.yaml` in this repo. Commit the result.
 
 Repos that keep skills outside a flat `skills/<name>/` folder need one entry per skill, with its folder as `path:`.
-
-The instructions are fetched from `main` on GitHub, not read from the working tree. A change to `instructions/` reaches your agents after it is merged and you run `apm update --global && apm compile --global`.
 
 ## Skill catalog
 
