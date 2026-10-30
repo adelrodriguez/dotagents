@@ -30,6 +30,8 @@ Explain the user's problem first, then briefly describe the solution.
 
 Use the terms defined in the repository's `GLOSSARY.md` when one exists.
 
+Use the `unslop` skill to write the PR description.
+
 ## Include evidence
 
 For new features with a visual result, include a screenshot. For changes to existing visuals or bug fixes, show before-and-after evidence. When screenshots cannot capture the behavior, include a video. For changes without a visual result, use command output or a regression test that fails before the fix and passes afterward. For documentation or refactors without behavior changes, describe the checks you ran.
