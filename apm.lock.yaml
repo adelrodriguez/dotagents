@@ -6,112 +6,130 @@ dependencies:
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/architect
+  local_path: ~/.apm/skills/architect
   content_hash: sha256:f61db7922bee8f79a6714835b7c5898b3302fcc59157878ec7e5d23b97e2757f
 - repo_url: _local/arena
   name: arena
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/arena
+  local_path: ~/.apm/skills/arena
   content_hash: sha256:b5a05ee835e0315036eb1ce411f1c7e787bf338f98bb890c17814e5b59e92bd5
 - repo_url: _local/bro
   name: bro
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/bro
+  local_path: ~/.apm/skills/bro
   content_hash: sha256:b05227a1b488643f9ee7b22f87a402edeec2bfa938cb233560b1265b98cf3a2d
 - repo_url: _local/create-verification-skill
   name: create-verification-skill
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/create-verification-skill
+  local_path: ~/.apm/skills/create-verification-skill
   content_hash: sha256:f47e16f9f6e54269837580c186c8ceff2471549d9757090bfb9ef96b076c4db5
 - repo_url: _local/file-pr
   name: file-pr
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/file-pr
+  local_path: ~/.apm/skills/file-pr
   content_hash: sha256:379ef4c13c6ddfc4580f40b7b3bfa16fec82351cda73bd52d841454dc9f2681b
 - repo_url: _local/full-send
   name: full-send
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/original/full-send
+  local_path: ~/.apm/skills/full-send
   content_hash: sha256:d014b07ee80cd98c464b7197aab2612a10882ee5ead3c06693a22408c652958e
 - repo_url: _local/how
   name: how
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/how
+  local_path: ~/.apm/skills/how
   content_hash: sha256:07d68aa3f50a50f131854fa9a2b0a10dd8a64363ad85ddc22eb6aaa113ecb5d1
 - repo_url: _local/html-communication
   name: html-communication
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/original/html-communication
+  local_path: ~/.apm/skills/html-communication
   content_hash: sha256:a2fd98c4a945f62abbfb94d9511bfd7ac927ceed99fe4b42965cdfadfef8c075
 - repo_url: _local/interrogate
   name: interrogate
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/interrogate
+  local_path: ~/.apm/skills/interrogate
   content_hash: sha256:b81fdea7485e83fda6ea6c9497041d25a3a3f5eee02585eec1a41ff415f1260c
 - repo_url: _local/maintain-verification-skill
   name: maintain-verification-skill
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/maintain-verification-skill
+  local_path: ~/.apm/skills/maintain-verification-skill
   content_hash: sha256:64e99c7961ff3e2da7970292ca2532f09890e8ada6b6c795407f2e11d9db817a
 - repo_url: _local/monitor-pr
   name: monitor-pr
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/original/monitor-pr
+  local_path: ~/.apm/skills/monitor-pr
   content_hash: sha256:3619122db8e7753db8fc2e37678ced479f31005234beac788f246d97df24f549
 - repo_url: _local/no-comments
   name: no-comments
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/no-comments
+  local_path: ~/.apm/skills/no-comments
   content_hash: sha256:a2e34dc126c7ebe9ff5cd75a721d74ebf170cbe8618e622f96595316334f76e6
 - repo_url: _local/product-description
   name: product-description
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/product-description
+  local_path: ~/.apm/skills/product-description
   content_hash: sha256:9bea753195737b155928e2175323ed32ad13f698a05189d1349ee2b29b7cbf05
 - repo_url: _local/show-me-your-work
   name: show-me-your-work
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/show-me-your-work
+  local_path: ~/.apm/skills/show-me-your-work
   content_hash: sha256:75bd0bc24b5029bd2ab7e5d09ff77dbe0945c02bfe9fa9b18d9573d0b18bd096
 - repo_url: _local/typescript-best-practices
   name: typescript-best-practices
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/adapted/typescript-best-practices
+  local_path: ~/.apm/skills/typescript-best-practices
   content_hash: sha256:15545163bbbeaaee7d3f2ebac18db270fd02a39caa68e98176f586672afd4b54
+- repo_url: _local/unslop
+  name: unslop
+  version: unknown
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/unslop
+  - .agents/skills/unslop/SKILL.md
+  - .claude/skills/unslop
+  - .claude/skills/unslop/SKILL.md
+  - .config/opencode/skills/unslop
+  - .config/opencode/skills/unslop/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/unslop/SKILL.md: sha256:0dabcb6b66ee38dbdb7b4915c3c7beca2b4cb3ccb8a9bc421b971bb83516e327
+    .claude/skills/unslop/SKILL.md: sha256:0dabcb6b66ee38dbdb7b4915c3c7beca2b4cb3ccb8a9bc421b971bb83516e327
+    .config/opencode/skills/unslop/SKILL.md: sha256:0dabcb6b66ee38dbdb7b4915c3c7beca2b4cb3ccb8a9bc421b971bb83516e327
+  source: local
+  local_path: ~/.apm/skills/unslop
+  content_hash: sha256:b61e891762fef837ebddadba9bb4f88f4a99e96ca55a45b795651460421c7c5c
 - repo_url: _local/write-changeset
   name: write-changeset
   version: unknown
   package_type: claude_skill
   source: local
-  local_path: ~/.apm/skills/original/write-changeset
+  local_path: ~/.apm/skills/write-changeset
   content_hash: sha256:d60633ba44f31eb88783a4c67ab4ceecca10e36dcc41d9f0c2fc81e12b78a4fc
 - repo_url: adelrodriguez/adamantite
   name: adamantite
@@ -648,15 +666,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   content_hash: sha256:a7c43dc2b94eeff919575766da35b695d61b677ec44476bb8feb5d82c5fa0328
-- repo_url: cursor/plugins
-  name: unslop
-  host: github.com
-  resolved_commit: adeec11f7c7a863a73eb850ddaed0968270c9e97
-  version: unknown
-  virtual_path: pstack/skills/unslop
-  is_virtual: true
-  package_type: claude_skill
-  content_hash: sha256:eca0ad9fa3a3867c83f3aaf3a058e247a569c8976a68ca423a569b93eb86de5d
 - repo_url: cursor/plugins
   name: why
   host: github.com
@@ -2834,6 +2843,24 @@ deployments:
   content_hash: sha256:b92001117a92c4161d43777a0ba2fa182a8a4d97f2304cc8c0cee5331497b73b
 - kind: project-relative
   target: claude
+  value: .claude/skills/unslop
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/skills/unslop
+  active_owner: ~/.apm/skills/unslop
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/unslop/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/skills/unslop
+  active_owner: ~/.apm/skills/unslop
+  content_hash: sha256:0dabcb6b66ee38dbdb7b4915c3c7beca2b4cb3ccb8a9bc421b971bb83516e327
+- kind: project-relative
+  target: claude
   value: .claude/skills/write-swift
   runtime: null
   scope: project
@@ -3995,6 +4022,24 @@ deployments:
   content_hash: sha256:b92001117a92c4161d43777a0ba2fa182a8a4d97f2304cc8c0cee5331497b73b
 - kind: project-relative
   target: codex
+  value: .agents/skills/unslop
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/skills/unslop
+  active_owner: ~/.apm/skills/unslop
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/unslop/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/skills/unslop
+  active_owner: ~/.apm/skills/unslop
+  content_hash: sha256:0dabcb6b66ee38dbdb7b4915c3c7beca2b4cb3ccb8a9bc421b971bb83516e327
+- kind: project-relative
+  target: codex
   value: .agents/skills/write-swift
   runtime: null
   scope: project
@@ -5154,6 +5199,24 @@ deployments:
   - cloudflare/security-audit-skill
   active_owner: cloudflare/security-audit-skill
   content_hash: sha256:b92001117a92c4161d43777a0ba2fa182a8a4d97f2304cc8c0cee5331497b73b
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/unslop
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/skills/unslop
+  active_owner: ~/.apm/skills/unslop
+  content_hash: null
+- kind: project-relative
+  target: opencode
+  value: .config/opencode/skills/unslop/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/skills/unslop
+  active_owner: ~/.apm/skills/unslop
+  content_hash: sha256:0dabcb6b66ee38dbdb7b4915c3c7beca2b4cb3ccb8a9bc421b971bb83516e327
 - kind: project-relative
   target: opencode
   value: .config/opencode/skills/write-swift

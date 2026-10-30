@@ -76,6 +76,12 @@ Then delete the old checkout. If you still use it for development, delete only i
 
 Run `make -C ~/.apm` again after pulling or after editing `skills/`.
 
+`unslop` used to be installed from `cursor/plugins` and now comes from `skills/`. APM refuses to overwrite a copy it doesn't own, so on a machine that still has the upstream copy, remove it once before syncing:
+
+```sh
+rm -r ~/.claude/skills/unslop ~/.agents/skills/unslop ~/.config/opencode/skills/unslop
+```
+
 ## Changes
 
 | Task | Command |
