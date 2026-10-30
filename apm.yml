@@ -3,7 +3,7 @@ version: 1.0.0
 targets: [claude, codex, opencode]
 dependencies:
   apm:
-    - adelrodriguez/dotagents/instructions
+    - ~/.apm/instructions
     - ~/.apm/skills/architect
     - ~/.apm/skills/arena
     - ~/.apm/skills/bro
