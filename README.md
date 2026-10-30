@@ -44,7 +44,7 @@ make -C ~/.apm
 1. `apm install --global` installs everything in `apm.lock.yaml`. If `apm.yml` and the lock disagree, it updates the lock to match, so check `git status` after a sync.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
    - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync. APM installs only the ones listed in `apm.yml` by path.
-   - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too. Like the skills, they come from the working tree, so local edits apply on the next sync.
+   - Each file in `instructions/.apm/instructions/` goes to `~/.claude/rules/<name>.md`. Grok reads that folder too. Like the skills, they come from the working tree, so local edits apply on the next sync.
 2. `apm prune` deletes packages in `apm_modules/` that `apm.yml` no longer lists. Global compile reads every instruction in `apm_modules/`, so a removed package's instructions would otherwise stay in `AGENTS.md`.
 3. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
 
@@ -81,6 +81,12 @@ Run `make -C ~/.apm` again after pulling or after editing `skills/`.
 
 ```sh
 rm -r ~/.claude/skills/unslop ~/.agents/skills/unslop ~/.config/opencode/skills/unslop
+```
+
+The instructions used to be one Claude rule, `coding-standards.md`, and are now one rule per domain. The lock no longer records the old file, so APM leaves it in place and Claude would load both. Remove it once before syncing. If you edited it, move those edits into `instructions/` first:
+
+```sh
+rm ~/.claude/rules/coding-standards.md
 ```
 
 ## Changes

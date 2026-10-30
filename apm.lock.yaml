@@ -168,12 +168,24 @@ dependencies:
   version: 1.0.0
   package_type: apm_package
   deployed_files:
-  - .claude/rules/coding-standards.md
+  - .claude/rules/api-design.md
+  - .claude/rules/architecture.md
+  - .claude/rules/code.md
+  - .claude/rules/maintenance.md
+  - .claude/rules/testing.md
+  - .claude/rules/types.md
+  - .claude/rules/workflow.md
   deployed_file_hashes:
-    .claude/rules/coding-standards.md: sha256:cb27a0bee6e4b4c81eee490e8035f3ede956b23ae8b1a512ee9643d5f3d443fb
+    .claude/rules/api-design.md: sha256:1b0db16048a32be111d1e2c45449c9613cf63da3a8f579acce155645c3cd6045
+    .claude/rules/architecture.md: sha256:1993ea2cba16683ea86649d06026ac64278fb80743ed9ad55cb0e9a0bccb02d9
+    .claude/rules/code.md: sha256:28f53902816f36f70ffffade4f4cd8f477429b091a9f9349df1b07144f1cac22
+    .claude/rules/maintenance.md: sha256:a98ac8ccc8e7fe10bfd58e1591f44d6b21af6555fa2e7c5dbacca37cf6ba7862
+    .claude/rules/testing.md: sha256:1904cd89642dc0ae3a274c6b2c71afc726348a4d68fb9cfc4765ea78d3ba1eeb
+    .claude/rules/types.md: sha256:86ee2403eaeac8f977923ccd72fac247dfffbfc100b3324efb92742a80bae578
+    .claude/rules/workflow.md: sha256:c23d40d5ef1847880f2610b44e61e0b71e1d19e1be03fcfcaf26c9ea6f93555f
   source: local
   local_path: ~/.apm/instructions
-  content_hash: sha256:22d32b9479686a7ea1298ea6f7e8aefd48ef371ed8f7501289676fddcb57a79e
+  content_hash: sha256:a1b1775fa314a004500e867593110245df3a5567c469d0d6ae98314a0b3e5fcd
 - repo_url: _local/interrogate
   name: interrogate
   version: unknown
@@ -3775,13 +3787,67 @@ dependencies:
 deployments:
 - kind: project-relative
   target: claude
-  value: .claude/rules/coding-standards.md
+  value: .claude/rules/api-design.md
   runtime: null
   scope: project
   owners:
   - ~/.apm/instructions
   active_owner: ~/.apm/instructions
-  content_hash: sha256:cb27a0bee6e4b4c81eee490e8035f3ede956b23ae8b1a512ee9643d5f3d443fb
+  content_hash: sha256:1b0db16048a32be111d1e2c45449c9613cf63da3a8f579acce155645c3cd6045
+- kind: project-relative
+  target: claude
+  value: .claude/rules/architecture.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
+  content_hash: sha256:1993ea2cba16683ea86649d06026ac64278fb80743ed9ad55cb0e9a0bccb02d9
+- kind: project-relative
+  target: claude
+  value: .claude/rules/code.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
+  content_hash: sha256:28f53902816f36f70ffffade4f4cd8f477429b091a9f9349df1b07144f1cac22
+- kind: project-relative
+  target: claude
+  value: .claude/rules/maintenance.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
+  content_hash: sha256:a98ac8ccc8e7fe10bfd58e1591f44d6b21af6555fa2e7c5dbacca37cf6ba7862
+- kind: project-relative
+  target: claude
+  value: .claude/rules/testing.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
+  content_hash: sha256:1904cd89642dc0ae3a274c6b2c71afc726348a4d68fb9cfc4765ea78d3ba1eeb
+- kind: project-relative
+  target: claude
+  value: .claude/rules/types.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
+  content_hash: sha256:86ee2403eaeac8f977923ccd72fac247dfffbfc100b3324efb92742a80bae578
+- kind: project-relative
+  target: claude
+  value: .claude/rules/workflow.md
+  runtime: null
+  scope: project
+  owners:
+  - ~/.apm/instructions
+  active_owner: ~/.apm/instructions
+  content_hash: sha256:c23d40d5ef1847880f2610b44e61e0b71e1d19e1be03fcfcaf26c9ea6f93555f
 - kind: project-relative
   target: claude
   value: .claude/skills/adamantite
