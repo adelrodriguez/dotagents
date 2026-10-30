@@ -39,13 +39,14 @@ Then sync:
 make -C ~/.apm
 ```
 
-`make` runs two commands:
+`make` runs three commands:
 
 1. `apm install --global` installs everything in `apm.lock.yaml`. If `apm.yml` and the lock disagree, it updates the lock to match, so check `git status` after a sync.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
    - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync. APM installs only the ones listed in `apm.yml` by path.
    - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too. Like the skills, they come from the working tree, so local edits apply on the next sync.
-2. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
+2. `apm prune` deletes packages in `apm_modules/` that `apm.yml` no longer lists. Global compile reads every instruction in `apm_modules/`, so a removed package's instructions would otherwise stay in `AGENTS.md`.
+3. `apm compile --global` writes `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md` from the instructions package.
 
 ### Switching from the old setup
 
