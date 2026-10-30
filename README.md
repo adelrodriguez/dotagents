@@ -4,7 +4,7 @@ This repo stores my coding-agent setup. It keeps skills, global instructions, an
 
 The checked-in files have four roles:
 
-- [`skills/`](skills/) contains skills maintained in this repo. `skills/original/` holds the ones I wrote, and `skills/adapted/` holds ones I changed from another source, which each record in their `metadata.source` frontmatter.
+- [`skills/`](skills/) contains skills maintained in this repo. A skill changed from another source records the original in its `metadata.source` frontmatter.
 - [`instructions/`](instructions/) is an APM package holding the global agent instructions.
 - [`apm.yml`](apm.yml) lists every third-party skill, the instructions package, and the agents to install for.
 - [`apm.lock.yaml`](apm.lock.yaml) pins each dependency to a commit and records the hash of every installed file.
@@ -81,7 +81,7 @@ Run `make -C ~/.apm` again after pulling or after editing `skills/`.
 | Task | Command |
 | --- | --- |
 | Add a skill | `apm install --global owner/repo --skill name` |
-| Add a skill of your own | Create `skills/original/<name>/SKILL.md`, add `- ~/.apm/skills/original/<name>` to `apm.yml`, then run `apm install --global`. For one changed from another source, use `skills/adapted/` and set `metadata.source` to the original. |
+| Add a skill of your own | Create `skills/<name>/SKILL.md`, add `- ~/.apm/skills/<name>` to `apm.yml`, then run `apm install --global`. For one changed from another source, set `metadata.source` to the original. |
 | Update every dependency | `apm update --global && apm compile --global` |
 | Remove a dependency | `apm uninstall --global owner/repo` |
 
@@ -257,7 +257,7 @@ All from [expo/skills](https://github.com/expo/skills). `expo-overview` is the e
 | `html-communication` | Presents plans, reports, or mocks as readable HTML. | Yes |
 | `writing-for-agents` | Writes skills, `AGENTS.md`, and `CLAUDE.md`. | Yes |
 | `technical-writing` | Applies a layered technical-writing standard to docs, RFCs, and PRs. | No |
-| `unslop` | Cuts AI tells from writing. | No |
+| `unslop` | Cuts AI tells from writing. | Yes |
 | `bro` | Restates the last message in plain language. | No |
 | `wait-what` | Re-pitches a message that did not land. | No |
 | `teach` | Teaches you a skill or concept within the workspace. | No |

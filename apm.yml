@@ -4,22 +4,23 @@ targets: [claude, codex, opencode]
 dependencies:
   apm:
     - adelrodriguez/dotagents/instructions
-    - ~/.apm/skills/original/full-send
-    - ~/.apm/skills/original/html-communication
-    - ~/.apm/skills/original/monitor-pr
-    - ~/.apm/skills/original/write-changeset
-    - ~/.apm/skills/adapted/architect
-    - ~/.apm/skills/adapted/arena
-    - ~/.apm/skills/adapted/bro
-    - ~/.apm/skills/adapted/create-verification-skill
-    - ~/.apm/skills/adapted/file-pr
-    - ~/.apm/skills/adapted/how
-    - ~/.apm/skills/adapted/interrogate
-    - ~/.apm/skills/adapted/maintain-verification-skill
-    - ~/.apm/skills/adapted/no-comments
-    - ~/.apm/skills/adapted/product-description
-    - ~/.apm/skills/adapted/show-me-your-work
-    - ~/.apm/skills/adapted/typescript-best-practices
+    - ~/.apm/skills/architect
+    - ~/.apm/skills/arena
+    - ~/.apm/skills/bro
+    - ~/.apm/skills/create-verification-skill
+    - ~/.apm/skills/file-pr
+    - ~/.apm/skills/full-send
+    - ~/.apm/skills/how
+    - ~/.apm/skills/html-communication
+    - ~/.apm/skills/interrogate
+    - ~/.apm/skills/maintain-verification-skill
+    - ~/.apm/skills/monitor-pr
+    - ~/.apm/skills/no-comments
+    - ~/.apm/skills/product-description
+    - ~/.apm/skills/show-me-your-work
+    - ~/.apm/skills/typescript-best-practices
+    - ~/.apm/skills/unslop
+    - ~/.apm/skills/write-changeset
     - git: adelrodriguez/adamantite
       skills: [adamantite]
     - git: adelrodriguez/packref
@@ -84,8 +85,6 @@ dependencies:
       path: pstack/skills/principle-type-system-discipline
     - git: cursor/plugins
       path: pstack/skills/technical-writing
-    - git: cursor/plugins
-      path: pstack/skills/unslop
     - git: cursor/plugins
       path: pstack/skills/why
     - git: expo/skills
