@@ -41,7 +41,7 @@ make -C ~/.apm
 
 `make` runs two commands:
 
-1. `apm install --global --frozen` installs everything in `apm.lock.yaml`. It fails instead of changing the lock when `apm.yml` and the lock disagree.
+1. `apm install --global` installs everything in `apm.lock.yaml`. If `apm.yml` and the lock disagree, it updates the lock to match, so check `git status` after a sync.
    - Skills go to `~/.claude/skills` for Claude Code and `~/.agents/skills` for Codex. OpenCode gets its own copy in `~/.config/opencode/skills`. Grok reads the Claude folder.
    - The skills in `skills/` are deployed from the working tree, so local edits apply on the next sync. APM installs only the ones listed in `apm.yml` by path.
    - The instructions go to `~/.claude/rules/coding-standards.md`. Grok reads that folder too.
