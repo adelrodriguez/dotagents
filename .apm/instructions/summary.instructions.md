@@ -3,7 +3,7 @@ description: End replies with clear actions the user needs to take.
 applyTo: "**"
 ---
 
-# What I need from you
+## What I need from you
 
 - When you need the user to act, end the reply with a short **What I need from you** section.
 - Use a numbered list with one concrete action per item. Say exactly what to do, where to do it, and what to send back.

@@ -3,7 +3,7 @@ description: Writing rules for replies, documentation, and published text.
 applyTo: "**"
 ---
 
-# Write clearly
+## Write clearly
 
 - Lead with the conclusion or result.
 - Prefer plain, everyday words.

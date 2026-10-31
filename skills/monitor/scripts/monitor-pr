@@ -79,9 +79,183 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Any, NoReturn
+from typing import TYPE_CHECKING, NoReturn, cast
 
-Json = dict[str, Any]
+# GraphQL response shapes. They exist only for the type checker, so the script
+# still runs on the system Python 3.9.
+if TYPE_CHECKING:
+    from typing import Generic, Literal, NotRequired, TextIO, TypedDict, TypeVar
+
+    T = TypeVar("T")
+
+    class Nodes(TypedDict, Generic[T]):
+        nodes: list[T]
+
+    class GraphQLError(TypedDict):
+        type: NotRequired[str]
+        message: str
+
+    class Response(TypedDict, Generic[T]):
+        data: NotRequired[T | None]
+        errors: NotRequired[list[GraphQLError]]
+
+    class Actor(TypedDict):
+        login: str
+        kind: str
+
+    class App(TypedDict):
+        slug: str
+
+    class CheckSuite(TypedDict):
+        app: App | None
+
+    class CheckRun(TypedDict):
+        kind: Literal["CheckRun"]
+        name: str
+        status: str
+        conclusion: str | None
+        title: str | None
+        summary: str | None
+        startedAt: str | None
+        completedAt: str | None
+        detailsUrl: str | None
+        checkSuite: CheckSuite
+
+    class StatusContext(TypedDict):
+        kind: Literal["StatusContext"]
+        context: str
+        state: str
+        description: str | None
+        targetUrl: str | None
+        createdAt: str
+
+    class Rollup(TypedDict):
+        contexts: Nodes[CheckRun | StatusContext]
+
+    class Commit(TypedDict):
+        committedDate: str
+        statusCheckRollup: Rollup | None
+
+    class CommitNode(TypedDict):
+        commit: Commit
+
+    class Oid(TypedDict):
+        oid: str
+
+    class Ref(TypedDict):
+        target: Oid | None
+
+    class Review(TypedDict):
+        databaseId: int | None
+        url: str
+        state: str
+        body: str
+        submittedAt: str | None
+        commit: Oid | None
+        author: Actor | None
+
+    class Comment(TypedDict):
+        databaseId: int | None
+        url: str
+        body: str
+        createdAt: str
+        lastEditedAt: str | None
+        author: Actor | None
+
+    class Reaction(TypedDict):
+        content: str
+        createdAt: str
+        user: Actor | None
+
+    class RootComment(TypedDict):
+        databaseId: int | None
+
+    class Thread(TypedDict):
+        id: str
+        isResolved: bool
+        path: str
+        line: int | None
+        root: Nodes[RootComment]
+        recent: Nodes[Comment]
+
+    class PullRequest(TypedDict):
+        url: str
+        state: str
+        headRefOid: str
+        baseRefName: str
+        mergeStateStatus: str
+        baseRef: Ref | None
+        commits: Nodes[CommitNode]
+        reviews: Nodes[Review]
+        comments: Nodes[Comment]
+        reactions: Nodes[Reaction]
+        reviewThreads: Nodes[Thread]
+
+    class Viewer(TypedDict):
+        login: str
+
+    class Repository(TypedDict):
+        pullRequest: PullRequest | None
+
+    class PullRequestData(TypedDict):
+        viewer: Viewer
+        repository: Repository | None
+
+    class PastCheckRun(TypedDict):
+        kind: Literal["CheckRun"]
+        name: str
+        checkSuite: CheckSuite
+
+    class PastStatusContext(TypedDict):
+        kind: Literal["StatusContext"]
+        context: str
+
+    class PastRollup(TypedDict):
+        contexts: Nodes[PastCheckRun | PastStatusContext]
+
+    class PastCommit(TypedDict):
+        statusCheckRollup: PastRollup | None
+
+    class PastCommitNode(TypedDict):
+        commit: PastCommit
+
+    class Authored(TypedDict):
+        author: Actor | None
+
+    class Reacted(TypedDict):
+        user: Actor | None
+
+    class PastPullRequest(TypedDict):
+        reviews: Nodes[Authored]
+        comments: Nodes[Authored]
+        reactions: Nodes[Reacted]
+        commits: Nodes[PastCommitNode]
+
+    class PastRepository(TypedDict):
+        pullRequests: Nodes[PastPullRequest]
+
+    class HistoryData(TypedDict):
+        repository: PastRepository | None
+
+    class Url(TypedDict):
+        url: str
+
+    class Id(TypedDict):
+        id: str
+
+    class Replied(TypedDict):
+        comment: Url
+
+    class ReplyData(TypedDict):
+        addPullRequestReviewThreadReply: Replied
+
+    class Resolved(TypedDict):
+        thread: Id
+
+    class State(TypedDict):
+        reported: list[str]
+        base_oid: str | None
+        merge_state: str | None
 
 
 @dataclass(frozen=True)
@@ -109,12 +283,12 @@ AGENTS = (
 # "No new issues were found. The existing issue remains, so I cannot approve."
 FINDINGS = re.compile(
     r"cannot approve|would not approve|would request changes|found [1-9]\d* potential issues?|"
-    r"actionable comments posted:\s*[1-9]|confidence score:?\s*[0-4]\s*/\s*5|\b[1-9]\d* comments? added",
+    + r"actionable comments posted:\s*[1-9]|confidence score:?\s*[0-4]\s*/\s*5|\b[1-9]\d* comments? added",
     re.IGNORECASE,
 )
 APPROVAL = re.compile(
     r"no new issues|no issues found|didn'?t find any major issues|no actionable (comments|issues)|"
-    r"actionable comments posted:\s*0\b|would approve|confidence score:?\s*5\s*/\s*5|\b0 comments added|\blgtm\b",
+    + r"actionable comments posted:\s*0\b|would approve|confidence score:?\s*5\s*/\s*5|\b0 comments added|\blgtm\b",
     re.IGNORECASE,
 )
 RUN_FAILED = re.compile(r"\brun failed\b|review failed|this review did not happen|token expired or was revoked", re.IGNORECASE)
@@ -128,7 +302,7 @@ GRAPHITE_STACK = re.compile(r"app\.graphite\.(com|dev)/github/pr/")
 FAILED_CONCLUSIONS = {"FAILURE", "TIMED_OUT", "ACTION_REQUIRED", "STARTUP_FAILURE", "CANCELLED", "STALE"}
 TRANSIENT = re.compile(
     r"HTTP (5\d\d)|timed? ?out|connection (reset|refused)|EOF|temporar|could not resolve host|"
-    r"TLS handshake|Something went wrong",
+    + r"TLS handshake|Something went wrong",
     re.IGNORECASE,
 )
 RATE_LIMIT = re.compile(r"rate limit|HTTP 429", re.IGNORECASE)
@@ -150,20 +324,20 @@ query($owner: String!, $name: String!, $number: Int!) {
       url state headRefOid baseRefName mergeStateStatus
       baseRef { target { oid } }
       commits(last: 1) { nodes { commit { committedDate statusCheckRollup { contexts(first: 100) { nodes {
-        __typename
+        kind: __typename
         ... on CheckRun {
           name status conclusion title summary startedAt completedAt detailsUrl
           checkSuite { app { slug } }
         }
         ... on StatusContext { context state description targetUrl createdAt }
       } } } } } }
-      reviews(last: 100) { nodes { databaseId url state body submittedAt commit { oid } author { login __typename } } }
-      comments(last: 100) { nodes { databaseId url body createdAt lastEditedAt author { login __typename } } }
-      reactions(last: 50) { nodes { content createdAt user { login } } }
+      reviews(last: 100) { nodes { databaseId url state body submittedAt commit { oid } author { login kind: __typename } } }
+      comments(last: 100) { nodes { databaseId url body createdAt lastEditedAt author { login kind: __typename } } }
+      reactions(last: 50) { nodes { content createdAt user { login kind: __typename } } }
       reviewThreads(last: 100) { nodes {
         id isResolved path line
         root: comments(first: 1) { nodes { databaseId } }
-        recent: comments(last: 20) { nodes { databaseId url body createdAt author { login __typename } } }
+        recent: comments(last: 20) { nodes { databaseId url body createdAt lastEditedAt author { login kind: __typename } } }
       } }
     }
   }
@@ -174,8 +348,8 @@ query($owner: String!, $name: String!, $number: Int!) {
 class GhError(Exception):
     def __init__(self, message: str, *, transient: bool = False, rate_limited: bool = False) -> None:
         super().__init__(message)
-        self.transient = transient
-        self.rate_limited = rate_limited
+        self.transient: bool = transient
+        self.rate_limited: bool = rate_limited
 
 
 def log(message: str) -> None:
@@ -225,10 +399,10 @@ def same_commit(a: str | None, b: str | None) -> bool:
     return min(len(a), len(b)) >= 7 and (a.startswith(b) or b.startswith(a))
 
 
-def who(node: Json, key: str = "author") -> tuple[str, bool]:
-    actor = node.get(key) or {}
-    login = (actor.get("login") or "ghost").removesuffix("[bot]")
-    return login, actor.get("__typename") == "Bot"
+def who(actor: Actor | None) -> tuple[str, bool]:
+    if not actor:
+        return "ghost", False
+    return actor["login"].removesuffix("[bot]"), actor["kind"] == "Bot"
 
 
 def plain(body: str | None) -> str:
@@ -297,15 +471,21 @@ def agent_for_check(name: str, app: str) -> Agent | None:
     return next((a for a in AGENTS if app in a.logins or (a.checks and name.startswith(a.checks))), None)
 
 
-def read_checks(commit: Json) -> dict[str, Check]:
+def app_slug(suite: CheckSuite) -> str:
+    app = suite["app"]
+    return app["slug"] if app else ""
+
+
+def read_checks(commit: Commit) -> dict[str, Check]:
     """The head's checks by name. A re-run leaves the old run behind, so the newest run wins."""
     checks: dict[str, Check] = {}
-    for node in ((commit.get("statusCheckRollup") or {}).get("contexts") or {}).get("nodes") or []:
-        if node["__typename"] == "CheckRun":
+    rollup = commit["statusCheckRollup"]
+    for node in rollup["contexts"]["nodes"] if rollup else []:
+        if node["kind"] == "CheckRun":
             state = "pending" if node["status"] != "COMPLETED" else "fail" if node["conclusion"] in FAILED_CONCLUSIONS else "pass"
             check = Check(
                 node["name"], state, node["detailsUrl"] or "", f"{node['title'] or ''}\n{node['summary'] or ''}",
-                timestamp(node["startedAt"]), timestamp(node["completedAt"]), ((node["checkSuite"] or {}).get("app") or {}).get("slug") or "",
+                timestamp(node["startedAt"]), timestamp(node["completedAt"]), app_slug(node["checkSuite"]),
             )
         else:
             state = {"PENDING": "pending", "EXPECTED": "pending", "FAILURE": "fail", "ERROR": "fail"}.get(node["state"], "pass")
@@ -342,7 +522,7 @@ class Item:
 
 @dataclass
 class Status:
-    pr: Json
+    pr: PullRequest
     viewer: str
     head: str
     head_at: float
@@ -351,11 +531,11 @@ class Status:
     agents: list[AgentStatus]
     quiet_since: float
     items: list[Item]
-    open_threads: list[Json]
-    answered_threads: list[Json]
+    open_threads: list[Thread]
+    answered_threads: list[Thread]
 
 
-def analyze(pr: Json, viewer: str, required_checks: set[str], require: list[str] | None, expected: set[str]) -> Status:
+def analyze(pr: PullRequest, viewer: str, required_checks: set[str], require: list[str] | None, expected: set[str]) -> Status:
     """Turn one snapshot of the PR into its checks, review agents, and conversation."""
     head = pr["headRefOid"]
     commit = pr["commits"]["nodes"][0]["commit"]
@@ -390,9 +570,10 @@ def analyze(pr: Json, viewer: str, required_checks: set[str], require: list[str]
 
     items: list[Item] = []
     for review in pr["reviews"]["nodes"]:
-        login, is_bot = who(review)
+        login, is_bot = who(review["author"])
         at, body, url = timestamp(review["submittedAt"]), review["body"] or "", review["url"]
-        on_head = same_commit((review.get("commit") or {}).get("oid"), head)
+        commit = review["commit"]
+        on_head = same_commit(commit["oid"] if commit else None, head)
         if is_bot:
             # Any bot that reviews is a review agent, known or not.
             agent = agent_for(login) or Agent(login, (login,))
@@ -405,7 +586,7 @@ def analyze(pr: Json, viewer: str, required_checks: set[str], require: list[str]
             items.append(Item(f"c:{review['databaseId']}", f"review from {login} ({state}): {snippet(body)} {url}", on_head))
 
     for comment in pr["comments"]["nodes"]:
-        login, is_bot = who(comment)
+        login, is_bot = who(comment["author"])
         body, url = comment["body"] or "", comment["url"]
         at = timestamp(comment["lastEditedAt"] or comment["createdAt"])
         if agent := agent_for(login):
@@ -425,7 +606,7 @@ def analyze(pr: Json, viewer: str, required_checks: set[str], require: list[str]
         items.append(Item(f"c:{comment['databaseId']}", f"comment from {login}: {snippet(body)} {url}", created >= head_at))
 
     for reaction in pr["reactions"]["nodes"]:
-        login, _ = who(reaction, "user")
+        login, _ = who(reaction["user"])
         if not (agent := agent_for(login)):
             continue
         agents[agent.name] = agent
@@ -437,20 +618,21 @@ def analyze(pr: Json, viewer: str, required_checks: set[str], require: list[str]
         approves = reaction["content"] == "THUMBS_UP" and agent.thumbs_up_approves
         note(agent, at, "approved" if approves else None, "reacted 👍 to the PR", pr["url"])
 
-    open_threads: list[Json] = []
-    answered_threads: list[Json] = []
+    open_threads: list[Thread] = []
+    answered_threads: list[Thread] = []
     for thread in pr["reviewThreads"]["nodes"]:
         comments = thread["recent"]["nodes"]
-        root = (thread["root"]["nodes"] or [{}])[0].get("databaseId")
+        roots = thread["root"]["nodes"]
+        root = roots[0]["databaseId"] if roots else None
         if not comments:
             continue
-        last_login, _ = who(comments[-1])
+        last_login, _ = who(comments[-1]["author"])
         answered = last_login == viewer and marked(comments[-1]["body"])
         if not thread["isResolved"]:
             (answered_threads if answered else open_threads).append(thread)
         where = f"{thread['path']}:{thread['line']}" if thread["line"] else thread["path"]
         for comment in comments:
-            login, _ = who(comment)
+            login, _ = who(comment["author"])
             body = comment["body"] or ""
             if login == viewer:
                 if marked(body) or timestamp(comment["createdAt"]) < head_at:
@@ -528,7 +710,7 @@ def parse_target(raw: str, repo: str | None) -> tuple[str, int]:
     if not re.fullmatch(r"[\w.-]+/[\w.-]+", repo):
         fail(f"'{repo}' is not owner/name")
     try:
-        gh("api", f"repos/{repo}/pulls/{pr}", "--jq", ".number")
+        _ = gh("api", f"repos/{repo}/pulls/{pr}", "--jq", ".number")
     except GhError as error:
         if not (error.transient or error.rate_limited):  # the poll loop retries those
             fail(f"cannot read {repo}#{pr}: {error}")
@@ -555,21 +737,22 @@ def required_check_names(repo: str, base: str) -> set[str]:
     return names
 
 
-def fetch(repo: str, pr: int) -> tuple[Json, str]:
+def fetch(repo: str, pr: int) -> tuple[PullRequest, str]:
     owner, name = repo.split("/")
     # GraphQL errors exit 1 even when the response holds usable data.
     out = gh("api", "graphql", "-f", f"query={QUERY}", "-f", f"owner={owner}", "-f", f"name={name}", "-F", f"number={pr}", ok=(0, 1))
     try:
-        body = json.loads(out)
+        body = cast("Response[PullRequestData]", json.loads(out))
     except ValueError:
         raise GhError("GitHub returned a response that is not JSON", transient=True) from None
     errors = body.get("errors") or []
     if any(e.get("type") == "RATE_LIMITED" for e in errors):
         raise GhError("GraphQL rate limit reached", rate_limited=True)
-    data = body.get("data") or {}
-    pull = (data.get("repository") or {}).get("pullRequest")
-    if not pull:
-        message = "; ".join(e.get("message", "") for e in errors) or "empty GraphQL response"
+    data = body.get("data")
+    repository = data["repository"] if data else None
+    pull = repository["pullRequest"] if repository else None
+    if not data or not pull:
+        message = "; ".join(e["message"] for e in errors) or "empty GraphQL response"
         raise GhError(message, transient=not errors or bool(TRANSIENT.search(message)))
     return pull, data["viewer"]["login"]
 
@@ -578,11 +761,11 @@ HISTORY_QUERY = """
 query($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     pullRequests(states: MERGED, first: 10, orderBy: {field: UPDATED_AT, direction: DESC}) { nodes {
-      reviews(last: 30) { nodes { author { login __typename } } }
-      comments(last: 30) { nodes { author { login } } }
-      reactions(last: 20) { nodes { user { login } } }
+      reviews(last: 30) { nodes { author { login kind: __typename } } }
+      comments(last: 30) { nodes { author { login kind: __typename } } }
+      reactions(last: 20) { nodes { user { login kind: __typename } } }
       commits(last: 1) { nodes { commit { statusCheckRollup { contexts(first: 50) { nodes {
-        __typename
+        kind: __typename
         ... on CheckRun { name checkSuite { app { slug } } }
         ... on StatusContext { context }
       } } } } } }
@@ -597,31 +780,39 @@ def expected_agents(repo: str) -> set[str]:
     cache = STATE_DIR / f"{repo.replace('/', '__')}.agents.json"
     try:
         if time.time() - cache.stat().st_mtime < 24 * 3600:
-            return set(json.loads(cache.read_text()))
+            return set(cast("list[str]", json.loads(cache.read_text())))
     except (OSError, ValueError):
         pass
     owner, name = repo.split("/")
     try:
         out = gh("api", "graphql", "-f", f"query={HISTORY_QUERY}", "-f", f"owner={owner}", "-f", f"name={name}")
-        prs = json.loads(out)["data"]["repository"]["pullRequests"]["nodes"]
-    except (GhError, ValueError, KeyError, TypeError) as error:
+        data = cast("Response[HistoryData]", json.loads(out)).get("data")
+    except (GhError, ValueError) as error:
         log(f"could not read recent PRs to learn the repo's review agents: {error}")
         return set()
+    repository = data["repository"] if data else None
+    if not repository:
+        log("could not read recent PRs to learn the repo's review agents: empty GraphQL response")
+        return set()
     found: set[str] = set()
-    for pr in prs:
+    for pr in repository["pullRequests"]["nodes"]:
         for review in pr["reviews"]["nodes"]:
-            login, is_bot = who(review)
+            login, is_bot = who(review["author"])
             if agent := agent_for(login) or (Agent(login, (login,)) if is_bot else None):
                 found.add(agent.name)
-        logins = [who(c)[0] for c in pr["comments"]["nodes"]] + [who(r, "user")[0] for r in pr["reactions"]["nodes"]]
+        logins = [who(c["author"])[0] for c in pr["comments"]["nodes"]] + [who(r["user"])[0] for r in pr["reactions"]["nodes"]]
         found.update(agent.name for login in logins if (agent := agent_for(login)))
         for commit in pr["commits"]["nodes"]:
-            for node in ((commit["commit"].get("statusCheckRollup") or {}).get("contexts") or {}).get("nodes") or []:
-                app = ((node.get("checkSuite") or {}).get("app") or {}).get("slug") or ""
-                if agent := agent_for_check(node.get("name") or node.get("context") or "", app):
+            rollup = commit["commit"]["statusCheckRollup"]
+            for node in rollup["contexts"]["nodes"] if rollup else []:
+                if node["kind"] == "CheckRun":
+                    agent = agent_for_check(node["name"], app_slug(node["checkSuite"]))
+                else:
+                    agent = agent_for_check(node["context"], "")
+                if agent:
                     found.add(agent.name)
     STATE_DIR.mkdir(parents=True, exist_ok=True)
-    cache.write_text(json.dumps(sorted(found)))
+    _ = cache.write_text(json.dumps(sorted(found)))
     return found
 
 
@@ -634,34 +825,51 @@ def rate_limit_reset() -> float:
         return time.time() + 300
 
 
-def lock(repo: str, pr: int) -> Any:
+def lock(repo: str, pr: int) -> TextIO:
     """Hold a per-PR lock for the life of the process. The OS drops it on exit."""
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     handle = open(STATE_DIR / f"{repo.replace('/', '__')}__{pr}.lock", "a+")
     try:
         fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:
-        handle.seek(0)
+        _ = handle.seek(0)
         pid = handle.read().strip() or "unknown"
         fail(
             f"pid {pid} already watches {repo}#{pr}, so this watcher exits to avoid duplicate events. "
-            f"If no events reach you from it, run `kill {pid}` and start again."
+            + f"If no events reach you from it, run `kill {pid}` and start again."
         )
-    handle.seek(0)
-    handle.truncate()
-    handle.write(str(os.getpid()))
+    _ = handle.seek(0)
+    _ = handle.truncate()
+    _ = handle.write(str(os.getpid()))
     handle.flush()
     return handle
 
 
+class Args(argparse.Namespace):
+    """Parsed arguments. argparse keeps these defaults because it only fills missing attributes."""
+
+    target: list[str] = []
+    repo: str | None = None
+    json: bool = False
+    body_file: str | None = None
+    resolve: bool = False
+    until: str = "ready"
+    head: str | None = None
+    require: list[str] | None = None
+    interval: float = 30.0
+    stall: float = 900.0
+
+
 class Watcher:
-    def __init__(self, repo: str, pr: int, args: argparse.Namespace) -> None:
-        self.repo, self.pr, self.args = repo, pr, args
-        self.path = STATE_DIR / f"{repo.replace('/', '__')}__{pr}.json"
+    def __init__(self, repo: str, pr: int, args: Args) -> None:
+        self.repo: str = repo
+        self.pr: int = pr
+        self.args: Args = args
+        self.path: Path = STATE_DIR / f"{repo.replace('/', '__')}__{pr}.json"
         state = self.load()
         # First run for this PR: report what is open on the head, not its history.
-        self.first_run = state is None
-        self.state: Json = state or {"reported": [], "base_oid": None, "merge_state": None}
+        self.first_run: bool = state is None
+        self.state: State = state or {"reported": [], "base_oid": None, "merge_state": None}
         self.reported: set[str] = set(self.state["reported"])
         self.printed: set[str] = set()
         self.required: set[str] | None = None
@@ -669,19 +877,19 @@ class Watcher:
         self.previous_ci: list[tuple[str, str]] | None = None
         self.pr_files: dict[str, set[str]] = {}
 
-    def load(self) -> Json | None:
+    def load(self) -> State | None:
         try:
             if time.time() - self.path.stat().st_mtime > STALE_STATE_SECONDS:
                 return None
-            return json.loads(self.path.read_text())
+            return cast("State", json.loads(self.path.read_text()))
         except (OSError, ValueError):
             return None
 
     def save(self) -> None:
         self.state["reported"] = sorted(self.reported)
         tmp = self.path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(self.state))
-        tmp.replace(self.path)
+        _ = tmp.write_text(json.dumps(self.state))
+        _ = tmp.replace(self.path)
 
     def say(self, line: str) -> None:
         if line not in self.printed:
@@ -769,7 +977,9 @@ class Watcher:
                 self.emit(f"agent:{agent.agent.name}:{head}:{v.state}:{v.at}", f"{agent.agent.name} {v.state} on {short}: {snippet(v.text)} {v.url}")
 
         # Base branch and merge state.
-        base_oid = ((pr.get("baseRef") or {}).get("target") or {}).get("oid")
+        base_ref = pr["baseRef"]
+        target = base_ref["target"] if base_ref else None
+        base_oid = target["oid"] if target else None
         old_base = self.state["base_oid"]
         if base_oid and old_base and base_oid != old_base:
             touched = self.files_overlap(head, old_base, base_oid)
@@ -880,7 +1090,7 @@ def print_threads(status: Status) -> None:
         answered = " (answered by you; resolve it)" if thread in status.answered_threads else ""
         print(f"\n[thread {thread['id']}] {where}{answered}")
         for comment in comments[-3:]:
-            print(f"  {who(comment)[0]}: {excerpt(comment['body'], 1500)}\n  {comment['url']}")
+            print(f"  {who(comment['author'])[0]}: {excerpt(comment['body'], 1500)}\n  {comment['url']}")
 
 
 THREAD_ID = re.compile(r"PRRT_[\w-]+")
@@ -903,22 +1113,22 @@ def list_threads(repo: str, number: int, as_json: bool) -> None:
             "path": thread["path"],
             "line": thread["line"],
             "answered": thread in status.answered_threads,
-            "comments": [{"author": who(c)[0], "body": c["body"], "url": c["url"]} for c in thread["recent"]["nodes"]],
+            "comments": [{"author": who(c["author"])[0], "body": c["body"], "url": c["url"]} for c in thread["recent"]["nodes"]],
         }
         for thread in status.open_threads + status.answered_threads
     ]
     print(json.dumps(threads, indent=2))
 
 
-def mutate(query: str, variables: dict[str, str]) -> Json:
+def mutate(query: str, variables: dict[str, str]) -> object:
     fields = [arg for name, value in variables.items() for arg in ("-f", f"{name}={value}")]
     try:
-        body = json.loads(gh("api", "graphql", "-f", f"query={query}", *fields, ok=(0, 1)))
+        body = cast("Response[object]", json.loads(gh("api", "graphql", "-f", f"query={query}", *fields, ok=(0, 1))))
     except (GhError, ValueError) as error:
         fail(f"GitHub rejected the request: {error}", 1)
-    if body.get("errors"):
-        fail("GitHub rejected the request: " + "; ".join(e.get("message", "") for e in body["errors"]), 1)
-    return body["data"]
+    if errors := body.get("errors"):
+        fail("GitHub rejected the request: " + "; ".join(e["message"] for e in errors), 1)
+    return body.get("data")
 
 
 def reply(thread: str, body: str) -> None:
@@ -929,7 +1139,7 @@ def reply(thread: str, body: str) -> None:
     mutation($thread: ID!, $body: String!) {
       addPullRequestReviewThreadReply(input: {pullRequestReviewThreadId: $thread, body: $body}) { comment { url } }
     }"""
-    data = mutate(query, {"thread": thread, "body": body})
+    data = cast("ReplyData", mutate(query, {"thread": thread, "body": body}))
     print(data["addPullRequestReviewThreadReply"]["comment"]["url"])
 
 
@@ -937,7 +1147,7 @@ def resolve(threads: list[str]) -> None:
     """Resolve review threads in one request."""
     params = ", ".join(f"$t{i}: ID!" for i in range(len(threads)))
     calls = "\n".join(f"t{i}: resolveReviewThread(input: {{threadId: $t{i}}}) {{ thread {{ id }} }}" for i in range(len(threads)))
-    data = mutate(f"mutation({params}) {{\n{calls}\n}}", {f"t{i}": thread for i, thread in enumerate(threads)})
+    data = cast("dict[str, Resolved]", mutate(f"mutation({params}) {{\n{calls}\n}}", {f"t{i}": thread for i, thread in enumerate(threads)}))
     for i in range(len(threads)):
         print(f"resolved {data[f't{i}']['thread']['id']}")
 
@@ -949,26 +1159,30 @@ def duration(text: str) -> float:
     return float(match.group(1)) * {"": 1, "s": 1, "m": 60, "h": 3600}[match.group(2)]
 
 
+def agent_list(text: str) -> list[str]:
+    return [name.strip() for name in text.split(",") if name.strip()]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="monitor-pr",
         usage="monitor-pr [show] <pr> [options]\n       monitor-pr threads list <pr> [--json]\n"
-        "       monitor-pr threads reply <thread-id> --body-file <file> [--resolve]\n"
-        "       monitor-pr threads resolve <thread-id>...",
+        + "       monitor-pr threads reply <thread-id> --body-file <file> [--resolve]\n"
+        + "       monitor-pr threads resolve <thread-id>...",
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("target", nargs="+", metavar="command", help="a PR number or URL, or a command and its arguments")
-    parser.add_argument("--repo", help="owner/name (default: from the URL or the current checkout)")
-    parser.add_argument("--json", action="store_true", help="threads list: print JSON")
-    parser.add_argument("--body-file", help="threads reply: file with the reply, or - for stdin")
-    parser.add_argument("--resolve", action="store_true", help="threads reply: resolve the thread after replying")
-    parser.add_argument("--until", choices=("ready", "green"), default="ready")
-    parser.add_argument("--head", help="ignore the PR until its head is this commit")
-    parser.add_argument("--require", type=lambda s: [p.strip() for p in s.split(",") if p.strip()], help="agents that must approve, or none")
-    parser.add_argument("--interval", type=duration, default=30.0, help="time between polls (default 30s, min 10s)")
-    parser.add_argument("--stall", type=duration, default=900.0, help="quiet time before a review agent counts as stalled (default 15m)")
-    args = parser.parse_args()
+    _ = parser.add_argument("target", nargs="+", metavar="command", help="a PR number or URL, or a command and its arguments")
+    _ = parser.add_argument("--repo", help="owner/name (default: from the URL or the current checkout)")
+    _ = parser.add_argument("--json", action="store_true", help="threads list: print JSON")
+    _ = parser.add_argument("--body-file", help="threads reply: file with the reply, or - for stdin")
+    _ = parser.add_argument("--resolve", action="store_true", help="threads reply: resolve the thread after replying")
+    _ = parser.add_argument("--until", choices=("ready", "green"))
+    _ = parser.add_argument("--head", help="ignore the PR until its head is this commit")
+    _ = parser.add_argument("--require", type=agent_list, help="agents that must approve, or none")
+    _ = parser.add_argument("--interval", type=duration, help="time between polls (default 30s, min 10s)")
+    _ = parser.add_argument("--stall", type=duration, help="quiet time before a review agent counts as stalled (default 15m)")
+    args = parser.parse_args(namespace=Args())
 
     if args.target[0] == "threads":
         action, rest = (args.target[1], args.target[2:]) if len(args.target) > 1 else ("", [])

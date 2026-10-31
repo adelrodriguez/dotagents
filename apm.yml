@@ -17,6 +17,12 @@ dependencies:
     - git: emilkowalski/skills
       skills:
         - break-ui
+    - git: mattpocock/skills
+      skills:
+        - grilling
+        - grill-me
+        - wayfinder
+        - domain-modeling
   mcp: []
 includes: auto
 scripts: {}

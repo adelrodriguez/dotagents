@@ -32,6 +32,41 @@ dependencies:
   content_hash: sha256:085e940b1624234b48a22f458f88c1c210a1239106ea0a75cf704772fefdfd09
   skill_subset:
   - break-ui
+- repo_url: mattpocock/skills
+  name: mattpocock-skills
+  host: github.com
+  resolved_commit: 4ae2317ddb22b046e26455e4f9c9b3aaaf62212d
+  version: 1.3.2
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/grilling
+  - .agents/skills/grilling/SKILL.md
+  - .agents/skills/grilling/agents/openai.yaml
+  - .claude/skills/grilling
+  - .claude/skills/grilling/SKILL.md
+  - .claude/skills/grilling/agents/openai.yaml
+  - .grok/skills/grilling
+  - .grok/skills/grilling/SKILL.md
+  - .grok/skills/grilling/agents/openai.yaml
+  - agent-data/workflows/grilling
+  - agent-data/workflows/grilling/SKILL.md
+  - agent-data/workflows/grilling/agents/openai.yaml
+  deployed_file_hashes:
+    .agents/skills/grilling/SKILL.md: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+    .agents/skills/grilling/agents/openai.yaml: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+    .claude/skills/grilling/SKILL.md: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+    .claude/skills/grilling/agents/openai.yaml: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+    .grok/skills/grilling/SKILL.md: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+    .grok/skills/grilling/agents/openai.yaml: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+    agent-data/workflows/grilling/SKILL.md: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+    agent-data/workflows/grilling/agents/openai.yaml: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+  content_hash: sha256:85e73a1b3ba5510c07ebd2d2ed51b5eb45f4f5612657d0f713f538fbb972664e
+  skill_subset:
+  - domain-modeling
+  - grill-me
+  - grilling
+  - wayfinder
+  declared_license: MIT
 deployments:
 - kind: project-relative
   target: claude
@@ -41,7 +76,16 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:e6b671cf0eda4e44068c3687bd2c4990742198138a8b1a3019ab2aac66caa5ee
+  content_hash: sha256:b7eac9941ca20c6265ea8087a32b3df5018d37cd6efe337db5e4dde78709bb91
+- kind: project-relative
+  target: claude
+  value: .claude/rules/summary.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:5d42aaac1cc396310c4d645e0e9d5d95b2a8ee29c8189a9075b0463aad5cf27e
 - kind: project-relative
   target: claude
   value: .claude/rules/writing.md
@@ -50,7 +94,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:ff47e9ee856e3a7f3faa0e674c052987ac23a0e70b545f0018ecd1f46cd7e79c
+  content_hash: sha256:bdc94140cf9dfd7f61d23c900eafac805cd250257cd3e5cda4052a191e41df48
 - kind: project-relative
   target: claude
   value: .claude/skills/break-ui
@@ -79,6 +123,33 @@ deployments:
   active_owner: emilkowalski/skills
   content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
 - kind: project-relative
+  target: claude
+  value: .claude/skills/grilling
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/grilling/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+- kind: project-relative
+  target: claude
+  value: .claude/skills/grilling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+- kind: project-relative
   target: codex
   value: .agents/skills/break-ui
   runtime: null
@@ -106,6 +177,33 @@ deployments:
   active_owner: emilkowalski/skills
   content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
 - kind: project-relative
+  target: codex
+  value: .agents/skills/grilling
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/grilling/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+- kind: project-relative
+  target: codex
+  value: .agents/skills/grilling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+- kind: project-relative
   target: cursor
   value: .cursor/rules/bugs.mdc
   runtime: null
@@ -113,7 +211,16 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:ad63dc5fde8b273a122f70cd67c350abe3e905602883ddef8cbcba093a69d36d
+  content_hash: sha256:a1ac105cedc1906d15a1ff66c39fbfbd16d5f90dd7d4be8496cc8190e9edb331
+- kind: project-relative
+  target: cursor
+  value: .cursor/rules/summary.mdc
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f4e4758cfb78b2e796a2a3c9924a1270b3d3f569828ba07d745b9bb0acec5396
 - kind: project-relative
   target: cursor
   value: .cursor/rules/writing.mdc
@@ -122,7 +229,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:b8acbc64649c83cf126943afcf261aebf08f31f8a0ff344bdbecbc6c34b604f0
+  content_hash: sha256:168a18dc0c4f5ae8f5f2ebe5f0ea332f0f7360f2c67d85d979e1e2d754c15e2c
 - kind: project-relative
   target: grok-bot
   value: agent-data/workflows/break-ui
@@ -151,6 +258,33 @@ deployments:
   active_owner: emilkowalski/skills
   content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
 - kind: project-relative
+  target: grok-bot
+  value: agent-data/workflows/grilling
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: null
+- kind: project-relative
+  target: grok-bot
+  value: agent-data/workflows/grilling/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+- kind: project-relative
+  target: grok-bot
+  value: agent-data/workflows/grilling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+- kind: project-relative
   target: grok-build
   value: .grok/rules/bugs.instructions.md
   runtime: null
@@ -158,7 +292,16 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:abecc706b2a8ea9cec08feba6b7204a593135b64b36e793c4fc96621770701a7
+  content_hash: sha256:d7076c81f43ba37d8563e6e7ea742676db84c72039f71e39ae781c32b0191284
+- kind: project-relative
+  target: grok-build
+  value: .grok/rules/summary.instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2645741782352beee73075e76d9332c943d57606bbc67331f02b0f0c9f84efcc
 - kind: project-relative
   target: grok-build
   value: .grok/rules/writing.instructions.md
@@ -167,7 +310,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:bab9546cd4e22e7cb6cdfd700bc57b42e147f2f17f539aa427821d778c6c63f9
+  content_hash: sha256:78d73363a64dbc64e0c582c7982b1c16c9f7dc49c46000efc617ecd43c7579a2
 - kind: project-relative
   target: grok-build
   value: .grok/skills/break-ui
@@ -195,17 +338,50 @@ deployments:
   - emilkowalski/skills
   active_owner: emilkowalski/skills
   content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+- kind: project-relative
+  target: grok-build
+  value: .grok/skills/grilling
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: null
+- kind: project-relative
+  target: grok-build
+  value: .grok/skills/grilling/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2
+- kind: project-relative
+  target: grok-build
+  value: .grok/skills/grilling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills
+  active_owner: mattpocock/skills
+  content_hash: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
 local_deployed_files:
 - .claude/rules/bugs.md
+- .claude/rules/summary.md
 - .claude/rules/writing.md
 - .cursor/rules/bugs.mdc
+- .cursor/rules/summary.mdc
 - .cursor/rules/writing.mdc
 - .grok/rules/bugs.instructions.md
+- .grok/rules/summary.instructions.md
 - .grok/rules/writing.instructions.md
 local_deployed_file_hashes:
-  .claude/rules/bugs.md: sha256:e6b671cf0eda4e44068c3687bd2c4990742198138a8b1a3019ab2aac66caa5ee
-  .claude/rules/writing.md: sha256:ff47e9ee856e3a7f3faa0e674c052987ac23a0e70b545f0018ecd1f46cd7e79c
-  .cursor/rules/bugs.mdc: sha256:ad63dc5fde8b273a122f70cd67c350abe3e905602883ddef8cbcba093a69d36d
-  .cursor/rules/writing.mdc: sha256:b8acbc64649c83cf126943afcf261aebf08f31f8a0ff344bdbecbc6c34b604f0
-  .grok/rules/bugs.instructions.md: sha256:abecc706b2a8ea9cec08feba6b7204a593135b64b36e793c4fc96621770701a7
-  .grok/rules/writing.instructions.md: sha256:bab9546cd4e22e7cb6cdfd700bc57b42e147f2f17f539aa427821d778c6c63f9
+  .claude/rules/bugs.md: sha256:b7eac9941ca20c6265ea8087a32b3df5018d37cd6efe337db5e4dde78709bb91
+  .claude/rules/summary.md: sha256:5d42aaac1cc396310c4d645e0e9d5d95b2a8ee29c8189a9075b0463aad5cf27e
+  .claude/rules/writing.md: sha256:bdc94140cf9dfd7f61d23c900eafac805cd250257cd3e5cda4052a191e41df48
+  .cursor/rules/bugs.mdc: sha256:a1ac105cedc1906d15a1ff66c39fbfbd16d5f90dd7d4be8496cc8190e9edb331
+  .cursor/rules/summary.mdc: sha256:f4e4758cfb78b2e796a2a3c9924a1270b3d3f569828ba07d745b9bb0acec5396
+  .cursor/rules/writing.mdc: sha256:168a18dc0c4f5ae8f5f2ebe5f0ea332f0f7360f2c67d85d979e1e2d754c15e2c
+  .grok/rules/bugs.instructions.md: sha256:d7076c81f43ba37d8563e6e7ea742676db84c72039f71e39ae781c32b0191284
+  .grok/rules/summary.instructions.md: sha256:2645741782352beee73075e76d9332c943d57606bbc67331f02b0f0c9f84efcc
+  .grok/rules/writing.instructions.md: sha256:78d73363a64dbc64e0c582c7982b1c16c9f7dc49c46000efc617ecd43c7579a2
