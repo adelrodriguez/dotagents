@@ -1,5 +1,3 @@
-.PHONY: sync
-
 sync:
 	apm install --global
 	apm prune
