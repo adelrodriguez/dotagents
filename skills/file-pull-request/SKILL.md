@@ -52,6 +52,8 @@ Before submission, check the title, description, quotes, and attachments for sec
 
 Unless the user asks for a draft, open a ready-for-review PR so review bots run.
 
+For a stack managed with `gh stack`, check `gh stack view` and create the PRs with `gh stack submit`. Use `gh stack submit --open` when all PRs in the stack should be ready for review, since the flag also marks existing PRs ready. Apply the prepared title and description to each new PR with `gh pr edit <number> --title <title> --body-file <file>`.
+
 If `gh pr create` fails because the GraphQL rate limit is used up, open it through REST with `gh api repos/<owner>/<repo>/pulls -f title=... -f head=... -f base=... -F body=@<file>`.
 
 If the user also asks to watch, monitor, or babysit the PR, use the `watch-pull-request` skill.

@@ -10,13 +10,19 @@ metadata:
 
 Address review agents' feedback until all required checks pass and every review agent approves the latest head.
 
+## Read the review gates
+
+Read the repository's `AGENTS.md` review-gate section first. Use its required review agents and approval criteria, including score thresholds.
+
+Only when the repository has no documented review gates, infer review agents from bots that engaged with this PR or recent merged PRs.
+
 ## Start the watcher
 
 Use the harness's watcher tool or, if none is available, the `watch-pr` script. Never write your own watcher, polling loop, or `sleep` loop.
 
 Watch only PRs you own. If you are a delegated child task, leave the watcher to the parent thread that owns the PR. After each notification from the harness's watcher, check the merge requirements yourself.
 
-Users cannot interact with a thread while it watches a PR, so stop the watcher before you finish, report readiness or a blocker, or ask for input. If a merge or closure does not stop the watcher automatically, stop it yourself.
+A foreground `watch-pr` run occupies the thread, so stop the script before you finish, report readiness or a blocker, or ask for input. Harness watchers such as T3's let you end your turn while the watcher runs and the user continues to interact with the thread. If a merge or closure does not stop the watcher automatically, stop it yourself.
 
 If the harness's watcher reports "Stopped watching, could not read it", run `gh api rate_limit --jq .resources.graphql` as one background command before restarting the watcher. Never retry in a tight loop. `watch-pr` waits out rate limits on its own.
 
@@ -40,11 +46,11 @@ Choose the wait condition that matches the task:
 - `ready` (default): required checks pass, every review agent approves the latest head, no review threads remain unresolved, and the branch is mergeable.
 - `green`: required checks pass.
 
-Review agents are the review bots that engaged with this PR or with the repository's recent merged PRs. Pass `--require` to name them, or `--require none` when the repository has none.
+Pass `--require` to name the review agents identified from the repository's review gates or, when none are documented, from PR activity. Use `--require none` only when the repository requires no review agents and none are found.
 
 Run `watch-pr show <pr>` to read the full text of every failed check, open finding, and unresolved thread.
 
-If the harness provides a Monitor tool, run the script with `timeout_ms: 3600000` so each output line sends a notification. If the monitor stops before the script exits, restart the script. Without a monitor, run it as one long command that exits on its own.
+If the harness provides Claude Code's Monitor tool, run the script with `timeout_ms: 1800000`, its 30-minute limit, so each output line sends a notification. If the monitor stops before the script exits, restart the script. Without a monitor, run it as one long command that exits on its own.
 
 After a push, restart the script with `--head $(git rev-parse HEAD)` so it ignores the old head. Also restart it after you address an exit code of `1`, or when you resume work. The script tracks reported events and reports any that arrived while it was stopped.
 
@@ -117,7 +123,7 @@ Rebase when `watch-pr` reports `DIRTY`, `BEHIND`, or base commits that touch thi
 
 If another PR makes this PR obsolete, stop the watcher and report that to the user. Ask before closing the PR unless the user has already authorized closure.
 
-Before reporting readiness, verify that required checks pass, every review agent approves the latest head, and no review threads remain unresolved. A `ready` exit from `watch-pr` establishes all three; any other watcher exit does not.
+Before reporting readiness, verify that required checks pass, every review agent approves the latest head, and no review threads remain unresolved. A `ready` exit from `watch-pr` establishes all three for the configured agents; any other watcher exit does not. Also verify any additional repository criteria, such as review scores.
 
 Stop the watcher once these conditions are met.
 
