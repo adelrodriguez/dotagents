@@ -1,10 +1,10 @@
 # Write a skill
 
-Use this file when the agent document is a skill. It covers the frontmatter, who invokes the skill, and router skills. Everything else is in [`SKILL.md`](SKILL.md).
+Use this file when the agent document is a skill. It covers the frontmatter, who invokes the skill, and router skills. Everything else is in [`../SKILL.md`](../SKILL.md).
 
 ## Choose who invokes the skill
 
-A **model-invoked** skill has a `description` that stays in the agent's context on every turn. The agent can load the skill on its own, other skills can load it, and the user can still invoke it by name. To make a skill model-invoked, omit `disable-model-invocation`, and write the `description` as a trigger, following "Write the trigger" in `SKILL.md`.
+A **model-invoked** skill has a `description` that stays in the agent's context on every turn. The agent can load the skill on its own, other skills can load it, and the user can still invoke it by name. To make a skill model-invoked, omit `disable-model-invocation`, and write the `description` as a trigger, following "Write the trigger" in `../SKILL.md`.
 
 A **user-invoked** skill is loaded only when the user types its name. It costs no tokens until then, but the user must remember that it exists, and no other skill can load it. To make a skill user-invoked, set `disable-model-invocation: true`, and write the `description` as a one-line summary for people, with no list of cases.
 

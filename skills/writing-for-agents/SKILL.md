@@ -14,7 +14,7 @@ Write documents that agents read, such as skills, `AGENTS.md`, `CLAUDE.md`, and 
 
 Before writing, read the agent documents near the one you are changing, the repository's `AGENTS.md`, and its `GLOSSARY.md` when it exists. Match their structure, headings, and terms. When an existing document already covers the behavior, edit it instead of adding a new one.
 
-When the document is a skill, also read [`SKILL-MECHANICS.md`](SKILL-MECHANICS.md) for frontmatter, invocation, and router skills.
+When the document is a skill, also read [`references/skill-mechanics.md`](references/skill-mechanics.md) for frontmatter, invocation, and router skills.
 
 ## Pick the type
 

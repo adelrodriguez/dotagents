@@ -1,6 +1,6 @@
 # Deepen shallow modules
 
-Merge a cluster of shallow modules into one deeper module, and test it through its new interface. The terms module, interface, seam, and adapter are defined in [`SKILL.md`](SKILL.md).
+Merge a cluster of shallow modules into one deeper module, and test it through its new interface. The terms module, interface, seam, and adapter are defined in [`../SKILL.md`](../SKILL.md).
 
 ## Sort the dependencies
 

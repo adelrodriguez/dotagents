@@ -39,12 +39,12 @@ Use the compass whenever the answer is not obvious, and also when it seems obvio
 
 Then read the file for the type before you write:
 
-- Tutorial: [`TUTORIAL.md`](TUTORIAL.md).
-- How-to guide: [`HOW-TO-GUIDE.md`](HOW-TO-GUIDE.md).
-- Reference: [`REFERENCE.md`](REFERENCE.md).
-- Explanation: [`EXPLANATION.md`](EXPLANATION.md).
+- Tutorial: [`references/tutorial.md`](references/tutorial.md).
+- How-to guide: [`references/how-to-guide.md`](references/how-to-guide.md).
+- Reference: [`references/reference.md`](references/reference.md).
+- Explanation: [`references/explanation.md`](references/explanation.md).
 
-When you are improving or reorganizing existing docs rather than writing one new page, read [`IMPROVE.md`](IMPROVE.md) first.
+When you are improving or reorganizing existing docs rather than writing one new page, read [`references/improve.md`](references/improve.md) first.
 
 ## Keep the types apart
 
@@ -70,7 +70,7 @@ Sorting content by type also exposes functional gaps. Reference that mirrors the
 - Check each page against the checklist in its type's file.
 - Check that each page is one type and that its title names that type's question.
 - Check every command, example, and fact against the current source.
-- Check the sentences against [`STYLE.md`](STYLE.md).
+- Check the sentences against [`references/style.md`](references/style.md).
 - Use the `unslop` skill on the prose.
 
 ## Return the result

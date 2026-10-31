@@ -61,13 +61,13 @@ Describe each design with:
 - The steps to migrate callers and delete the old code.
 - The tradeoffs it accepts.
 
-Check each design against [`RED-FLAGS.md`](RED-FLAGS.md). To explore very different interfaces in parallel, follow [`DESIGN-IT-TWICE.md`](DESIGN-IT-TWICE.md).
+Check each design against [`references/red-flags.md`](references/red-flags.md). To explore very different interfaces in parallel, follow [`references/design-it-twice.md`](references/design-it-twice.md).
 
 ## Propose the design and wait
 
 Choose the design that hides the necessary complexity behind the smallest interface. Reject a design that is easier to implement but harder to call, test, or change.
 
-Write the proposal using [`RATIONALE.md`](RATIONALE.md) as the template. Rank the designs, recommend one with its reason, and show a dry run, such as the new file tree or a diff of the call sites.
+Write the proposal using [`references/rationale.md`](references/rationale.md) as the template. Rank the designs, recommend one with its reason, and show a dry run, such as the new file tree or a diff of the call sites.
 
 Wait for the user's agreement before implementing the proposed design.
 
@@ -87,7 +87,7 @@ When the same workaround appears in more than one place, stop patching around it
 
 ## Deepen existing modules
 
-When the task is to refactor a cluster of shallow modules into a deeper one, follow [`DEEPENING.md`](DEEPENING.md).
+When the task is to refactor a cluster of shallow modules into a deeper one, follow [`references/deepening.md`](references/deepening.md).
 
 ## Reorganize code into folders
 
@@ -107,11 +107,11 @@ The reorganization is complete when the affected imports contain no cycles and t
 
 - Every part of the system that the design touches is traced, and anything unconfirmed is written down.
 - The caller usage was written before the types.
-- Each design was checked against `RED-FLAGS.md`.
+- Each design was checked against `references/red-flags.md`.
 - The proposal ranks the designs and includes a dry run.
 - The user agreed before implementation began.
 - After a reorganization, imports point in one direction, no cycles remain, and a lint rule or test enforces the direction.
 
 ## Return the result
 
-Return the proposal using `RATIONALE.md` as the template. After implementation, also report where the implementation departed from the design, the risks that remain open, and how you verified the change.
+Return the proposal using `references/rationale.md` as the template. After implementation, also report where the implementation departed from the design, the risks that remain open, and how you verified the change.
