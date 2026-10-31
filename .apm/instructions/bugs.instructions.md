@@ -7,7 +7,7 @@ applyTo: "**"
 
 ### Check the scope
 
-If a bug is within the current scope of work, fix it and report the bug and fix to the user.
+For an in-scope bug, use the `testing` skill to write a failing test, then fix the bug. Report the bug and fix to the user.
 
 If a bug is outside the current scope, use the `issue` skill to file it and suggest another PR.
 

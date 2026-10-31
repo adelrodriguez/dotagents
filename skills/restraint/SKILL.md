@@ -37,6 +37,8 @@ A context menu opened 200 times a day with a 300ms open animation costs a minute
 
 When reviewing your own work or someone else's, read it once asking only what can go. Cut each element, animation, or line whose removal leaves the outcome as good or better. Question your first idea as hard as anyone else's.
 
+Review the repository the same way. Delete superseded plans, duplicate checks, and scripts, CI jobs, dependencies, and files that no longer earn their place.
+
 ## Report
 
 List what you chose not to add or removed, with one line of reason each, so the user can put back anything they want.
