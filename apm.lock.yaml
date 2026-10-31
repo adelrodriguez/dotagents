@@ -1,0 +1,211 @@
+lockfile_version: '1'
+apm_version: 0.35.0
+dependencies:
+- repo_url: emilkowalski/skills
+  name: skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  version: unknown
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/break-ui
+  - .agents/skills/break-ui/CATALOG.md
+  - .agents/skills/break-ui/SKILL.md
+  - .claude/skills/break-ui
+  - .claude/skills/break-ui/CATALOG.md
+  - .claude/skills/break-ui/SKILL.md
+  - .grok/skills/break-ui
+  - .grok/skills/break-ui/CATALOG.md
+  - .grok/skills/break-ui/SKILL.md
+  - agent-data/workflows/break-ui
+  - agent-data/workflows/break-ui/CATALOG.md
+  - agent-data/workflows/break-ui/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/break-ui/CATALOG.md: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+    .agents/skills/break-ui/SKILL.md: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+    .claude/skills/break-ui/CATALOG.md: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+    .claude/skills/break-ui/SKILL.md: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+    .grok/skills/break-ui/CATALOG.md: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+    .grok/skills/break-ui/SKILL.md: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+    agent-data/workflows/break-ui/CATALOG.md: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+    agent-data/workflows/break-ui/SKILL.md: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+  content_hash: sha256:085e940b1624234b48a22f458f88c1c210a1239106ea0a75cf704772fefdfd09
+  skill_subset:
+  - break-ui
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/rules/bugs.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e6b671cf0eda4e44068c3687bd2c4990742198138a8b1a3019ab2aac66caa5ee
+- kind: project-relative
+  target: claude
+  value: .claude/rules/writing.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:ff47e9ee856e3a7f3faa0e674c052987ac23a0e70b545f0018ecd1f46cd7e79c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/break-ui
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/break-ui/CATALOG.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+- kind: project-relative
+  target: claude
+  value: .claude/skills/break-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+- kind: project-relative
+  target: codex
+  value: .agents/skills/break-ui
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/break-ui/CATALOG.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+- kind: project-relative
+  target: codex
+  value: .agents/skills/break-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+- kind: project-relative
+  target: cursor
+  value: .cursor/rules/bugs.mdc
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:ad63dc5fde8b273a122f70cd67c350abe3e905602883ddef8cbcba093a69d36d
+- kind: project-relative
+  target: cursor
+  value: .cursor/rules/writing.mdc
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:b8acbc64649c83cf126943afcf261aebf08f31f8a0ff344bdbecbc6c34b604f0
+- kind: project-relative
+  target: grok-bot
+  value: agent-data/workflows/break-ui
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: null
+- kind: project-relative
+  target: grok-bot
+  value: agent-data/workflows/break-ui/CATALOG.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+- kind: project-relative
+  target: grok-bot
+  value: agent-data/workflows/break-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+- kind: project-relative
+  target: grok-build
+  value: .grok/rules/bugs.instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:abecc706b2a8ea9cec08feba6b7204a593135b64b36e793c4fc96621770701a7
+- kind: project-relative
+  target: grok-build
+  value: .grok/rules/writing.instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:bab9546cd4e22e7cb6cdfd700bc57b42e147f2f17f539aa427821d778c6c63f9
+- kind: project-relative
+  target: grok-build
+  value: .grok/skills/break-ui
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: null
+- kind: project-relative
+  target: grok-build
+  value: .grok/skills/break-ui/CATALOG.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15
+- kind: project-relative
+  target: grok-build
+  value: .grok/skills/break-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills
+  active_owner: emilkowalski/skills
+  content_hash: sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e
+local_deployed_files:
+- .claude/rules/bugs.md
+- .claude/rules/writing.md
+- .cursor/rules/bugs.mdc
+- .cursor/rules/writing.mdc
+- .grok/rules/bugs.instructions.md
+- .grok/rules/writing.instructions.md
+local_deployed_file_hashes:
+  .claude/rules/bugs.md: sha256:e6b671cf0eda4e44068c3687bd2c4990742198138a8b1a3019ab2aac66caa5ee
+  .claude/rules/writing.md: sha256:ff47e9ee856e3a7f3faa0e674c052987ac23a0e70b545f0018ecd1f46cd7e79c
+  .cursor/rules/bugs.mdc: sha256:ad63dc5fde8b273a122f70cd67c350abe3e905602883ddef8cbcba093a69d36d
+  .cursor/rules/writing.mdc: sha256:b8acbc64649c83cf126943afcf261aebf08f31f8a0ff344bdbecbc6c34b604f0
+  .grok/rules/bugs.instructions.md: sha256:abecc706b2a8ea9cec08feba6b7204a593135b64b36e793c4fc96621770701a7
+  .grok/rules/writing.instructions.md: sha256:bab9546cd4e22e7cb6cdfd700bc57b42e147f2f17f539aa427821d778c6c63f9
