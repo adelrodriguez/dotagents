@@ -120,7 +120,7 @@ APPROVAL = re.compile(
 RUN_FAILED = re.compile(r"\brun failed\b|review failed|this review did not happen|token expired or was revoked", re.IGNORECASE)
 # Agents edit one progress comment in place. Only its final form is a verdict.
 PROGRESS = re.compile(r"leaping into action|^\s*-\s\[ \]|\bin progress\b|working on (it|this)|reviewing\.\.\.|⏳", re.IGNORECASE | re.MULTILINE)
-# Posts the agent makes on the user's behalf. See the comment-on-pull-request skill.
+# Posts the agent makes on the user's behalf. See the comment-on-github skill.
 AGENT_MARK = re.compile(r"on behalf of ", re.IGNORECASE)
 REVIEW_REQUEST = re.compile(r"^\s*@[\w-]+ review\b", re.IGNORECASE)
 GRAPHITE_STACK = re.compile(r"app\.graphite\.(com|dev)/github/pr/")
@@ -922,7 +922,7 @@ def mutate(query: str, variables: dict[str, str]) -> Json:
 def reply(thread: str, body: str) -> None:
     """Reply to a review thread. Replies post on the user's behalf, so they must carry the agent marker."""
     if not AGENT_MARK.search(body):
-        fail("the reply lacks the agent marker; format it with the comment-on-pull-request skill")
+        fail("the reply lacks the agent marker; format it with the comment-on-github skill")
     query = """
     mutation($thread: ID!, $body: String!) {
       addPullRequestReviewThreadReply(input: {pullRequestReviewThreadId: $thread, body: $body}) { comment { url } }
