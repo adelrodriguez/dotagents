@@ -28,6 +28,8 @@ Explain the user's problem first, then briefly describe the solution.
 - Avoid: `Removed implicit workspace carryover from every new thread entry point. New threads inherit only the project from context; branch, worktree, audio…`
 - Prefer: `My new worktree default was ignored when starting new threads on existing worktrees. Now your preference is always applied.`
 
+When the PR fixes an issue, include `Closes #N`.
+
 Use the terms defined in the repository's `GLOSSARY.md` when one exists.
 
 Use the `unslop` skill to write the PR description.
