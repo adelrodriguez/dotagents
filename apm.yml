@@ -6,16 +6,17 @@ author: Adel Rodríguez
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, grok-bot, grok-build, hermes, kiro, opencode, vscode, windsurf
 targets:
-  - antigravity
   - claude
   - codex
   - cursor
-  - gemini
   - grok-bot
   - grok-build
   - opencode
 dependencies:
-  apm: []
+  apm:
+    - git: emilkowalski/skills
+      skills:
+        - break-ui
   mcp: []
 includes: auto
 scripts: {}
