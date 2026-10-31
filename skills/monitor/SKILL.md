@@ -1,5 +1,5 @@
 ---
-name: watch-pull-request
+name: monitor
 description: Use when the user asks to watch, monitor, or babysit a pull request.
 metadata:
   reference:
@@ -18,28 +18,28 @@ Only when the repository has no documented review gates, infer review agents fro
 
 ## Start the watcher
 
-Use the harness's watcher tool or, if none is available, the `watch-pr` script. Never write your own watcher, polling loop, or `sleep` loop.
+Use the harness's watcher tool or, if none is available, the `monitor-pr` script. Never write your own watcher, polling loop, or `sleep` loop.
 
 Watch only PRs you own. If you are a delegated child task, leave the watcher to the parent thread that owns the PR. After each notification from the harness's watcher, check the merge requirements yourself.
 
-A foreground `watch-pr` run occupies the thread, so stop the script before you finish, report readiness or a blocker, or ask for input. Harness watchers such as T3's let you end your turn while the watcher runs and the user continues to interact with the thread. If a merge or closure does not stop the watcher automatically, stop it yourself.
+A foreground `monitor-pr` run occupies the thread, so stop the script before you finish, report readiness or a blocker, or ask for input. Harness watchers such as T3's let you end your turn while the watcher runs and the user continues to interact with the thread. If a merge or closure does not stop the watcher automatically, stop it yourself.
 
-If the harness's watcher reports "Stopped watching, could not read it", run `gh api rate_limit --jq .resources.graphql` as one background command before restarting the watcher. Never retry in a tight loop. `watch-pr` waits out rate limits on its own.
+If the harness's watcher reports "Stopped watching, could not read it", run `gh api rate_limit --jq .resources.graphql` as one background command before restarting the watcher. Never retry in a tight loop. `monitor-pr` waits out rate limits on its own.
 
-### Use the `watch-pr` script
+### Use the `monitor-pr` script
 
-Run `scripts/watch-pr` from this skill's directory, using its absolute path. `--help` lists every option.
+Run `scripts/monitor-pr` from this skill's directory, using its absolute path. `--help` lists every option.
 
 ```bash
-watch-pr <pr> [--repo owner/name] [--until ready|green] [--head <sha>] [--require <agents>|none]
-watch-pr show <pr>
+monitor-pr <pr> [--repo owner/name] [--until ready|green] [--head <sha>] [--require <agents>|none]
+monitor-pr show <pr>
 ```
 
 The script prints one line per event and returns one of these exit codes:
 
 - `0`: the `--until` condition is met or the PR merges.
 - `1`: action is needed because a required check failed, the branch conflicts or is `BEHIND`, a review agent left findings or stalled, review threads remain unresolved, or the PR closed.
-- `2`: the input is invalid, or another `watch-pr` already watches the PR.
+- `2`: the input is invalid, or another `monitor-pr` already watches the PR.
 
 Choose the wait condition that matches the task:
 
@@ -48,7 +48,7 @@ Choose the wait condition that matches the task:
 
 Pass `--require` to name the review agents identified from the repository's review gates or, when none are documented, from PR activity. Use `--require none` only when the repository requires no review agents and none are found.
 
-Run `watch-pr show <pr>` to read the full text of every failed check, open finding, and unresolved thread.
+Run `monitor-pr show <pr>` to read the full text of every failed check, open finding, and unresolved thread.
 
 If the harness provides Claude Code's Monitor tool, run the script with `timeout_ms: 1800000`, its 30-minute limit, so each output line sends a notification. If the monitor stops before the script exits, restart the script. Without a monitor, run it as one long command that exits on its own.
 
@@ -76,7 +76,7 @@ Verify approval for the latest head according to how each agent reports its revi
 - **Agents that publish a review check.** Wait for the check to report approval. A completed check with unresolved findings is not approval.
 - **Agents that leave comments.** Wait for a comment that reports no remaining issues or explicitly approves the change in the agent's own wording. Silence and resolved threads do not count as approval.
 
-After each push, wait for fresh approval from every review agent. If a review does not restart automatically, use the retry command that `watch-pr` prints when it reports a stalled agent. Post the command with the `comment-on-github` skill.
+After each push, wait for fresh approval from every review agent. If a review does not restart automatically, use the retry command that `monitor-pr` prints when it reports a stalled agent. Post the command with the `comment-on-github` skill.
 
 Use the bot's handle, which can differ from its product name:
 
@@ -88,18 +88,18 @@ Fix valid findings and CI failures after checking whether each failure comes fro
 
 If a finding cites repository review rules, read those rules before replying.
 
-If you decide not to address a finding, explain why in a comment and resolve the thread. Use the `comment-on-github` skill for every comment you post on the user's behalf. When screenshots or videos help explain the result, upload them with the `upload-file` skill.
+If you decide not to address a finding, explain why in a comment and resolve the thread. Use the `comment-on-github` skill for every comment you post on the user's behalf. When screenshots or videos help explain the result, upload them with the `upload` skill.
 
 Keep changes within the user's goal, and prefer fixes that delete or narrow code. Decline unrelated tests, unnecessary edge-case guards, extra integrations or compatibility work, and minor performance changes. Explain those decisions and list the declined work as follow-ups.
 
 ### Reply to and resolve review threads
 
-Use the `watch-pr threads` commands for review threads, whichever watcher you run. Never write GraphQL for threads by hand.
+Use the `monitor-pr threads` commands for review threads, whichever watcher you run. Never write GraphQL for threads by hand.
 
 ```bash
-watch-pr threads list <pr> [--json]
-watch-pr threads reply <thread-id> --body-file <file> [--resolve]
-watch-pr threads resolve <thread-id>...
+monitor-pr threads list <pr> [--json]
+monitor-pr threads reply <thread-id> --body-file <file> [--resolve]
+monitor-pr threads resolve <thread-id>...
 ```
 
 - `list` prints each unresolved thread with its ID, location, and latest comments, and marks the threads you have already answered.
@@ -119,11 +119,11 @@ A PR whose base is not the default branch may be part of a GitHub stack, managed
 
 ## Check the base branch and merge requirements
 
-Rebase when `watch-pr` reports `DIRTY`, `BEHIND`, or base commits that touch this PR's files. Each rebase restarts CI and every review agent, so do not rebase only because the base moved. Because `watch_pull_request` reports only conflicts, check for `BEHIND` yourself before reporting that the PR is ready.
+Rebase when `monitor-pr` reports `DIRTY`, `BEHIND`, or base commits that touch this PR's files. Each rebase restarts CI and every review agent, so do not rebase only because the base moved. Because `watch_pull_request` reports only conflicts, check for `BEHIND` yourself before reporting that the PR is ready.
 
 If another PR makes this PR obsolete, stop the watcher and report that to the user. Ask before closing the PR unless the user has already authorized closure.
 
-Before reporting readiness, verify that required checks pass, every review agent approves the latest head, and no review threads remain unresolved. A `ready` exit from `watch-pr` establishes all three for the configured agents; any other watcher exit does not. Also verify any additional repository criteria, such as review scores.
+Before reporting readiness, verify that required checks pass, every review agent approves the latest head, and no review threads remain unresolved. A `ready` exit from `monitor-pr` establishes all three for the configured agents; any other watcher exit does not. Also verify any additional repository criteria, such as review scores.
 
 Stop the watcher once these conditions are met.
 

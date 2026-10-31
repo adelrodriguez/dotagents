@@ -1,5 +1,5 @@
 ---
-name: file-pull-request
+name: pr
 description: Use when the user asks to file, open, or create a pull request (PR).
 metadata:
   reference:
@@ -38,7 +38,7 @@ Use the `unslop` skill to write the PR description.
 
 For new features with a visual result, include a screenshot. For changes to existing visuals or bug fixes, show before-and-after evidence. When screenshots cannot capture the behavior, include a video. For changes without a visual result, use command output or a regression test that fails before the fix and passes afterward. For documentation or refactors without behavior changes, describe the checks you ran.
 
-Upload screenshots and videos with the `upload-file` skill and include them in the PR description, not the commit. If an upload fails, state which attachment is missing.
+Upload screenshots and videos with the `upload` skill and include them in the PR description, not the commit. If an upload fails, state which attachment is missing.
 
 ## Submit the PR
 
@@ -56,6 +56,6 @@ For a stack managed with `gh stack`, check `gh stack view` and create the PRs wi
 
 If `gh pr create` fails because the GraphQL rate limit is used up, open it through REST with `gh api repos/<owner>/<repo>/pulls -f title=... -f head=... -f base=... -F body=@<file>`.
 
-If the user also asks to watch, monitor, or babysit the PR, use the `watch-pull-request` skill.
+If the user also asks to watch, monitor, or babysit the PR, use the `monitor` skill.
 
 Post a follow-up PR comment only when requested or needed to complete the requested workflow. Use the `comment-on-github` skill.

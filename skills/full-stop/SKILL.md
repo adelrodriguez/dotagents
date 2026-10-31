@@ -24,6 +24,6 @@ Fetch the base and check the live PR state. Confirm the PR is open, ready for re
 
 ## Hand off the PR
 
-Stop watching the PR before handing it off or asking a question. Stop the `watch-pr` process or unregister the harness watcher, depending on which you used.
+Stop watching the PR before handing it off or asking a question. Stop the `monitor-pr` process or unregister the harness watcher, depending on which you used.
 
 Report the PR URL, final head, evidence, review results, and remaining blockers. State whether it is ready, waiting only for human approval, or blocked, and confirm it remains open and unmerged. If someone else merged it, report that instead.

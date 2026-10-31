@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""watch-pr: watch a GitHub pull request until it is ready, one line per event.
+"""monitor-pr: watch a GitHub pull request until it is ready, one line per event.
 
-  watch-pr <pr> [--repo owner/name] [--until ready|green] [--head <sha>]
+  monitor-pr <pr> [--repo owner/name] [--until ready|green] [--head <sha>]
                 [--require <agents>|none] [--interval 30s] [--stall 15m]
-  watch-pr show <pr> [--repo owner/name] [--require <agents>|none]
-  watch-pr threads list <pr> [--repo owner/name] [--json]
-  watch-pr threads reply <thread-id> --body-file <file|-> [--resolve]
-  watch-pr threads resolve <thread-id>...
+  monitor-pr show <pr> [--repo owner/name] [--require <agents>|none]
+  monitor-pr threads list <pr> [--repo owner/name] [--json]
+  monitor-pr threads reply <thread-id> --body-file <file|-> [--resolve]
+  monitor-pr threads resolve <thread-id>...
 
 <pr> is a PR number or URL. Without --repo, the repo comes from the URL or the
 current checkout. A thread ID looks like PRRT_kwDO...; `threads list` prints it.
@@ -44,7 +44,7 @@ Exit codes
      agent left findings or went quiet, threads are unresolved, the branch is
      BEHIND a base that requires up-to-date branches, the PR closed, or GitHub
      stayed unreachable
-  2  bad arguments, unknown PR, or another watch-pr already watches this PR
+  2  bad arguments, unknown PR, or another monitor-pr already watches this PR
 
 Events
   - a check failed (name, link, and the command to read its logs)
@@ -57,7 +57,7 @@ Events
   - merge state became BEHIND or DIRTY
   - the PR merged or closed
 
-State lives in ~/.local/state/watch-pr/. A lock makes a second watcher for the
+State lives in ~/.local/state/monitor-pr/. A lock makes a second watcher for the
 same PR exit at once. The state file lets a restarted watcher report only what
 arrived since the last report. On the first run, the watcher reports what is
 open on the current head and skips the history of older heads.
@@ -133,7 +133,7 @@ TRANSIENT = re.compile(
 )
 RATE_LIMIT = re.compile(r"rate limit|HTTP 429", re.IGNORECASE)
 
-STATE_DIR = Path(os.environ.get("XDG_STATE_HOME") or Path.home() / ".local" / "state") / "watch-pr"
+STATE_DIR = Path(os.environ.get("XDG_STATE_HOME") or Path.home() / ".local" / "state") / "monitor-pr"
 # A state file older than this belongs to an old session. Start over instead of
 # replaying hours of comments as new events.
 STALE_STATE_SECONDS = 6 * 3600
@@ -179,12 +179,12 @@ class GhError(Exception):
 
 
 def log(message: str) -> None:
-    print(f"watch-pr: {message}", file=sys.stderr, flush=True)
+    print(f"monitor-pr: {message}", file=sys.stderr, flush=True)
 
 
 def fail(message: str, code: int = 2) -> NoReturn:
     # Fatal messages go to stdout so a monitor shows the agent why it stopped.
-    print(f"watch-pr: {message}", flush=True)
+    print(f"monitor-pr: {message}", flush=True)
     sys.exit(code)
 
 
@@ -837,11 +837,11 @@ class Watcher:
                     time.sleep(max(reset - time.time(), 0) + 5)
                     continue
                 if not error.transient:
-                    self.finish(1, [f"watch-pr stopped: {error}"])
+                    self.finish(1, [f"monitor-pr stopped: {error}"])
                 failures += 1
                 log(f"poll failed ({failures}/{MAX_FAILED_POLLS}): {error}")
                 if failures >= MAX_FAILED_POLLS:
-                    self.finish(1, [f"watch-pr stopped: GitHub unreachable for {failures} polls: {error}"])
+                    self.finish(1, [f"monitor-pr stopped: GitHub unreachable for {failures} polls: {error}"])
             else:
                 self.save()
                 if self.first_run:
@@ -949,10 +949,10 @@ def duration(text: str) -> float:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        prog="watch-pr",
-        usage="watch-pr [show] <pr> [options]\n       watch-pr threads list <pr> [--json]\n"
-        "       watch-pr threads reply <thread-id> --body-file <file> [--resolve]\n"
-        "       watch-pr threads resolve <thread-id>...",
+        prog="monitor-pr",
+        usage="monitor-pr [show] <pr> [options]\n       monitor-pr threads list <pr> [--json]\n"
+        "       monitor-pr threads reply <thread-id> --body-file <file> [--resolve]\n"
+        "       monitor-pr threads resolve <thread-id>...",
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

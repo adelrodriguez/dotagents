@@ -9,7 +9,7 @@ applyTo: "**"
 
 If a bug is within the current scope of work, fix it and report the bug and fix to the user.
 
-If a bug is outside the current scope, use the `file-issue` skill to file it and suggest another PR.
+If a bug is outside the current scope, use the `issue` skill to file it and suggest another PR.
 
 ## Choose the PR for an out-of-scope fix
 

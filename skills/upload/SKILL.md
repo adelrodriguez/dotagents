@@ -1,5 +1,5 @@
 ---
-name: upload-file
+name: upload
 description: Use when attaching files to a pull request or comment, or when another skill needs a public file URL.
 ---
 

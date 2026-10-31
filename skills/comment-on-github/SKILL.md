@@ -38,7 +38,7 @@ Review the comment with the `unslop` skill before posting.
 
 ## Include attachments
 
-Upload relevant attachments with the `upload-file` skill.
+Upload relevant attachments with the `upload` skill.
 
 ## Post the comment
 
@@ -46,7 +46,7 @@ Check the entire comment, including quoted text and attachments, for secrets and
 
 Write the comment to a file created with `mktemp`. Preserve literal text and newlines. For an issue comment, use `gh issue comment <number> --repo <owner>/<repo> --body-file <file>`. For a top-level PR comment, use `gh pr comment <number> --repo <owner>/<repo> --body-file <file>`.
 
-For review-thread replies, use the `watch-pull-request` skill's `watch-pr threads reply <thread-id> --body-file <file>` command. Keep `on behalf of` in the attribution so the script accepts the reply.
+For review-thread replies, use the `monitor` skill's `monitor-pr threads reply <thread-id> --body-file <file>` command. Keep `on behalf of` in the attribution so the script accepts the reply.
 
 ## Verify the result
 

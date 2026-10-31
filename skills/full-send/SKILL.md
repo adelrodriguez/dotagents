@@ -37,19 +37,19 @@ Choose checks that prove the changed behavior:
 - For a bug, reproduce the failure before the fix and verify that the same reproduction passes afterward.
 - Run the relevant local CI checks, including linting, formatting, and type checking.
 - If the behavior lacks coverage and the repository has a test setup, add a focused regression test that fails without the fix.
-- For UI or runtime behavior, run the app and observe the result. Mocked tests alone do not prove the user experience. Upload screenshots or recordings with the `upload-file` skill.
+- For UI or runtime behavior, run the app and observe the result. Mocked tests alone do not prove the user experience. Upload screenshots or recordings with the `upload` skill.
 
 ## Review the change
 
-Use the `review-loop` skill to review the diff. Address valid findings and verify each fix before pushing.
+Use the `code-review` skill to review the diff. Address valid findings and verify each fix before pushing.
 
 ## File the PR
 
-Use the `file-pull-request` skill. Use the correct base branch for a stacked PR. Follow `watch-pull-request` for base updates and rebases.
+Use the `pr` skill. Use the correct base branch for a stacked PR. Follow `monitor` for base updates and rebases.
 
 ## Watch the PR
 
-Use the `watch-pull-request` skill to monitor checks and reviews. Fix valid findings and CI failures, and verify each fix before pushing. After each push, wait for fresh approval on the latest head.
+Use the `monitor` skill to monitor checks and reviews. Fix valid findings and CI failures, and verify each fix before pushing. After each push, wait for fresh approval on the latest head.
 
 Keep working until the PR merges or you reach a blocker that requires the user. While checks or reviews are pending, use the skill's watcher so notifications resume the work. End your turn only when the watcher can resume it.
 
@@ -62,9 +62,9 @@ Before merging, verify all of these conditions on the latest head:
 - Every required review agent approves under the repository's review gates.
 - Every finding is fixed or declined with a written reason, and no review threads remain unresolved.
 - No human review still requests changes.
-- The PR is mergeable and meets the base-branch requirements in `watch-pull-request`.
+- The PR is mergeable and meets the base-branch requirements in `monitor`.
 
-Use the repository's merge method and follow `watch-pull-request` for stacks. Respect branch protection without bypasses. If the repository uses a merge queue or auto-merge, continue watching until GitHub reports the PR as merged.
+Use the repository's merge method and follow `monitor` for stacks. Respect branch protection without bypasses. If the repository uses a merge queue or auto-merge, continue watching until GitHub reports the PR as merged.
 
 ## Ask when blocked
 

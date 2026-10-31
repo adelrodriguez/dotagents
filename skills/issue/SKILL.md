@@ -1,5 +1,5 @@
 ---
-name: file-issue
+name: issue
 description: Use when creating or opening a GitHub issue, including tracker and child issues, or several issues at once.
 ---
 
@@ -51,7 +51,7 @@ For a bug, include the available evidence:
 
 For a visual problem, include a screenshot. When screenshots cannot capture the behavior, include a video.
 
-Upload screenshots and videos with the `upload-file` skill and include them in the issue description. If an upload fails, state which attachment is missing.
+Upload screenshots and videos with the `upload` skill and include them in the issue description. If an upload fails, state which attachment is missing.
 
 ## Set the issue metadata
 
