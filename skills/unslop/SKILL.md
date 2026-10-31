@@ -4,6 +4,7 @@ description: Use when the user asks to simplify, unslop, or improve text.
 metadata:
   reference:
     - "https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md"
+    - "https://github.com/cursor/plugins/blob/main/pstack/skills/technical-writing/SKILL.md"
 ---
 
 # Unslop
@@ -49,6 +50,18 @@ Apply the `Write clearly` rules from your instructions, then check the additiona
 - **Say what it does, not how it feels.** "the database stays close at hand", "SQL you can read", "types that follow your schema" name a feeling. The fix names the mechanism or a number: "`.toSQL()` returns the exact string sent to the database", "a column rename fails the build". Ask what the sentence tells the reader to do or know, then write that. If you can't restate it as a concrete instruction, fact, or number, cut it. One more check: if the sentence could appear unchanged in another project's docs, it says nothing about this one. Cut it.
 - **Cut adverbs, or use a stronger verb.** "runs quickly" becomes "is fast" or the number, and "significantly improves" becomes the measured delta. An adverb propping up a weak verb means the verb is wrong.
 - **Mannered prose.** Metaphor or flourish where a literal phrase exists: aphorisms ("wire it or delete it"), rhetorical fragments for effect, personified code ("the plan holds it"), figurative verbs ("rides along", "stands on"), stock framing phrases. "A dial worth turning" becomes "a parameter worth varying". Say what you mean. The abstract metaphor nouns rule covers those terms.
+
+### Sentences
+
+- **Misplaced "only" and "not".** Put each next to the word it changes. "Only fails on growth" and "fails only on growth" say different things.
+- **Noun strings.** "The proto import budget check script" becomes "the script that checks the proto-import budget".
+- **Dropped verbs.** "Phase 1 moves the converters and Phase 2 the runtime" becomes "Phase 1 moves the converters, and Phase 2 moves the runtime".
+- **Dropped structure words.** Keep "the" and "a": "Remove backup file" reads two ways, and "Remove the backup file" reads one. Keep "that" in "Ensure that the switch is off". Repeat the article when a series names separate things: "the client and the host".
+- **Ambiguous grouping.** When "and" or "or" can group two ways, use "both…and" or "either…or".
+- **Slashes.** "a/b" and "and/or" become "a, b, or both".
+- **Loose parentheses.** Make the text in parentheses a full phrase or its own sentence. Never write plurals as "(s)".
+- **Repeated openings.** Consecutive sentences that start with the same phrase, such as "This skill… This skill…". Vary the opening or merge the sentences.
+- **Idioms and Latin abbreviations.** "e.g." becomes "such as" or "for example", "i.e." becomes "that is", and "out of the box" becomes "by default".
 
 ## Examples of the writing instruction
 

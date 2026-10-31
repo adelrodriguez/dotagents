@@ -8,6 +8,7 @@ applyTo: "**"
 - Lead with the conclusion or result.
 - Prefer plain, everyday words.
 - Use periods or commas instead of em dashes. Do not substitute other dashes or parentheses.
+- Use periods instead of semicolons.
 - Use sentence-case headings.
 - Omit chatbot phrases and sycophantic praise.
 - Match certainty to the evidence. State what remains unverified.

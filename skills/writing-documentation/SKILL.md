@@ -4,6 +4,7 @@ description: Use when writing, editing, or reorganizing technical documentation 
 metadata:
   reference:
     - "https://diataxis.fr/"
+    - "https://github.com/cursor/plugins/blob/main/pstack/skills/technical-writing/SKILL.md"
 ---
 
 # Write documentation
@@ -69,6 +70,7 @@ Sorting content by type also exposes functional gaps. Reference that mirrors the
 - Check each page against the checklist in its type's file.
 - Check that each page is one type and that its title names that type's question.
 - Check every command, example, and fact against the current source.
+- Check the sentences against [`STYLE.md`](STYLE.md).
 - Use the `unslop` skill on the prose.
 
 ## Return the result
