@@ -37,7 +37,7 @@ A context menu opened 200 times a day with a 300ms open animation costs a minute
 
 When reviewing your own work or someone else's, read it once asking only what can go. Cut each element, animation, or line whose removal leaves the outcome as good or better. Question your first idea as hard as anyone else's.
 
-Review the repository the same way. Delete superseded plans, duplicate checks, and scripts, CI jobs, dependencies, and files that no longer earn their place. When a deletion removes a public API or changes the folder organization, propose it with the `codebase-design` skill instead.
+Review files and tooling affected by the task the same way. Identify superseded plans, duplicate checks, and unused scripts, CI jobs, dependencies, and files. Apply the bug-scope and structural-change rules before removing them.
 
 ## Report
 

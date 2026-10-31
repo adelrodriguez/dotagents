@@ -49,7 +49,7 @@ A test is weak when it passes even though the behavior is broken. Look for these
 - It asserts on the mocks it set up rather than on the result.
 - It snapshots a large output that no reviewer reads.
 
-To check a test, break the behavior on purpose, such as by inverting a condition, and confirm that the test fails. Strengthen a weak test by asserting the exact value or outcome.
+To check a test, temporarily break the behavior, such as by inverting a condition, and confirm that the test fails. Restore the code, then confirm that the test passes. Strengthen a weak test by asserting the exact value or outcome.
 
 ## Delete low-value tests
 
@@ -67,7 +67,7 @@ When the change adds or changes an exported type, test the type. Use the reposit
 ## Check the tests
 
 - Every new or changed test fails when the behavior it covers breaks.
-- A bug fix includes a test that failed before the fix.
+- A bug fix includes a test that failed before the fix, or records why the test setup cannot reproduce the bug and how the bug was verified.
 - Each test sits in the `__tests__` folder next to the file it tests, or follows the repository's placement.
 - No test asserts on internal state or private calls.
 - Every exported type that changed has a type test.
