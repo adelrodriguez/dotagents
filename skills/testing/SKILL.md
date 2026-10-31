@@ -9,7 +9,21 @@ Write tests that prove behavior. A test earns its place when it fails if the beh
 
 ## Start from the repository
 
-Before writing, read the repository's test setup, helpers, fixtures, and the existing tests near the code. Match their structure, naming, and file placement. Run the test command from the repository's scripts, such as `package.json`, rather than calling the runner directly.
+Before writing, read the repository's test setup, helpers, fixtures, and the existing tests near the code. Match their structure and naming. Run the test command from the repository's scripts, such as `package.json`, rather than calling the runner directly.
+
+## Place the test next to its file
+
+Put each test in a `__tests__` folder next to the file it tests, so the tests stay with the code without breaking up the folder's file list:
+
+```
+src/billing/
+  __tests__/
+    invoice.test.ts
+  invoice.ts
+  payment.ts
+```
+
+When the repository already places tests another way, follow the repository.
 
 ## Test through the interface
 
@@ -54,6 +68,7 @@ When the change adds or changes an exported type, test the type. Use the reposit
 
 - Every new or changed test fails when the behavior it covers breaks.
 - A bug fix includes a test that failed before the fix.
+- Each test sits in the `__tests__` folder next to the file it tests, or follows the repository's placement.
 - No test asserts on internal state or private calls.
 - Every exported type that changed has a type test.
 - The full suite passes.
