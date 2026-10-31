@@ -76,7 +76,7 @@ Verify approval for the latest head according to how each agent reports its revi
 - **Agents that publish a review check.** Wait for the check to report approval. A completed check with unresolved findings is not approval.
 - **Agents that leave comments.** Wait for a comment that reports no remaining issues or explicitly approves the change in the agent's own wording. Silence and resolved threads do not count as approval.
 
-After each push, wait for fresh approval from every review agent. If a review does not restart automatically, use the retry command that `monitor-pr` prints when it reports a stalled agent. Post the command with the `comment-on-github` skill.
+After each push, wait for fresh approval from every review agent. If a review does not restart automatically, use the retry command that `monitor-pr` prints when it reports a stalled agent. Post the command with the `comment` skill.
 
 Use the bot's handle, which can differ from its product name:
 
@@ -88,7 +88,7 @@ Fix valid findings and CI failures after checking whether each failure comes fro
 
 If a finding cites repository review rules, read those rules before replying.
 
-If you decide not to address a finding, explain why in a comment and resolve the thread. Use the `comment-on-github` skill for every comment you post on the user's behalf. When screenshots or videos help explain the result, upload them with the `upload` skill.
+If you decide not to address a finding, explain why in a comment and resolve the thread. Use the `comment` skill for every comment you post on the user's behalf. When screenshots or videos help explain the result, upload them with the `upload` skill.
 
 Keep changes within the user's goal, and prefer fixes that delete or narrow code. Decline unrelated tests, unnecessary edge-case guards, extra integrations or compatibility work, and minor performance changes. Explain those decisions and list the declined work as follow-ups.
 
@@ -103,7 +103,7 @@ monitor-pr threads resolve <thread-id>...
 ```
 
 - `list` prints each unresolved thread with its ID, location, and latest comments, and marks the threads you have already answered.
-- `reply` posts the file's contents as a reply and prints its URL. It refuses a reply without the agent marker, so write the body with the `comment-on-github` skill. Create the file with `mktemp`, because other sessions share fixed `/tmp` paths.
+- `reply` posts the file's contents as a reply and prints its URL. It refuses a reply without the agent marker, so write the body with the `comment` skill. Create the file with `mktemp`, because other sessions share fixed `/tmp` paths.
 - `resolve` resolves every thread you pass in one request. Resolve threads once their fix is pushed or your reply explains why you declined.
 
 ## Work on a stacked PR

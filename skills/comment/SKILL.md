@@ -1,5 +1,5 @@
 ---
-name: comment-on-github
+name: comment
 description: Use when posting a comment on a GitHub pull request or issue, including review comments and thread replies.
 metadata:
   reference:

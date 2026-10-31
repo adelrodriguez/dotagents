@@ -58,4 +58,4 @@ If `gh pr create` fails because the GraphQL rate limit is used up, open it throu
 
 If the user also asks to watch, monitor, or babysit the PR, use the `monitor` skill.
 
-Post a follow-up PR comment only when requested or needed to complete the requested workflow. Use the `comment-on-github` skill.
+Post a follow-up PR comment only when requested or needed to complete the requested workflow. Use the `comment` skill.
