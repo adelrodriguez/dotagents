@@ -20,9 +20,9 @@ Use only facts from the code, the product, or the user. Never invent numbers, qu
 
 ## Earn every line
 
-Every line on screen must help the user act or understand. Cut these:
+Every line and element on screen must help the user act or understand. Apply the `restraint` skill before adding any. Cut these:
 
-- Eyebrow text above headings.
+- Eyebrow text above headings, and other eyebrow elements such as pills, badges, and small labels that sit on top of the real content.
 - Subtitles and helper text that repeat the heading or label.
 - Taglines and slogans that nobody asked for.
 - Text that describes the page itself, such as "This page shows your goals."
@@ -45,7 +45,7 @@ If the interface already makes something clear, leave it unsaid.
 These patterns make copy read as generated. Rewrite each one as a direct statement of what the product does.
 
 - Contrast framing, such as "Not just a to-do app. A habit system." State what the product is.
-- Dramatic fragments, such as "No setup. No config. Just results." Write one sentence with the specific claim, and combine related short sentences.
+- Staccato sentences and dramatic fragments, such as "More reliable. Less expensive.", "Sleep better. Live longer.", or "No setup. No config. Just results." Never use them, especially on landing pages. Write one full sentence with the specific claim from the source, and combine related short sentences.
 - Forced triads, such as "Fast, simple, secure." Keep three items only when there are three real ones.
 - Sales and inflation words, such as seamless, powerful, effortless, robust, unlock, elevate, supercharge, game-changing, and "the future of". Name the specific benefit or cut the claim.
 - AI vocabulary, such as delve, crucial, vibrant, showcase, tapestry, testament, and pivotal. Use plain words.
