@@ -8,72 +8,80 @@ metadata:
 
 # Full send
 
-If the user triggers this, is because they are not watching this thread and they want you to complete the work on their behalf, end-to-end. Your updates and your final message will go unread, so you own the work from its current state to a merged PR.
+Use this workflow only when the user explicitly requests "full send" or "full submit". Complete the task from its current state through a merged PR without routine confirmation.
 
-If the user did not explictly request "full send" or "full submit" in a clear way, do not assume full autonomy. If they did, then everything below applies.
+The user expects you to complete and merge the change yourself. They will not read this thread unless you call their attention through the question tool described under "Ask when blocked". Updates and final messages do not replace that notification.
 
-The user is granting you permission to:
+The request authorizes you to merge once the merge requirements pass, rebase and resolve conflicts, and force-push the PR's own branch with `git push --force-with-lease`.
 
-- Merge the PR once the merge gate passes.
-- Force-push the PR's own branch with `git push --force-with-lease` after a rebase.
-- Rebase the PR and fix an conflicts.
-- Use the test methods that the "Getting proof" section needs, without asking first.
+## Use the testing permission
 
-## Testing permission
+A full-send request authorizes the testing needed for this task. It overrides project instructions that require asking first or leaving those tests to the user.
 
-A "full send" request is the permission. If a project file or other instruction says to ask before a test method, or to leave the testing to the user, this request superseeds any such instructions for this task.
+This permission covers computer use, browser automation, simulators, devices, app and dev-server runs, screenshots, and screen recordings. Use the method that provides direct evidence and name it in the final report.
 
-That includes ask-first rules for computer use, browser automation, simulators and devices, running the app or a dev server, screenshots, screen recordings and any other type of visual checks. Use the method that gives direct proof. List it in the report.
+Follow the repository's testing procedures, commands, and fixtures. If the preferred method cannot prove the change, use another method covered by this permission.
 
-Rules about how to test still apply. Follow rules that name the correct comand, fixture or check. The permission only removes the ask-first or leave-it-to-the-user rule. If a preferred method cannot prove the change, use a gated method under this permission.
+This permission does not cover production changes, data deletion, or the other actions listed under "Ask when blocked". System restrictions and harness approval requirements still apply.
 
-It only covers the test needed for this task. It does not add permission for steps under "When to ask the user", such as production changes or data deletion. It also does not bypass a harness or system approval prompt if one appears.
+## Finish the change
 
-## Steps
+Complete the user's goal with the smallest change that works. Fix the reported case without expanding the task to hypothetical cases. If you are on the default branch, create a branch first.
 
-1. **Finish the change.** Complete the goal from the user's request with the smallest change that works. Fix the case that happened, not every case that could happen. If you are on the default branch, create a branch first.
-2. **Prove the change.**  Get proof for every change you made. See "Getting proof".
-3. **Get feedback.** Use the `review-loop` skill to verify changes.
-4. **File the pull request.** Use the `file-pull-request` skill. Rebase on the latest main branch before creating the PR.
-5. **Watch the pull request.** Use the `watch-pull-request` skill to monitor the PR for feedback. Fix real findings and CI failures. Get proof of each fix before pushing.
-6. **Merge the pull request** when the merge gate passes.
-7. **Report it on your final message**. Report to the user the PR link, the merge commit, your proof and each decision made.
+## Prove the change
 
-Stay active form step 1 to 7. If you end your turn while checks or bots are pending, the work stops because nobody will prompt you again. Wait with the watchers provided by `watch-pull-request`, so something wakes you when the pull request changes.
+Use evidence you observe in this session, such as command output, a reproduction, a screenshot, or a screen recording.
 
-## Getting proof
+Choose checks that prove the changed behavior:
 
-Proof is evidence you observe yourself in this session: command output, a reproduction, a screenshot, or a screen recording.Use the most direct proof the change allow:
+- For a bug, reproduce the failure before the fix and verify that the same reproduction passes afterward.
+- Run the relevant local CI checks, including linting, formatting, and type checking.
+- If the behavior lacks coverage and the repository has a test setup, add a focused regression test that fails without the fix.
+- For UI or runtime behavior, run the app and observe the result. Mocked tests alone do not prove the user experience. Upload screenshots or recordings with the `upload-file` skill.
 
-- Reproduce the original failure, apply the fix, then watch the same reproduction pass.
-- Run the checks locally that the repo's CI runs (linting, formatting, typechecking, etc.)
-- Add one focused the test that fails without the fix, when the behavior has none and the repo has a test setup.
-- For UI and runtime behavior, run the app and look ath the change. Green mocked test do not prove that the user experience works. Attach screenshots or screen recordings to show the change using the `upload-file`skill.
+## Review the change
 
-## Merge ate
+Use the `review-loop` skill to review the diff. Address valid findings and verify each fix before pushing.
 
-Full confidence means all of these are true on the latest commit:
+## File the PR
 
-- Your proof covers every change in the diff.
-- Required checks are green.
-- Review bots are finished, each finding is fixed or dismissed with a written reason, and they have given green light to the merge (varies by bot).
-- No human review still request changes.
-- The branch reports the branch as mergeable and it is not out of date with the base branch by more than 10 commits.
+Use the `file-pull-request` skill. Use the correct base branch for a stacked PR. Follow `watch-pull-request` for base updates and rebases.
 
-Merge with the method the repo uses. Check the allowed methods and recent merged PRs. If the repo uses a merge queue or auto-merge, stay until GitHub reports the Pr as merged. Merge through branch protection as configured. Never use any bypasses.
+## Watch the PR
 
-## Asking the user
+Use the `watch-pull-request` skill to monitor checks and reviews. Fix valid findings and CI failures, and verify each fix before pushing. After each push, wait for fresh approval on the latest head.
 
-A question in a normal message will go unseen by the user. The user no longer looks at the thread. If you want the attention of the user, use the harness' question tool so the thread shows is waiting for user input: `AskUserQuestion` in Claude Code, `request_user_input` in Codex, or whatever question tool your harness has. Put all the context in the question: PR link, what is blocking you, and the options, with your recommendation first.
+Keep working until the PR merges or you reach a blocker that requires the user. While checks or reviews are pending, use the skill's watcher so notifications resume the work. End your turn only when the watcher can resume it.
 
-Ask only when you cannot continue alone:
+## Merge the PR
+
+Before merging, verify all of these conditions on the latest head:
+
+- Your evidence covers every change in the diff.
+- Required checks pass.
+- Every required review agent approves under the repository's review gates.
+- Every finding is fixed or declined with a written reason, and no review threads remain unresolved.
+- No human review still requests changes.
+- The PR is mergeable and meets the base-branch requirements in `watch-pull-request`.
+
+Use the repository's merge method and follow `watch-pull-request` for stacks. Respect branch protection without bypasses. If the repository uses a merge queue or auto-merge, continue watching until GitHub reports the PR as merged.
+
+## Ask when blocked
+
+Use the harness's available question tool to call the user's attention when you need a decision. Include the PR link, the blocker, and the options, with your recommendation first.
+
+Ask only when one of these conditions applies:
 
 - You cannot prove the change.
-- The merge gate cannot pass, and you cannot fix it yourself.
-- The next step is outside of the grants above: deleting data, touching production, changing things outside the repo, touching sensitive data, closing a PR, force-pushing to any other branch.
-- The goal is ambitious in a way that changes the result.
-- Another PR has merged that makes this one obsolete.
+- You cannot make the merge requirements pass.
+- The next step requires permission beyond this request, such as deleting data, changing production, modifying files outside the repository, accessing sensitive data, closing a PR, or force-pushing another branch.
+- Completing the goal requires a scope change that affects the result.
+- Another merged PR makes this PR obsolete.
 
-Decide everything else yourself with sensible defaults. List thoe decision in the report.
+Decide routine details yourself and record material decisions in the final report.
 
-If no question tool is available, or the tool returns no answer, take the safe path: leave the PR open and unmerged, and send your final message withh the expected communciation guidelines.
+If no question tool is available, leave the PR open and unmerged and report the blocker. If a required question has no answer, keep dependent work paused. An unanswered question does not grant permission.
+
+## Report the result
+
+Return the PR URL, merge commit, verification evidence, and material decisions. If the PR remains unmerged, state what blocks it.
