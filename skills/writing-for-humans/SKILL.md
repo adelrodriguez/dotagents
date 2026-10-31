@@ -36,24 +36,18 @@ If the interface already makes something clear, leave it unsaid.
 - Errors: Say what happened and what the user can do next. Do not blame the user. Do not write "Oops" or "Something went wrong" without a next step.
 - Empty states: Say what is missing and offer the one action that fills it.
 - Destructive confirmations: Name the item and the consequence, such as "Delete Morning run? Its 12 check-ins will be deleted too."
+- Landing pages: Write each claim as one full sentence with the specific benefit from the source. Never use staccato sentences such as "More reliable. Less expensive." or "Sleep better. Live longer."
 - Success messages: State the result briefly. Skip celebration unless the product's voice uses it.
 - Numbers: Format numbers for the locale, such as "1,500" rather than "1500". Use numerals for counts.
 - Alt text and accessible labels: Describe the purpose, not the appearance. An icon button's label is its action.
 
-## Avoid AI patterns
+## Cut generated patterns
 
-These patterns make copy read as generated. Rewrite each one as a direct statement of what the product does.
+Apply the `unslop` skill to every string. Then cut these patterns, which are specific to product and marketing copy:
 
-- Contrast framing, such as "Not just a to-do app. A habit system." State what the product is.
-- Staccato sentences and dramatic fragments, such as "More reliable. Less expensive.", "Sleep better. Live longer.", or "No setup. No config. Just results." Never use them, especially on landing pages. Write one full sentence with the specific claim from the source, and combine related short sentences.
-- Forced triads, such as "Fast, simple, secure." Keep three items only when there are three real ones.
 - Sales and inflation words, such as seamless, powerful, effortless, robust, unlock, elevate, supercharge, game-changing, and "the future of". Name the specific benefit or cut the claim.
-- AI vocabulary, such as delve, crucial, vibrant, showcase, tapestry, testament, and pivotal. Use plain words.
-- Sayings that sound deep, such as "Consistency is the currency of change." Replace the saying with the specific claim.
 - Unsourced authority, such as "Trusted by teams everywhere" or "Loved by thousands." Use a real, sourced number or cut the claim.
-- Fancy ways to say "is", such as "serves as", "boasts", and "features". Use "is" or "has".
-- Decoration, such as emoji bullets, Title Case headings, bold on every feature name, and exclamation marks on routine messages.
-- Em dashes. Use a period, comma, or colon.
+- Exclamation marks on routine messages.
 
 ## Check the copy
 
