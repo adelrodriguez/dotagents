@@ -25,12 +25,21 @@ if [[ ! -f $path ]]; then
 fi
 
 ref=${FILE_UPLOAD_OP_REF:-op://Agents/FILE_UPLOAD}
+# Agents read 1Password with a read-only service account, set up once per machine.
+token_file=$HOME/.config/agents/1password-token
 
 setting() { # setting <ENV_NAME> <1password-field>
   [[ -n ${!1:-} ]] && return
   if ! command -v op >/dev/null; then
     echo "upload: set $1 or install the 1Password CLI" >&2
     exit 78
+  fi
+  if [[ -z ${OP_SERVICE_ACCOUNT_TOKEN:-} ]]; then
+    if [[ ! -r $token_file ]]; then
+      echo "upload: no 1Password service account on this machine; save its token to $token_file (see SKILL.md)" >&2
+      exit 78
+    fi
+    export OP_SERVICE_ACCOUNT_TOKEN=$(<"$token_file")
   fi
   local value
   value=$(op read "$ref/$2") || { echo "upload: could not read $ref/$2" >&2; exit 78; }

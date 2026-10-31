@@ -25,14 +25,12 @@ The script prints the file's URL on stdout. Use that URL exactly as printed.
 
 The script names each file by the SHA-256 of its content and keeps its extension. The same file always gets the same URL, so uploading a file that is already in the bucket returns its existing URL without uploading it again.
 
-If the script shows a 1Password prompt, tell the user you are waiting for them to approve it.
-
 The script returns these exit codes:
 
 - `0`: the file is in the bucket and its URL is printed.
 - `64`: the arguments are invalid.
 - `66`: the path is not a file.
-- `78`: a setting is missing or could not be read. Set the named `FILE_UPLOAD_*` variable or address the reported 1Password access or CLI issue.
+- `78`: a setting is missing or could not be read. If the machine has no 1Password service account, tell the user and point them to [Set up a machine](#set-up-a-machine). Otherwise, set the named `FILE_UPLOAD_*` variable or address the reported 1Password access or CLI issue.
 - Any other code: inspect the error, retry once, then report the failure if the retry fails.
 
 ## Use the URL
@@ -64,3 +62,13 @@ The default item is `op://Agents/FILE_UPLOAD`. Set `FILE_UPLOAD_OP_REF` to use a
 | `FILE_UPLOAD_PUBLIC_URL` | `public_url` |
 
 Never print, log, or commit these values.
+
+### Set up a machine
+
+The script reads 1Password as a service account, so it never shows an approval prompt. Each machine needs its own service account with read-only access to the `Agents` vault. Save its token once per machine:
+
+```bash
+bash -c 'umask 077; mkdir -p ~/.config/agents; read -rsp "Token: " t; printf "%s\n" "$t" > ~/.config/agents/1password-token; echo'
+```
+
+The script loads the token for its own `op` calls, so it works under any agent host. An `OP_SERVICE_ACCOUNT_TOKEN` that is already set takes precedence.
